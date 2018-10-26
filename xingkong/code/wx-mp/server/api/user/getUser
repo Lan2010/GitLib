@@ -1,0 +1,10 @@
+{
+	"code": 0,
+	"msg": "Success",
+	"data": {
+		"isAuth": 1,
+		"isGetGC": 0,
+		"nickName": "Gang1",
+		"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132"
+	}
+}

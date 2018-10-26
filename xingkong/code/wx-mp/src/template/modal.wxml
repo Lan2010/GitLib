@@ -1,0 +1,12 @@
+<!-- modal.wxml -->
+
+<template name="modal">
+    <view class="page-mask" hidden='{{!modal.show}}'></view>
+    <view class='modal' hidden='{{!modal.show}}'>
+      <view class='title'>{{modal.title}}</view>
+      <view class='content'>{{modal.content}}</view>
+      <view class='btn-area'>
+        <button type='default' bindtap='closeModal'>确定</button>
+      </view>
+    </view>
+</template>

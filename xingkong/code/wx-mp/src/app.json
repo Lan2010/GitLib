@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/postcard/create",
+    "pages/postcard/share",
+    "pages/postcard/show",
+    "pages/ecard/show",
+    "pages/guide/guide",
+    "pages/wish/wish",
+    "pages/winner/winner",
+    "pages/mine/wish",
+    "pages/mine/postcard",
+    "pages/mine/award",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "天智星",
+    "navigationStyle": "custom",
+    "backgroundColor": "#f2f2f2"
+  },
+  "networkTimeout": {
+    "request": 180000,
+    "uploadFile": 180000,
+    "downloadFile": 180000
+  }
+}

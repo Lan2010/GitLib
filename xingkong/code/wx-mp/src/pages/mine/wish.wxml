@@ -1,0 +1,40 @@
+<!--pages/mywish/mywish.wxml-->
+
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}' nav-back-params='{{nav.backParams}}'></nav>
+
+<view class='container'>
+
+  <view class='page' style='padding-top: {{nav.height}}px;'>
+    
+    <view class='cells cells-list mywish' hidden='{{!list.length}}'>
+      <view wx:for="{{list}}" wx:key="id" data-idx='{{index}}' data-url='{{item.audioUrl}}' data-len='{{item.audioTimeLen}}' class='cell cell-access' bind:tap='playAudio'>
+
+        <view class='cell-hd'>
+          <view class='icon-voice {{audio.status == 1 && audio.idx == index ? "play" : ""}}'>
+            <image src='/images/icon-voice.png'></image>
+            <view class='mask'></view>
+          </view>
+        </view>
+        <view class='cell-bd'>{{item.createTime}}</view>
+        <view class='cell-ft'>{{(audio.status == 1 || audio.status == 2) && audio.idx == index ? audio.time + '/' : ''}}{{item.audioTimeLen}}"</view>
+
+      </view>
+
+      
+    </view>
+
+    <view class='nodata' hidden='{{list.length || page.loading}}'>
+      <text>无记录</text>
+    </view>
+
+    <view class='page-loading' hidden='{{!page.loading}}'>
+      <view class='icon-loading'></view>
+      <view class='text'>加载中</view>
+    </view>
+
+  </view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}"></msg> 

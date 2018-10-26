@@ -1,0 +1,36 @@
+<!--pages/mine/award.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}' nav-back-params='{{nav.backParams}}'></nav>
+
+<view class='container'>
+
+  <view class='page' style='padding-top: {{nav.height}}px;'>
+    
+    <view class='winner'>
+      <view  class='datelist flex-v'>
+        <!-- <view class='date'>{{item.date}}</view> -->
+
+        <view class='cells cells-menu' hidden='{{!list.length}}'>
+          <view wx:for="{{list}}" wx:key="id" class='cell'>
+            <view class='cell-bd'>{{item.prizeTime}}</view>
+             <view class='cell-ft'>{{item.desc}}</view> 
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='nodata' hidden='{{list.length || page.loading}}'>
+      <text>无记录</text>
+    </view>
+
+    <view class='page-loading' hidden='{{!page.loading}}'>
+      <view class='icon-loading'></view>
+      <view class='text'>加载中</view>
+    </view>
+
+  </view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}"></msg> 

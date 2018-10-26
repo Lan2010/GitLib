@@ -1,0 +1,237 @@
+<!--index.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}'></nav>
+
+<view class='bg-white' hidden='{{page.ready && !tab.loading ? true : false}}'></view>
+
+<view class='container {{sys.os}} {{sys.isIOSX ? "iosX":""}}' hidden='{{!page.ready}}'>
+  
+  <!-- -------------------------------------------------------------------------- Tab Page - 绿卡 -->
+  <view class='tab-page flex page-card' style='padding-top: {{nav.height}}px;' hidden='{{tab.active == 0 ? false : true}}'>
+
+    <view class='tab-content flex-item' hidden='{{!tab.list[0].ready}}'>  
+    <!-- Content begin -->
+      
+      <view class='page-bg'>
+        <image src='{{tab.list[0].bg}}' mode='widthFix'></image>
+      </view>
+      
+      <view class='card-title'>
+        <view class='txt1'><text>我的专属天智星绿卡</text></view>
+        <view class='txt2'><text>已领取移民天智星的通行证</text></view>
+      </view>
+
+      <view class='card'>
+        <image src='{{conf.host}}/static/images/card-2.png' class='card-bg'></image>
+        <view class='card-inner'>
+          <view class='card-info'>
+            <view>昵　　称：{{userInfo.nickName}}</view>
+            <view>签发日期：{{ecard.date}}</view>
+            <view>绿卡号码：{{ecard.gcNumber}}</view>
+          </view>
+          <view class='card-head' hidden='{{!userInfo.loaded}}'>
+            <image src='{{userInfo.avatarUrl}}' mode='aspectFill' bindload='headOnLoad' class='{{userInfo.loaded ? "fade_in" : "fade_out"}}'></image>
+          </view>
+          <view class='card-share'>
+            <button open-type='share'>
+              <image src='/images/icon-card-share-2.png'></image>
+            </button>  
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class='card-des'>
+        <text>在您移民天智星之际\n天智星对您曾经的家园做了留影</text>
+      </view> -->
+
+      <!-- <view class='card-memory'>
+        <image src='/images/memory.png' mode='aspectFill'></image>
+      </view> -->
+
+      <view class='card-btn'>
+        <button class='btn btn-shadow' bind:tap='gotoPostcardCreate'>制作星座明信片</button>
+      </view>
+
+    <!-- Content end -->
+    </view>
+
+  </view>
+  <!-- -------------------------------------------------------------------------- Tab Page end - 绿卡 -->
+
+  <!-- -------------------------------------------------------------------------- Tab Page begin - 对星盟誓 -->
+  <view class='tab-page flex page-wish' style='padding-top: {{nav.height}}px;' hidden='{{tab.active == 1 ? false : true}}'>
+    
+    <view class='tab-content flex-item' hidden='{{!tab.list[1].ready}}'>
+    <!-- Content begin -->
+
+      <view class='page-bg'>
+        <image src='{{tab.list[1].bg}}' mode='widthFix'></image> 
+      </view>
+
+      <view class='wish-des'><text>据说对着天智星盟誓, 可以实现……</text></view>
+      <image src='/images/wish-title.png' class='wish-title'></image>
+      <!-- <view class='winner-link' bind:tap='gotoWinnerList'>抽奖结果</view> -->
+
+      <view class='award'>
+        <view class='inner'>
+
+          <image src='/images/award-border.png' class='border'></image>
+
+          <view class='award-des'><text>奖品1：去酒泉看卫星发射\n奖品2：远程操控卫星拍摄</text></view>
+
+          <view class='winner'>
+
+            <view class='title'>
+              <view class='name'>中奖名单</view>
+              <navigator url="/pages/winner/winner" class='more'>更多>></navigator>
+            </view>
+
+            <view class='list'>
+              <view class='list-inner'>
+                <view class='list-scroll {{winner.effect ? "transition":""}}' style='bottom: {{winner.bottom}};'>
+                  <view wx:for='{{winner.list}}' wx:key='id' class='list-item'>
+                    <view class='hd'><image src='{{item.avatarUrl ? item.avatarUrl : "/images/icon-user-head.png"}}'></image></view>
+                    <view class='bd'>{{item.nickName}}({{item.gcNumber}})</view>
+                    <view class='ft'>{{item.desc}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+          </view>
+
+          <!-- <view class='title'>{{award.list[award.current].title}}</view> -->
+          <!-- <swiper autoplay='true' circular='true' indicator-dots='true'  interval='3000' indicator-color='rgba(255, 255, 255, .5)' indicator-active-color='#ffffff' class='tickets' bind:change='onTicketChange'>
+            <block wx:for="{{award.list}}" wx:key='id'>
+              <swiper-item>
+                <image src='{{item.src}}'></image>
+              </swiper-item>
+            </block>
+          </swiper> -->
+
+          <view class='rule-link'><view bindtap='showRules'>奖励规则>></view></view>
+
+          <view class='des'><text>您的盟誓将永存天智星区块链</text></view>
+
+        </view>
+      </view>
+
+      <!-- <view class='status' hidden='{{!wish.ready}}'>
+        <button type='primary' class='btn' bind:tap='gotoWish' hidden='{{!wish.isAppt}}'>立即预约</button>
+        <view hidden='{{wish.isAppt}}'>你已预约过，请明天再来</view>
+      </view> -->
+
+      <view class='appt'>
+        <button class='btn btn-shadow' bind:tap='gotoWish' disabled='{{(wish.apptStatus || wish.wishStatus) && wish.ready ? false:true}}'>{{(wish.apptStatus || wish.wishStatus) && '我要盟誓' || '明天再约'}}</button>
+      </view>
+      
+      <view class='popup-rule' hidden='{{!rules}}'>
+        <view class='rules-mask'></view>
+        <view class='rules'>
+          <view class='panel'>
+            <view class='bd'>
+              <ul class='flex-v'>
+                <li>
+                  <view class='t'>抽奖资格</view>
+                  <view class='d n'><text>对星盟誓成功的用户才能参与抽奖</text></view>
+                </li>
+                <li>
+                  <view class='t'>奖品</view>
+                  <view class='d'><i>1.</i><text>去酒泉看卫星发射</text></view>
+                  <view class='d'><i>2.</i><text>远程操控卫星拍摄</text></view>
+                </li>
+                <li>
+                  <view class='t'>中奖方式</view>
+                  <view class='d'><i>1.</i><text>每周五系统随机抽取5个名额</text></view>
+                  <view class='d'><i>2.</i><text>中奖结果会在天智星小程序公布</text></view>
+                </li>
+                <!-- <li>
+                  <view class='t'>你可以通过以下几种方式提高中奖几率</view>
+                  <view class='d'><i>1.</i><text>分享绿卡到群聊，邀请更多好友帮你提高中奖概率</text></view>
+                  <view class='d'><i>2.</i><text>制作明信片，分享到群聊</text></view>
+                </li> -->
+              </ul>
+              <view class=''>
+                <button bindtap='hideRules'>关闭</button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    <!-- Content end -->
+    </view>
+
+  </view>
+  <!-- -------------------------------------------------------------------------- Tab Page end - 对星盟誓 -->
+
+  <!-- -------------------------------------------------------------------------- Tab Page begin - 我的 -->
+  <view class='tab-page flex page-user' hidden='{{tab.active == 2 ? false : true}}'>
+
+    <view class='tab-content flex-item'>
+    <!-- Content begin -->
+
+      <view class='user-info' style='padding-top: {{nav.height}}px;'>
+        <image class='user-info-bg' src='/images/mine-top-bg.png'></image>
+        <view class='inner'>
+          <button open-type='getUserInfo' bind:getuserinfo='onGetUserInfo'>
+            <view class='user-head'><image src='{{userInfo.avatarUrl}}' mode='aspectFill' bindload='headOnLoad' class='{{userInfo.loaded ? "fade_in" : "fade_out"}}'></image></view>
+            <view class='user-nickname'>{{userInfo.nickName}}</view>
+          </button>
+        </view>
+      </view>
+
+      <view class='user-info-space'></view>
+
+      <view class='cells cells-menu cells-noline'>
+        <view class='cell cell-access' bind:tap='navToMyPostCard'>
+          <view class='cell-hd'><image src='/images/icon-menu-card.png'></image></view>
+          <view class='cell-bd'><text>我的明信片</text></view>
+          <view class='cell-ft arrow'></view>
+        </view>
+        <view class='cell cell-access' bind:tap='navToMywish'>
+          <view class='cell-hd'><image src='/images/icon-menu-star.png'></image></view>
+          <view class='cell-bd'><text>我的盟誓</text></view>
+          <view class='cell-ft arrow'></view>
+        </view>
+         <view class='cell cell-access' bind:tap='navToMyAward'>
+          <view class='cell-hd'><image src='/images/icon-menu-win.png'></image></view>
+          <view class='cell-bd'><text>我的奖品</text></view>
+          <view class='cell-ft arrow'></view>
+        </view> 
+      </view>
+
+    <!-- Content end -->
+    </view>
+
+  </view>
+  <!-- -------------------------------------------------------------------------- Tab Page end - 我的 -->
+
+  <!-- -------------------------------------------------------------------------- Tabs -->
+  <view class='tab {{tab.style}}'>
+    <view wx:for="{{tab.list}}" wx:key="text" class='item {{tab.active == index ? "active":""}}' data-index='{{index}}' bind:tap='onTab'>
+      <view class='icon'>
+        <image src='{{item.icon.white}}' hidden='{{!(tab.active != index && tab.style == "white")}}'></image>
+        <image src='{{item.icon.black}}' hidden='{{!(tab.active != index && tab.style == "black")}}'></image>
+        <image src='{{item.icon.active}}' hidden='{{!(tab.active === index)}}'></image>
+      </view>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+  <!-- -------------------------------------------------------------------------- Tabs -->
+
+  <!-- <view class='loading2 page-loading2' hidden='{{!tab.loading}}'><i></i><i></i><i></i></view> -->
+  <view class='page-loading' hidden='{{!tab.loading}}'><view class='icon-loading'></view></view>
+
+</view>
+
+<view class='page-loading' hidden='{{!page.loading}}'>
+  <view class='icon-loading'></view>
+  <view class='text'>加载中</view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="onConfirm" bind:cancel="onCancel" bind:getUserInfo="onGetUserInfo"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg> 
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{ imgLoadList }}"></template>

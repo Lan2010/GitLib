@@ -1,0 +1,10 @@
+<!--component/msg/msg.wxml-->
+
+<view class='msg-wrap {{showMsgWrap == true ? "msg-wrap-show" : ""}}'>
+  <view class='msg-mask' hidden="{{msgMask == true ? false : true}}"></view>
+  <view class='msg-box' bind:tap='hideMsg'>
+    <view class='msg {{showMsg == true ? "msg-show" : ""}}'>
+      <text class='msg-content'>{{msgContent}}</text>
+    </view>
+  </view>
+</view>

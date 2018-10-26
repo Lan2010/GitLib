@@ -1,0 +1,80 @@
+<!--pages/guide/guide.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}'></nav>
+
+<view class='container' style='padding-top: {{nav.height}}px;'>
+
+  <view class='page page-getcard'>
+
+    <view class='page-bg'>
+      <image src='{{card.bg[0]}}' mode='widthFix'></image>
+    </view>
+
+    <view class='card-title'>
+      <view class='txt1'><text>我的专属天智星绿卡</text></view>
+      <view class='txt2'><text>移民天智星的通行证</text></view>
+    </view>
+
+    <view class='card'>
+
+      <image src='{{conf.host}}/static/images/card-2.png' class='card-bg'></image>
+
+      <!-- <image src='{{conf.host}}/static/images/card.png' class='card-bg' hidden='{{true}}'></image>
+      <view class='card-inner' hidden='{{true}}'>
+        <view class='card-info'>
+          <view>昵称：也很挚爱</view>
+          <view>签发日期：2018.6.18</view>
+          <view>绿卡号码：TZX00001</view>
+        </view>
+        <view class='card-head'>
+          <image src='{{userInfo.avatarUrl}}' mode='aspectFill' bindload='headOnLoad' class='{{userInfo.loaded ? "fade_in" : "hide"}}'></image>
+        </view>
+      </view> -->
+    </view>
+
+    <view class='card-btn'>
+      <button class='btn btn-shadow' open-type='getUserInfo' bind:getuserinfo='onGetUserInfo'>领取自己的天智星绿卡</button>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='bg-white' hidden='{{!page.mask}}'></view> 
+
+<view class='container container-guide {{guide.show ? "show":""}}' hidden='{{guide.finish}}'>
+  <view class='page page-guide'>
+    <swiper class='swiper-guide' skip-hidden-item-layou='true' current='{{guide.active}}' duration='300' bindtap='onTapGuide' bindchange='onGuideChange' bindanimationfinish='onGuideFinishChange'>
+      <swiper-item>
+        <image src="{{guide.bg[0]}}" mode='widthFix' class='guide-img'/>
+      </swiper-item>
+      <swiper-item>
+        <image src="{{guide.bg[1]}}" mode='widthFix' class='guide-img'/>
+      </swiper-item>
+      <swiper-item>
+        <image src="{{guide.bg[2]}}" mode='widthFix' class='guide-img'/>
+        <button class='btn-guide' bindtap='showPage'>去领取您的绿卡</button>
+      </swiper-item>
+    </swiper>
+
+    <view class='swiper-tab'>
+      <view class='dots'>
+        <i class='{{guide.active == 0 ? "active":""}}'></i>
+        <i class='{{guide.active == 1 ? "active":""}}'></i>
+        <i class='{{guide.active == 2 ? "active":""}}'></i>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='page-loading' hidden='{{!page.loading}}'>
+  <view class='icon-loading'></view>
+  <view class='text'>加载中</view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="onConfirm" bind:cancel="onCancel" bind:getUserInfo="onGetUserInfo"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg> 
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{ imgLoadList }}"></template>

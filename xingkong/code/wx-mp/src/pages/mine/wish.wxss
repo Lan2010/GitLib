@@ -1,0 +1,66 @@
+/* pages/mywish/mywish.wxss */
+
+
+.mywish {
+  
+}
+
+.mywish .cell-hd {
+  padding-right: 20rpx;
+  height: 43rpx;
+}
+
+.cell-ft {
+  padding-right: 28rpx;
+  color: #00edf0;
+}
+
+.icon-voice {
+  position: relative;
+  width: 28rpx;
+  height: 43rpx; 
+  overflow: hidden;
+}
+.icon-voice image {
+  position: absolute;
+  width: 28rpx;
+  height: 43rpx;
+}
+.icon-voice .mask {
+  display: none;
+  position: absolute;
+  left: 8rpx;
+  top: 0;
+  width: 28rpx;
+  height: 43rpx;
+  background-color: #fff;
+}
+
+@keyframes voiceIn {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 8rpx;
+  }
+  40% {
+    left: 8rpx;
+  }
+  50% {
+    left: 17rpx
+  }
+  70% {
+    left: 17rpx
+  }
+  80% {
+    left: 28rpx;
+  }
+  100% {
+    left: 28rpx;
+  } 
+}
+
+.icon-voice.play .mask {
+  display: block;
+  animation: voiceIn 1s infinite;
+}

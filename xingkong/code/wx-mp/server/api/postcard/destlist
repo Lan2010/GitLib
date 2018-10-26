@@ -1,0 +1,69 @@
+{
+	"code": 0,
+	"msg": "Success",
+	"data": [
+		{
+			"destId": 1,
+			"destName": "九寨沟",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-1-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-1-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-1.png",
+			"destMusic": "/static/resource/postcard/diefeihuawu.m4a"
+		},
+		{
+			"destId": 2,
+			"destName": "长城",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-2-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-2-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-2.png",
+			"destMusic": "/static/resource/postcard/xianjing.mp3"
+		},	
+		{
+			"destId": 3,
+			"destName": "张家界",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-3-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-3-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-3.png",
+			"destMusic": "/static/resource/postcard/xianjing.mp3"
+		},
+		{
+			"destId": 4,
+			"destName": "天坛",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-4-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-4-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-4.png",
+			"destMusic": "/static/resource/postcard/xianjing.mp3"
+		},	
+		{
+			"destId": 5,
+			"destName": "颐和园",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-5-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-5-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-5.png",
+			"destMusic": "/static/resource/postcard/xianjing.mp3"
+		},
+		{
+			"destId": 6,
+			"destName": "西湖",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-6-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-6-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-6.png",
+			"destMusic": "/static/resource/postcard/diefeihuawu.m4a"
+		},		
+		{
+			"destId": 7,
+			"destName": "凤凰古城",
+			"destLogo": "",
+			"thumbImageUrl": "/static/resource/postcard/spot-7-s.png",
+			"destBtImgUrl": "/static/resource/postcard/spot-7-t.png",
+			"destImgUrl": "/static/resource/postcard/spot-7.png",
+			"destMusic": "/static/resource/postcard/diefeihuawu.m4a"
+		}
+	]
+}

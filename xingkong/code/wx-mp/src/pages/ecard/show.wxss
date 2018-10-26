@@ -1,0 +1,76 @@
+/* pages/ecard/show.wxss */
+
+.page-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.page-bg image {
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  width: 750rpx;
+  height: 476rpx;
+  margin: auto;
+}
+.card-bg {
+  float: left;
+  width: 725rpx;
+  height: 476rpx;
+  margin: auto auto auto 24rpx;
+}
+.card-inner {
+  position: absolute;
+  top: 48rpx;
+  left: 35rpx;
+  width: 682rpx;
+  height: 396rpx;
+  margin: auto;
+  /* background: red; */
+}
+.card-info {
+  padding: 146rpx 0 0 225rpx;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.card-info view {
+  padding-bottom: 12rpx;
+}
+.card-head {
+  position: absolute;
+  top: 118rpx;
+  left: 42rpx;
+  width: 162rpx;
+  height: 162rpx;
+  margin: auto;
+  background: #46ad98;
+  /* border: 8rpx solid #46ad98; */
+  border-radius: 50%;
+}
+.card-head image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 146rpx;
+  height: 146rpx;
+  margin: auto;
+  border-radius: 50%;
+  opacity: 1;
+}
+.card-head image.hide {
+  opacity: 0;
+}
+
+.card-btn {
+  width: 580rpx;
+  margin: 94rpx auto auto; 
+}

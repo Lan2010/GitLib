@@ -1,0 +1,160 @@
+/* pages/postcard/show.wxss */
+
+page {
+  background: none;
+}
+
+
+/* Postcard */
+
+.postcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.postcard .bd {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* border: 1px solid blue; */
+  /* background-color: #fff; */
+  /* box-shadow: 0 2rpx 32rpx 3rpx rgba(0, 0, 0, .35); */
+}
+.postcard .bg {
+  position: relative;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* margin: auto; */
+  background-color: #f2f2f2;
+}
+
+.postcard .bg .pic,
+.postcard .bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.postcard .icon-loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* .postcard .content, */
+.postcard .from,
+.postcard .stamp,
+.postcard .music,
+.postcard .head {
+  position: absolute;
+  margin: auto;
+}
+
+.postcard .stamp {
+  top: 4rpx;
+  left: -12rpx;
+}
+.postcard .stamp .img {
+  width: 212rpx;
+  height: 166rpx;
+}
+.postcard .stamp .img image {
+  width: 212rpx;
+  height: 166rpx;
+}
+.postcard .stamp .txt {
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+  color: #fff;
+  text-shadow: 1rpx 1rpx 4rpx rgba(0, 0, 0, .6);
+}
+
+.postcard .music {
+  position: absolute;
+  top: 40rpx;
+  right: 28rpx;
+  width: 68rpx;
+  height: 68rpx;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 50%;
+}
+.postcard .music image {
+  position: absolute;
+  top: 18rpx;
+  left: 15rpx;
+}
+.postcard .voice-open {
+  display: none;
+  width: 38rpx;
+  height: 36rpx;
+}
+.postcard .voice-close {
+  width: 44rpx;
+  height: 36rpx;
+}
+.postcard .music.open .voice-open {
+  display: block;
+}
+.postcard .music.open .voice-close {
+  display: none;
+}
+
+.postcard .content {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 410rpx;
+  /* width: 100%; */
+  /* height: auto; */
+  /* min-height: 410rpx; */
+  padding: 100rpx 33rpx 50rpx 33rpx; 
+  /* height: 212rpx; */
+   /* border-top: 1rpx solid red; */
+  background-color: #fff; 
+}
+.postcard .content .txt {
+  width: 100%;
+  height: auto;
+  min-height: 66rpx;
+  margin: auto;
+  line-height: 66rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  word-break: break-all;
+  /* border: 1px solid red; */
+}
+.txt-ph {
+  color: #a0a0a0;
+}
+
+.postcard .from {
+  bottom: 70rpx;
+  right: 50rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: #a0a0a0;
+}
+
+.postcard .head {
+  top: -80rpx;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.postcard .head,
+.postcard .head image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.postcard .head image {
+  border: 1rpx solid #ebebeb;
+}

@@ -1,0 +1,87 @@
+/* component/nav/nav.wxss */
+
+/* Custom navigationBar */
+
+.app-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  text-align: center;
+}
+.app-status-bar {
+  height: 24px;
+}
+.app-nav-bar {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+   border-bottom: 1px solid transparent; 
+  /* border: 1px solid red; */
+}
+.app-title { 
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.app-back {
+  position: absolute;
+  top: 0;
+  /* bottom: 0; */
+  left: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+   /* background: red;  */
+   /* border: 1px solid blue;  */
+}
+.app-back::after {
+  content: " ";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-width: 0 0 5rpx 5rpx;
+  border-color: #000;
+  border-style: solid;
+   transform: rotate(45deg); 
+  position: absolute;
+  top: 50%;
+  margin-top: -10.5rpx; 
+  left: 26rpx; 
+}
+
+.app-nav.ios .app-nav-bar {
+  line-height: 40px;
+}
+.app-nav.ios .app-back {
+  height: 40px;
+}
+.app-nav.android .app-nav-bar {
+  line-height: 48px;
+}
+.app-nav.android .app-back {
+  height: 48px;
+}
+
+/* white */
+.app-nav.white .app-title {
+  color: rgb(255, 255, 255);
+}
+.app-nav.white .app-back::after {
+  border-color: #fff;
+}
+
+/* black */
+
+.app-nav.black .app-title {
+  color: rgb(48, 48, 48);
+}
+
+/* bg white */
+.app-nav.bg-white {
+  background: #fff;
+}
+.app-nav.bg-white .app-nav-bar.border {
+  border-bottom-color: #ebebeb;
+}

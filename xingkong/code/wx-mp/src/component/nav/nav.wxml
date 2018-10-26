@@ -1,0 +1,9 @@
+<!--component/nav/nav.wxml-->
+
+<view class='app-nav {{os}} {{navStyle}} {{navBg ? "bg-"+navBg : ""}}' hidden='{{!navShow}}'>
+  <view class='app-status-bar' style='height:{{statusHeight}}px'></view>
+  <view class='app-nav-bar {{navBorder ? "border" : ""}}'style='height:{{navHeight}}px'>
+    <view class='app-back' hidden='{{!navBack}}' bind:tap='navBack'></view>
+    <view class='app-title'><text>{{title}}</text></view>
+  </view>
+</view>

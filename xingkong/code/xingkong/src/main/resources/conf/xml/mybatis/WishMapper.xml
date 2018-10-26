@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="core.mapper.WishMapper">
+	<!-- 添加用户许愿信息 -->
+	<insert id="saveWish" parameterType="Wish">
+		insert into
+		t_wish(user_id,create_time,audio_time_len,audio_url)
+		values(#{userId},#{createTime},#{audioTimeLen},#{audioUrl})
+	</insert>
+	<!-- 查询某条许愿信息 -->
+	<select id="selectOne" resultType="Wish">
+		select user_id as userId,create_time as createTime,audio_time_len as audioTimeLen,audio_url as audioUrl 
+		from t_wish
+		where user_id = #{userId} and create_time = #{date}
+	</select>
+
+	<!-- 获取某用户所有许愿用户的数目-->
+	<select id="selectWishCount" resultType="java.lang.Integer">
+		select count(id)
+		from t_wish where user_id = #{userId}
+	</select>
+	
+	<!-- 获取用户当日许愿信息 -->
+	<select id="getWish" resultType="Wish">
+		select user_id as userId,create_time as createTime,audio_time_len as audioTimeLen,audio_url as audioUrl  from t_wish where user_id = #{userId} and DATE_FORMAT(create_time,'%Y-%m-%d') = #{date}
+	</select>
+
+	<!-- 获取某用户的许愿信息，根据分页条件 -->
+	<select id="selectWishsByPage" resultType="Wish" parameterType="java.util.Map">
+		select
+		user_id as userId,create_time as createTime,audio_time_len as audioTimeLen,audio_url as audioUrl from t_wish where user_id = #{userId} limit
+		${start},${pageSize}
+	</select>
+</mapper>

@@ -1,0 +1,13 @@
+<!--component/modal/modal.wxml-->
+
+<view class='modal-mask {{fadeIn ? "fade-in" : ""}}' hidden='{{!show}}'></view>
+<view class='modal {{fadeIn ? "fade-in" : ""}}' hidden='{{!show}}'>
+  <view class='title'>{{title}}</view>
+  <view class='content {{align == "center" ? "center" : ""}}'>
+    <text>{{content}}</text>
+  </view>
+  <view class='btn-area'>
+    <button class='btn-cancel' hidden='{{!cancel}}' bind:tap="onModalCancel">取消</button>
+    <button class='btn-confirm' type='default' bind:tap='onModalConfirm' open-type='{{openType}}' bind:getuserinfo='onGotUserInfo'>{{confirmText}}</button>
+  </view>
+</view>

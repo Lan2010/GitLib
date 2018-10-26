@@ -1,0 +1,18 @@
+{
+	"code": 0,
+	"msg": "Success",
+	"data": {
+		"pcId": 111,
+		"nickName": "Gang",
+		"pcHeadImg": "/resource/head-1.jpg",
+		"getPostcardById": "",
+		"pcTitle": "",
+		"pcText": "清风吹，鸟儿飞，快乐今朝笑微微；细水流，鱼儿游，忘记烦恼和忧愁；祝福心，朋友心，愿你舒心，顺心，永远开心！心心",
+		"destName": "九寨沟",
+		"thumbImageUrl": "/static/resource/postcard/spot-3-s.png",
+		"destBtImgUrl": "/static/resource/postcard/spot-3-t.png",
+		"destImgUrl": "/static/resource/postcard/spot-3.png",
+		"destMusic": "/static/resource/postcard/xianjing.mp3",
+		"pcDate": "2017-06-27"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "明信片",
+  "usingComponents": {
+    "nav": "../../component/nav/nav",
+    "msg": "../../component/msg/msg",
+    "modal": "../../component/modal/modal"
+  }
+}

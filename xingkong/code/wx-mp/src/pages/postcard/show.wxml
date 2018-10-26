@@ -1,0 +1,58 @@
+<!--pages/postcard/show.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}'></nav>
+
+<view class='bg-white' hidden='{{!page.loading}}'></view>
+
+<view class='container' style='padding-top: {{nav.height}}px;' hidden='{{!page.ready}}'>
+
+  <view class='postcard'>
+    <view class='bd flex-v'>
+
+      <view class='bg flex-item'>
+          <view class='pic'>
+            <image src='{{postcard.img}}' mode='aspectFill'></image> 
+          </view>
+          <view class='icon-loading' hidden='{{!imgLoading}}'></view>
+      </view>
+
+      <view class='content'>
+        <view class='txt'>
+          <text>{{postcard.text}}</text>
+        </view>
+
+        <view class='from'>
+          <text>@ {{postcard.nickName}}</text>
+        </view>
+
+        <view class='head'>
+          <image src='{{postcard.avatarUrl}}'></image>
+        </view>
+      </view>
+
+      <!-- <view class='stamp'>
+        <view class='img'><image src='/images/stamp.png'></image></view>
+        <view class='txt'><text>{{postcard.spotName}}</text></view>
+      </view> -->
+
+      <view class='music {{postcard.musicStatus ? "open":""}}' hidden='{{!postcard.musicSrc}}' bind:tap='operateAudio'>
+        <image src='/images/icon-voicebg.png' class='voice-open'></image>
+        <image src='/images/icon-voicebg-close.png' class='voice-close'></image> 
+      </view>
+
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class='loading2 page-loading2' hidden='{{!page.loading}}'><i></i><i></i><i></i></view> -->
+<view class='page-loading' hidden='{{!page.loading}}'>
+  <view class='icon-loading'></view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="modalConfirm" bind:cancel="modalCnacel" bind:getUserInfo="onGetUserInfo"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg>
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{ imgLoadList }}"></template> 
+

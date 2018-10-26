@@ -1,0 +1,9 @@
+{
+  "backgroundColor": "#fff",
+  "disableScroll": true,
+  "usingComponents": {
+    "nav": "../../component/nav/nav",
+    "msg": "../../component/msg/msg",
+    "modal": "../../component/modal/modal"
+  }
+}

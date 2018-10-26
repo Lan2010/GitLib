@@ -1,0 +1,43 @@
+<!--pages/ecard/show.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}'></nav>
+
+<view class='bg-white' hidden='{{!page.loading}}'></view>
+
+<view class='container' style='padding-top: {{nav.height}}px;' hidden='{{!page.ready}}'>
+
+  <view class='page page-getcard'>
+
+    <view class='page-bg'>
+      <image src='{{page.bg[0]}}' mode='widthFix'></image>
+    </view>
+    <view class='card'>
+
+      <image src='{{conf.host}}/static/images/card-2.png' class='card-bg'></image>
+      <view class='card-inner'>
+        <view class='card-info'>
+          <view>昵　　称：{{ecard.gcName}}</view>
+          <view>签发日期：{{ecard.signDate}}</view>
+          <view>绿卡号码：{{ecard.gcNumber}}</view>
+        </view>
+        <view class='card-head' hidden='{{!headLoaded}}'>
+          <image src='{{ecard.gcHeadImg}}' mode='aspectFill' bindload='headOnLoad' class='{{headLoaded ? "fade_in" : "hide"}}'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='card-btn'>
+      <button class='btn btn-shadow' bind:tap='navtoIndex'>我也要加入天智星移民</button>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='page-loading' hidden='{{!page.loading}}'><view class='icon-loading'></view></view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="onConfirm" bind:cancel="onCancel" bind:getUserInfo="onGetUserInfo"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg>
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{ imgLoadList }}"></template> 

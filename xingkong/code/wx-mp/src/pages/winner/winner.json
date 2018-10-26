@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "中奖名单",
+  "usingComponents": {
+    "nav": "../../component/nav/nav",
+    "msg": "../../component/msg/msg",
+    "modal": "../../component/modal/modal"
+  }
+}

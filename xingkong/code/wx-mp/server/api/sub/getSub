@@ -1,0 +1,8 @@
+{
+	"code": 0,
+	"msg": "Success",
+	"data": {
+		"subStatus": 1,
+		"wishStatus": 0
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"code": 0,
+	"msg": "Success",
+	"data": [
+		{
+			"id": 1,
+			"createTime": "2018-06-23 10:10:10",
+			"audioTimeLen": 11000,
+			"audioUrl": "http://192.168.11.104:8000/star/static/resource/1.m4a"
+		},
+		{
+			"id": 2,
+			"createTime": "2018-06-23 10:10:10",
+			"audioTimeLen": 30000,
+			"audioUrl": "http://192.168.11.104:8000/star/static/resource/2.m4a"
+		}
+	]
+}

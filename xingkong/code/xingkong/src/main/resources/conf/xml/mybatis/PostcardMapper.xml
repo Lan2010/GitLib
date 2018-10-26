@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="core.mapper.PostcardMapper">
+	<!-- 结果集 -->
+	<resultMap type="core.pojo.PostCard" id="PostCards">
+		<id column="pc_id" property="pcId" />
+		<result column="pc_head_img" property="pcHeadImg" />
+		<result column="pc_title" property="pcTitle" />
+		<result column="pc_text" property="pcText" />
+		<result column="pc_date" property="pcDate" />
+		<result column="dest_id" property="destId" />
+		<result column="user_id" property="userId" />
+		<result column="dest_name" property="destName" />
+		<result column="dest_img_url" property="destImgUrl" />
+		<result column="dest_btimg_url" property="destBtImgUrl" />
+		<result column="thumb_image_url" property="thumbImageUrl" />
+		<result column="dest_music" property="destMusic" />
+	</resultMap>
+	<resultMap type="core.pojo.Dest" id="Dests">
+		<id column="dest_id" property="destId" />
+		<result column="dest_name" property="destName" />
+		<result column="dest_logo" property="destLogo" />
+		<result column="dest_desc" property="destDesc" />
+		<result column="dest_img_url" property="destImgUrl" />
+		<result column="dest_btimg_url" property="destBtImgUrl" />
+		<result column="thumb_image_url" property="thumbImageUrl" />
+		<result column="dest_music" property="destMusic" />
+		<result column="category" property="category" />
+		<result column="status" property="status" />
+	</resultMap>
+
+	<!--查询用户明信片景点总数 -->
+	<select id="selectDestCount" resultType="Integer">
+		select count(*) from
+		t_dest where status=1
+	</select>
+
+	<!--分页查询明信片景点列表 -->
+	<select id="selectDestsByPage" resultMap="Dests" parameterType="java.util.Map">
+		select
+		d.dest_id,d.dest_name,d.dest_logo,d.dest_desc,d.dest_img_url,d.dest_btimg_url,d.thumb_image_url,d.dest_music,d.category,d.status
+		from t_dest d where status=1 limit ${start} , ${pageSize}
+	</select>
+
+	<!--通过ID获取某个景点信息 -->
+	<select id="getDestById" resultMap="Dests" parameterType="java.lang.Integer">
+		select
+		d.dest_name,d.dest_logo,d.dest_desc,d.dest_img_url,d.dest_btimg_url,d.thumb_image_url,d.dest_music,d.category,d.status
+		from t_dest d where d.dest_id=#{destId}
+	</select>
+
+	<!-- 保存明信片信息 -->
+	<insert id="savePostCard" parameterType="PostCard"
+		useGeneratedKeys="true" keyProperty="pcId">
+		insert into
+		t_postcard(pc_head_img,pc_title,pc_text,pc_date,dest_id,user_id)
+		values(#{pcHeadImg},#{pcTitle},#{pcText},#{pcDate},#{destId},#{userId})
+	</insert>
+
+	<!--查询用户明信片总数 -->
+	<select id="selectUserPCCount" resultType="Integer"
+		parameterType="java.lang.Integer">
+		select count(*) from
+		t_postcard d where d.user_id =
+		#{userId}
+	</select>
+
+	<!--分页查询明信片列表 -->
+	<select id="selectPCsByPage" resultMap="PostCards"
+		parameterType="java.util.Map">
+		SELECT
+		pc_id,pc_head_img,pc_title,pc_text,pc_date,p.dest_id,user_id,dest_name,dest_img_url,dest_btimg_url,thumb_image_url,dest_music
+		FROM t_postcard p LEFT JOIN t_dest d ON p.dest_id = d.dest_id where
+		p.user_id = #{userId} order by p.pc_date desc limit
+		${start},${pageSize}
+	</select>
+
+	<select id="getPCDateByUserId" parameterType="java.util.Map">
+		select
+		pc_date,dest_id,user_id from
+		t_postcard d where user_id = #{userId}
+		limit ${start} , ${pageSize}
+	</select>
+
+	<!--查询用户某个明信片 -->
+	<select id="getPostcardById" resultMap="PostCards"
+		parameterType="java.lang.Integer">
+		SELECT
+		pc_id,pc_head_img,pc_title,pc_text,pc_date,p.dest_id,user_id,dest_name,dest_img_url,dest_btimg_url,thumb_image_url,dest_music
+		FROM t_postcard p LEFT JOIN t_dest d ON p.dest_id = d.dest_id WHERE
+		p.pc_id = #{pcId}
+	</select>
+
+	<!--删除明信片 -->
+	<delete id="delPostcard" parameterType="java.lang.Integer">
+		delete from t_postcard
+		where pc_id = #{pcId}
+	</delete>
+
+
+	<!-- 修改明信片标题 -->
+	<update id="updatePCTitle" parameterType="PostCard">
+		update t_postcard set
+		pc_title = #{pcTitle}
+		where pc_id = #{pcId}
+	</update>
+
+
+</mapper>

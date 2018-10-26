@@ -1,0 +1,193 @@
+/* pages/guide/guide.wxss */
+
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0; 
+}
+.container-guide {
+  opacity: 0;
+   -webkit-transition: all .3s ease;
+    transition: all .3s ease; 
+}
+.container.show {
+  opacity: 1;
+}
+
+.page-loading2 {
+  -webkit-transition: all .3s ease;
+    transition: all .3s ease; 
+  z-index: 1;
+}
+
+
+
+/** Page guide **/
+
+.page-guide {
+
+}
+
+.swiper-guide {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.swiper-guide swiper-item {
+  background-color: #091d4f;
+}
+.guide-img {
+  width: 100%;
+}
+
+.btn-guide {
+  position: absolute;
+  bottom: 116rpx;
+  left: 0;
+  right: 0;
+  width: 336rpx;
+  height: 80rpx;
+  margin: auto;
+  line-height: 76rpx;
+  font-size: 32rpx;
+  border: 2rpx solid #fff;
+  color: #fff;
+  background: none;
+  border-radius: 40rpx;
+}
+.btn-guide:active {
+  color: #fff;
+  background: none;
+}
+
+.swiper-tab {
+  position: fixed;
+  bottom: 64rpx;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 12rpx;
+  text-align: center;
+  /* border: 1px solid red; */
+  /* background-color: red; */
+}
+.swiper-tab .dots {
+  width: 144rpx;
+  height: 12rpx;
+  margin: auto;
+}
+.swiper-tab .dots i {
+  float: left;
+  width: 34rpx;
+  height: 12rpx;
+  margin-right: 21rpx;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 6rpx;
+}
+.swiper-tab .dots i:last-child {
+  margin-right: auto;
+}
+.swiper-tab .dots i.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/** Page get card **/
+
+.page-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.page-bg image {
+  width: 100%;
+}
+
+.card-title {
+  position: relative;
+  width: 100%;
+  /* padding: 95rpx 0 29rpx 0; */
+  padding: 95rpx 0 6rpx 0;
+  text-align: center;
+}
+.card-title .txt1 {
+}
+.card-title .txt1 text {
+  line-height: 48rpx;
+  font-size: 48rpx;
+  color: #7afdff;
+  text-shadow: 0 8rpx 20rpx rgba(123, 255, 255, .3);
+}
+.card-title .txt2 {
+   padding-top: 18rpx; 
+}
+.card-title .txt2 text {
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: #04fff0;
+}
+
+.card {
+  position: relative;
+  width: 750rpx;
+  height: 476rpx;
+  margin: auto;
+  /* background: red; */
+}
+.card-bg {
+  float: left;
+  width: 725rpx;
+  height: 476rpx;
+  margin: auto auto auto 24rpx;
+}
+.card-inner {
+  position: absolute;
+  top: 20rpx;
+  left: 35rpx;
+  width: 682rpx;
+  height: 396rpx;
+}
+.card-info {
+  padding: 55rpx 0 0 49rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.card-info view {
+  padding-bottom: 44rpx;
+}
+.card-head {
+  position: absolute;
+  top: 44rpx;
+  right: 43rpx;
+  width: 139rpx;
+  height: 139rpx;
+  margin: auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+}
+.card-head image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 127rpx;
+  height: 127rpx;
+  margin: auto;
+  border-radius: 50%;
+  opacity: 1;
+}
+.card-head image.hide {
+  opacity: 0;
+}
+
+.card-btn {
+  width: 580rpx;
+  margin: 222rpx auto auto;
+  /* margin: 103rpx auto auto; */
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "对星盟誓",
+  "disableScroll": true,
+  "usingComponents": {
+    "nav": "../../component/nav/nav",
+    "msg": "../../component/msg/msg",
+    "modal": "../../component/modal/modal"
+  }
+}

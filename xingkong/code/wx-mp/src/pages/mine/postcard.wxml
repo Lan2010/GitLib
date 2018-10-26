@@ -1,0 +1,43 @@
+<!--pages/mine/postcard.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}' nav-back-params='{{nav.backParams}}'></nav>
+
+<view class='container'>
+
+  <view class='page' style='padding-top: {{nav.height}}px;'>
+    
+    <view class='postcard'>
+      <view wx:for="{{list}}" wx:key="date" class='datelist flex-v'>
+        <view class='date'>{{item.date}}</view>
+
+        <view class='list'>
+
+          <view wx:for='{{item.data}}' wx:key="pcId" wx:for-item='itemSub' class='item'>
+            <view class='pic' data-id='{{itemSub.pcId}}' bindtap='navtoPostcardDetl'><image src='{{conf.host}}{{itemSub.destBtImgUrl}}' mode='aspectFill'></image></view>
+            <view class='name'>
+              <text>{{itemSub.destName}}</text>
+              <image src='/images/icon-del.png' class='icon-del' data-id='{{itemSub.pcId}}' bind:tap='delPostCard'></image>
+              <!-- <button bind:tap="delPostCard" data-id="{{item.pcId}}">删除</button> -->
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+    
+    <view class='nodata' hidden='{{list.length || page.loading}}'>
+      <text>无记录</text>
+    </view>
+
+    <view class='page-loading' hidden='{{!page.loading}}'>
+      <view class='icon-loading'></view>
+      <view class='text'>加载中</view>
+    </view>
+
+  </view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}"></msg> 

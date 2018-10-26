@@ -1,0 +1,124 @@
+/* pages/postcard/share.wxss */
+
+page {
+  background: none;
+}
+
+.postcard-thum {
+  position: relative;
+  width: 694rpx;
+  height: 642rpx;
+  margin: 34rpx auto auto;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 32rpx 3rpx rgba(0, 0, 0, .35);
+}
+
+.postcard-thum .thum,
+.postcard-thum .stamp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.postcard-thum .thum {
+  width: 634rpx;
+  height: 582rpx;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 16rpx;
+  background-color: #ccc;
+}
+.postcard-thum .thum image {
+  width: 100%;
+}
+
+.postcard-thum .stamp {
+  top: 28rpx;
+  left: 0;
+  width: 212rpx;
+  height: 166rpx;
+}
+.postcard-thum .stamp .img {
+  width: 212rpx;
+  height: 166rpx;
+}
+.postcard-thum .stamp .img image {
+  width: 212rpx;
+  height: 166rpx;
+}
+.postcard-thum .stamp .txt {
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+  color: #fff;
+  text-shadow: 1rpx 1rpx 4rpx rgba(0, 0, 0, .6);
+}
+
+.postcard-title {
+  width: 694rpx;
+  margin: auto;
+}
+.postcard-title .title {
+  padding: 70rpx 0 0 7rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+}
+
+.postcard-title .input {
+  padding: 29rpx 0 0 0;
+}
+.postcard-title input {
+  height: 92rpx;
+  padding: 0 25rpx;
+  font-size: 32rpx;
+  letter-spacing: 4rpx;
+  border: 2rpx solid #eaeaea;
+  border-radius: 10rpx;
+}
+.input-ph {
+  font-size: 28rpx;
+}
+
+.btns {
+  padding-top: 70rpx;
+  text-align: center;
+}
+
+.btns button {
+  display: inline-block;
+  width: 300rpx;
+  margin-right: 50rpx!important;
+  letter-spacing: 4rpx;
+}
+.btns button:last-child {
+  margin-right: auto!important;
+}
+
+.more {
+  padding-top: 64rpx;
+  line-height: 26rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  color: #a0a0a0;
+}
+
+
+/* Canvas - poster */
+
+.poster {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 10000;
+  /* width: 100%;
+  height: 100%; */
+  /* letter-spacing: 4rpx; */
+  background-color: #fff;
+}

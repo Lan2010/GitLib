@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="core.mapper.GreencardMapper">
+	<!-- 结果集 -->
+	<resultMap type="core.pojo.GreenCard" id="GreenCards">
+		<id column="gc_id" property="gcId" />
+		<result column="gc_number" property="gcNumber" />
+		<result column="sign_date" property="signDate" />
+		<result column="gc_name" property="gcName" />
+		<result column="gc_head_img" property="gcHeadImg" />
+		<result column="user_id" property="userId" />
+	</resultMap>
+	<!-- 保存绿卡信息 -->
+	<insert id="saveGreenCard" useGeneratedKeys="true" keyProperty="gcId"
+		parameterType="GreenCard">
+		insert into
+		t_greencard(gc_number,sign_date,gc_name,gc_head_img,user_id)
+		values
+		<choose>
+			<when test="gcNumber!=null">
+				(#{gcNumber},#{signDate},#{gcName},#{gcHeadImg},#{userId})
+			</when>
+			<otherwise>
+				((SELECT CONCAT ('TZX',(SELECT LPAD((SELECT CAST((SELECT
+				SUBSTRING((SELECT
+				a.gc_number FROM(SELECT MAX(gc_number)gc_number
+				FROM
+				t_greencard)a),4))AS SIGNED) +1), 9,
+				0)))),#{signDate},#{gcName},#{gcHeadImg},#{userId})
+			</otherwise>
+		</choose>
+	</insert>
+
+	<!-- 根据用户id查询用户绿卡信息 -->
+	<select id="getGreenCardById" parameterType="java.lang.Integer"
+		resultMap="GreenCards">
+		select
+		gc_id,gc_number,sign_date,gc_name,gc_head_img,user_id
+		from t_greencard
+		where user_id=#{userId}
+	</select>
+
+	<!-- 查询最新一条用户绿卡信息 -->
+	<select id="getNewgreencard" resultMap="GreenCards">
+		select
+		gc_id,gc_number,sign_date,gc_name,gc_head_img,user_id from t_greencard
+		ORDER BY gc_number DESC,sign_date DESC LIMIT 1
+	</select>
+
+	<!--查询绿卡总数 -->
+	<select id="selectGCCount" resultType="Integer">
+		select count(*) from
+		t_greencard
+	</select>
+
+	<!-- 根据gcID查询绿卡信息 -->
+	<select id="getGCByGCId" parameterType="java.lang.Integer"
+		resultMap="GreenCards">
+		select
+		gc_id,gc_number,sign_date,gc_name,gc_head_img,user_id
+		from t_greencard
+		where gc_id=#{gcId}
+	</select>
+</mapper>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "天智星",
+  "usingComponents": {
+    "nav": "../../component/nav/nav",
+    "msg": "../../component/msg/msg",
+    "modal": "../../component/modal/modal"
+  }
+}

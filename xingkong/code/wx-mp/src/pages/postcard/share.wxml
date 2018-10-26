@@ -1,0 +1,55 @@
+<!--pages/postcard/share.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}'></nav>
+
+<view class='bg-white' hidden='{{!page.loading}}'></view>
+
+<view class='container flex' style='padding-top: {{nav.height}}px;' hidden='{{!page.ready}}'>
+
+  <view class='page'>
+
+    <!-- <form bindsubmit='sendToFriend'> -->
+
+      <view class='postcard-thum'>
+        <view class='thum'>
+          <image src='{{postcard.thum}}' mode='widthFix'></image>
+          <!-- <view class='stamp'>
+            <view class='img'><image src='/images/stamp.png'></image></view>
+            <view class='txt'><text>{{postcard.spotName}}</text></view>
+          </view> -->
+        </view>
+      </view>
+
+      <view class='postcard-title'>
+        <view class='title'><text>修改明信片标题(限15字)</text></view>
+        <view class='input'><input name='pcTitle' bindinput='inputTitle' placeholder='来自“微信名称”的明信片（默认）' maxlength='15' cursor-spacing='30' placeholder-class='input-ph'></input></view>
+      </view>
+
+      <view class='btns'>
+        <button class='btn' bindtap='onSavePoster'>保存海报</button>
+        <button class='btn' open-type='share' bindtap='savePostcardTitle'>发送给朋友</button>
+      </view>
+
+    <!-- </form> -->
+
+    <view class='more' bindtap='navtoMyPostcard'>查看我的明信片>></view>
+
+
+  </view>
+
+  <canvas canvas-id="poster" class="poster" style='width: {{poster.width}}px; height: {{poster.height}}px;' bind:tap="saveCanvasImg" />
+
+</view>
+
+<!-- <view class='loading2 page-loading2' hidden='{{!page.loading}}'><i></i><i></i><i></i></view> -->
+<view class='page-loading' hidden='{{!page.loading}}'>
+  <view class='icon-loading'></view>
+</view>
+
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="onConfirm" bind:cancel="onCancel" bind:getUserInfo="onGetUserInfo"></modal>
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg>
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{imgLoadList}}"></template> 
+

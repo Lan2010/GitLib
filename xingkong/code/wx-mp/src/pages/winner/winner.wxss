@@ -1,0 +1,32 @@
+/* pages/winner/winner.wxss */
+
+
+.winner {
+  width: 100%;
+  padding: 0 0 0 0;
+}
+
+.datelist {
+  width: 100%;
+  padding: 20rpx 0 20rpx 0;
+}
+
+.datelist .date,
+.datelist .list {
+  width: 100%;
+}
+
+.datelist .date {
+  padding-left: 28rpx;
+  line-height: 32rpx;
+}
+
+
+.cells-list .cell {
+  padding: 0 28rpx;
+  font-size: 28rpx;
+}
+
+.cell-ft {
+  color: rgb(48, 48, 48);
+}

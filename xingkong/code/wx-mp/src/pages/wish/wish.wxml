@@ -1,0 +1,98 @@
+<!--pages/wish/wish.wxml-->
+
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}'></nav>
+
+<view class='bg-white' hidden='{{page.ready ? true : false}}'></view>
+
+<view class='container' style='padding-top: {{nav.height}}px;' hidden='{{!page.ready}}'>
+
+  <view class='page'>
+    
+    <view class='page-bg'>
+      <image src='{{page.bg[0]}}' mode='widthFix'></image> 
+    </view>
+
+    <!-- <view class='stars' hidden='{{record.status != 3 ? false : true}}'> -->
+    <!-- <view class='stars'>
+      <image src='/images/wish-star.png' class='star star1'></image>
+      <image src='/images/wish-star.png' class='star star2'></image>
+      <image src='/images/wish-star.png' class='star star3'></image>
+      <image src='/images/wish-star.png' class='star star4'></image>
+      <image src='/images/wish-star.png' class='star star5'></image>
+    </view> -->
+
+    <!-- Record -->
+    <view class='record' hidden='{{!wish.ready}}'>
+
+      <view class='des d1' hidden='{{record.status == 1 ? false : true}}'>流星到了，请马上盟誓</view>
+
+      <view class='mic' hidden='{{record.status == 1 || record.status == 2 ? false : true}}'>
+        <view class='c m1'></view>
+        <view class='c m2'></view>
+        <view class='c m3' bind:tap='startRecord'>
+          <view class='icon-record {{record.status == 2 ? "play" : ""}}'>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <image src='/images/icon-record-bg.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <view class='finish' hidden='{{record.status != 3 ? true : false}}'>
+        <view class='c f1'></view>
+        <view class='c f2' hidden='{{record.showPlay}}'>
+          <image src='/images/icon-record-finish.png' class='c'></image>
+        </view> 
+        <view class='c f3' hidden='{{!record.showPlay}}' bind:tap='playRecord'>
+          <image src='/images/icon-record-play.png' hidden='{{audio.status}}'></image>
+          <image src='/images/icon-record-stop.png' hidden='{{!audio.status}}'></image>
+        </view>
+      </view>
+
+      <view class='des d2'>
+        <text hidden='{{record.status == 1 ? false : true}}'>点击话筒，开始说话\n最长时间为60秒</text> 
+        <text hidden='{{record.status == 2 ? false : true}}'><text class='s'>{{record.past}}s</text>/{{record.len}}s</text>
+        <text hidden='{{record.status != 3 ? true : false}}'>您的盟誓已保存在区块链中\n敬请关注每周抽奖结果</text> 
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+<!-- Result -->
+<view class='appt-res' hidden='{{!appt.showRes}}'>
+  <view class='wish-mask'></view>
+  <view class='appt'>
+    <image src='/images/appt-fail.png' class='bg'></image>
+    <view class='info'>
+      <view><text>当前预约人数较多\n明天再来</text></view>
+      <button bind:tap='apptConfirm'>确认</button>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='appt-load' hidden='{{!appt.loading}}'>
+  <view class='wish-mask'>
+  </view>
+  <view class='info'>
+    <view class='icon-loading'></view>
+    <view class='txt'>
+      <text>预约中</text>
+    </view>
+  </view>
+</view> -->
+
+<!-- <view class='loading2 page-loading2' hidden='{{!page.loading}}'><i></i><i></i><i></i></view> -->
+<view class='page-loading' hidden='{{!page.loading}}'>
+  <view class='icon-loading'></view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="onConfirm" bind:cancel="onCancel" bind:getUserInfo="onGetUserInfo"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg> 
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{ imgLoadList }}"></template>

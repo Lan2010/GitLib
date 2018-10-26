@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="core.mapper.SubMapper">
+	<!-- 添加用户预约信息 -->
+	<insert id="saveSub" useGeneratedKeys="true" keyProperty="id" parameterType="Sub">
+		insert into t_sub (sub_success,sub_time,user_id) values (#{subSuccess},#{subTime},#{userId}) 
+	</insert>
+	<!-- 查询某条预约信息 -->
+	<select id="getSubs" parameterType="java.util.Map" resultType="Sub">
+		select id,sub_success as subSuccess  from t_sub where user_id = #{userId} and DATE_FORMAT(sub_time,'%Y-%m-%d') = #{date}
+	</select>
+
+</mapper>

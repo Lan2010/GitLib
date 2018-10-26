@@ -1,0 +1,58 @@
+{
+	"code": 0,
+	"msg": "Success",
+	"data": [
+		{
+			"date": "2018-06-23",
+			"data": [
+				{
+					"id": 1,
+					"nickName": "Gang",
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132",
+					"desc": "酒泉卫星发射现场门票一张",
+					"gcNumber": "TZX000001"
+				},
+				{
+					"id": 2,
+					"nickName": "Gang",
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132",
+					"desc": "酒泉卫星发射现场门票一张",
+					"gcNumber": "TZX000002"
+				},
+				{
+					"id": 3,
+					"nickName": "Gang",
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132",
+					"desc": "酒泉卫星发射现场门票一张",
+					"gcNumber": "TZX000003"
+				}
+			]
+		},
+		{
+			"date": "2018-06-22",
+			"data": [
+				{
+					"id": 1,
+					"nickName": "Gang",
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132",
+					"desc": "酒泉卫星发射现场门票一张",
+					"gcNumber": "TZX000011"
+				},
+				{
+					"id": 2,
+					"nickName": "Gang",
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132",
+					"desc": "酒泉卫星发射现场门票一张",
+					"gcNumber": "TZX000012"
+				},
+				{
+					"id": 3,
+					"nickName": "Gang",
+					"avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM7LPrMBibT94Mwm7Ssy5aKz5y2JiakYBibAevjy2yF3H9ia5zacIiaicdmx1Gc6icLLVsYP65X8AhONrTeIA/132",
+					"desc": "酒泉卫星发射现场门票一张",
+					"gcNumber": "TZX000013"
+				}
+			]
+		}
+	]
+}

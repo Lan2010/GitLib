@@ -1,0 +1,88 @@
+<!--pages/postcard/create.wxml-->
+
+<nav nav-style='{{nav.style}}' nav-bg='{{nav.bg}}' nav-border='{{nav.border}}' title='{{nav.title}}' nav-back='{{nav.back}}'></nav>
+
+<view class='bg-white' hidden='{{!page.loading}}'></view>
+
+<view class='container {{sys.isIOSX ? "iosX":""}}' style='padding-top: {{nav.height}}px;' hidden='{{!page.ready}}'>
+
+  <form bindsubmit='sendPostcard'>
+
+    <view class='postcard'>
+      <view class='bd' bindtouchstart='showSendBtn' bindtap='showSendBtn'>
+
+        <view class='bg flex-v'>
+          <view class='pic flex-item'>
+            <view hidden='{{imgLoading}}'>
+              <block wx:for='{{spotImgs}}' wx:key='id'>
+                <view hidden='{{index === postcard.idx ? false : true}}'><image src='{{item.img}}' mode='aspectFill'></image></view>
+              </block>
+            </view>
+            <view class='icon-loading' hidden='{{!imgLoading}}'></view>
+          </view>
+          <view class='bot'></view>
+        </view>
+
+        <!-- <view class='loading2' hidden='{{!imgLoading}}'><i></i><i></i><i></i></view> -->
+
+        <view class='content'>
+          <textarea name='pcText' auto-height='true' placeholder='请输入祝福语（60字以内）' placeholder-class='txt-ph' maxlength='60' cursor-spacing='40' bindfocus='showSendBtn' bindblur='showSendBtn' bindconfirm='showSendBtn'></textarea>
+
+          <view class='from'>
+            <text>@ {{userInfo.nickName}}</text>
+          </view>
+
+          <view class='head'>
+            <!-- <image src='{{userInfo.avatarUrl}}'></image> -->
+            <image src='{{userInfo.avatarUrl}}' bindload='headOnLoad' class='{{userInfo.loaded ? "fade_in" : "fade_out"}}'></image>
+          </view>
+        </view>
+
+        <!-- <view class='stamp' hidden='{{imgLoading}}'>
+          <view class='img'><image src='/images/stamp.png'></image></view>
+          <view class='txt'><text>{{postcard.spotName}}</text></view>
+        </view> -->
+        
+        <view class='music {{postcard.musicStatus ? "open":""}}' hidden='{{!postcard.musicSrc}}' bind:tap='operateAudio'>
+          <image src='/images/icon-voicebg.png' class='voice-open'></image>
+          <image src='/images/icon-voicebg-close.png' class='voice-close'></image> 
+        </view>
+
+      </view>
+    </view>
+
+    <view class='spot-wrap'>
+      <scroll-view class='spot' scroll-x bindscroll='onSpotScroll' bindtap='showSendBtn'>
+        
+        <view class='list'>
+          <view wx:for='{{spotList}}' wx:key='destId' class='item {{index == postcard.idx ? "active" : ""}}' data-idx='{{index}}' bindtap='onSelectSpot'>
+            <view class='img'>
+              <image src='{{conf.host}}{{item.thumbImageUrl}}' mode='aspectFill'></image>
+              <view class='border'></view>
+            </view>
+            <view class='title'>{{item.destName}}</view>
+          </view>
+        </view>
+
+      </scroll-view>
+    </view>
+
+    <button form-type='submit' class='btn-send {{page.btnSend ? "" : "out"}}'>
+        <view class='icon'><image src='/images/icon-card-send.png'></image></view>
+        <view class='txt'><text>发送</text></view>
+    </button>
+
+  </form>
+
+</view>
+
+<!-- <view class='loading2 page-loading2' hidden='{{!page.loading}}'><i></i><i></i><i></i></view> -->
+<view class='page-loading' hidden='{{!page.loading}}'>
+  <view class='icon-loading'></view>
+</view>
+
+<modal hidden="{{sys.SDKVer < 10603}}" setting="{{modal}}" bind:confirm="onConfirm" bind:cancel="onCancel" bind:getUserInfo="onGetUserInfo"></modal> 
+<msg msg-show="{{msg.show}}" msg-content="{{msg.content}}" bind:hideMsg="hideMsg"></msg>
+
+<import src="../../template/imgLoader.wxml"/>
+<template is="imgLoader" data="{{ imgLoadList }}"></template> 
