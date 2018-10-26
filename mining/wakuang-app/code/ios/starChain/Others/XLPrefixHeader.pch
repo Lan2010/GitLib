@@ -1,0 +1,71 @@
+
+
+
+
+#ifdef __OBJC__
+
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#import "XLCategory.h"
+#import <UIImageView+WebCache.h>
+#import <SDCycleScrollView.h>
+#import <Masonry.h>
+#import <MJRefresh.h>
+#import <MJExtension.h>
+#import "TJKeychain.h"
+#import "XLGlobalFunc.h"
+#import "XLConst.h"
+#import "TJNetworking.h"
+
+
+#define IOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
+#define WEAKSELF __weak typeof(self) weakSelf = self;
+#define STRONGSELF __strong typeof(self) strongSelf = weakSelf;
+#define USERICONPATH [@"userIcon.png" tj_documentsPath]
+#define ADIMAGEPATH [@"adImage.png" tj_documentsPath]
+#define USERDEFAULTS [NSUserDefaults standardUserDefaults]
+#define TJNetworkTool [TJNetworking shareNetworking]
+
+#define UIColor_Hex(hex) [UIColor colorWithRed:((hex & 0xFF0000) >> 16) / 255.0 green:((hex & 0x00FF00) >> 8) / 255.0 blue:(hex & 0x0000FF) / 255.0 alpha:1.0]
+#define UIColor_RGB(R,G,B) [UIColor colorWithRed:(CGFloat)R / 255.0 green:(CGFloat)G / 255.0 blue:(CGFloat)B / 255.0 alpha:1]
+#define UIFont_Px(px) [UIFont systemFontOfSize:px]
+
+#define KScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+#define KScreenBounds [UIScreen mainScreen].bounds
+
+#define IPHONEX ([UIScreen mainScreen].bounds.size.height == 812 && [UIScreen mainScreen].bounds.size.width == 375)
+#define StatusBarHight [UIApplication sharedApplication].statusBarFrame.size.height
+#define TOPMAGRIN (StatusBarHight + 44)
+#define TabbarHight ((IPHONEX) ? 83 : 49)
+#define TabbarSafeBottomMargin ((IPHONEX) ? 34 : 0)
+#define NavBarHight (StatusBarHight + 44)
+#define iOS11 @available(iOS 11.0, *)
+
+#define ZOOM(value) (KScreenWidth / 375.0) * value
+#define H(value) (KScreenWidth / 375.0) * value
+#define ZOOM5(value) ((KScreenHeight < 667) ? H(value) : value)
+#define ZOOMP(value) ((KScreenHeight > 667 && KScreenWidth > 375) ? H(value) : value)
+
+#define KeyWindow [UIApplication sharedApplication].keyWindow
+
+#define REMOVOCOOKIES  NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];\
+[cookieStorage.cookies enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {\
+[cookieStorage deleteCookie:obj];\
+}];
+
+#define  ControllerPresentationCustom  - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {\
+if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {\
+self.modalPresentationStyle = UIModalPresentationCustom ;\
+}\
+return self;\
+}
+
+
+//#define TJLog(...)
+
+#define TJLog(...) NSLog(__VA_ARGS__)
+
+#endif
+

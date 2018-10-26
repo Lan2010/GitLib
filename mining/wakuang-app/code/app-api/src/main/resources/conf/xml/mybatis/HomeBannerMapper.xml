@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.HomeBannerMapper">
+	<!-- -->
+	<select id="getAll" resultType="HomeBanner" parameterType="java.lang.Integer">
+		select banner_name as bannerName,
+		dic_type as dicType,
+		banner_title as bannerTitle,
+		banner_sort as bannerSort,
+		dic_name as dicName,
+		banner_url as bannerUrl,
+		link_url as linkUrl,
+		banner_starttime as bannerStarttime,
+		banner_endtime as bannerEndTime,
+		remark 
+		from d_home_banner
+		<where>
+			and dic_type = #{dicType,jdbcType=INTEGER}
+			and banner_status=1
+		</where>
+		order by banner_sort desc
+	</select>
+	
+</mapper>

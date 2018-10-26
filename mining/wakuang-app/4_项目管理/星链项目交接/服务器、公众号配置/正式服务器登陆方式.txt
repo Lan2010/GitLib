@@ -1,0 +1,18 @@
+跳板机登陆
+ip地址：47.106.21.73
+用户名：dev_xupeiqin
+端口： 45613
+用私钥登陆
+
+
+其他服务器登陆
+ssh dev_xupeiqin@172.18.61.204 
+密码：899sischain.CN@)18@szNS
+
+1、密码自行修改
+2、其他服务器请参照服务器内网ip地址列表
+
+数据库：
+user:appuser
+password:appStzx20189#0721@TzX!23$
+

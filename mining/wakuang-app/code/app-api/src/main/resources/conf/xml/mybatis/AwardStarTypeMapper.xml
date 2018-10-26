@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.tianzhixing.app.dao.mapper.AwardStarTypeMapper">
+	<select id="getAwardStarType" resultType="AwardStarType"
+		parameterType="java.lang.Integer">
+		select type_name ,type_code ,type_value ,mark,remark,type_id from
+		d_star_type
+		where
+		<choose>
+			<when test="is_system != null">
+				is_system = #{is_system,jdbcType=INTEGER}
+			</when>
+			<otherwise>
+				is_system != 0
+			</otherwise>
+		</choose>
+		and mark = 1
+	</select>
+
+	<select id="getOneModuleByCode" resultType="AwardStarType"
+		parameterType="java.lang.String">
+		select type_name,type_code ,type_value
+		,mark,remark,type_id from
+		d_star_type
+		where type_code =#{type_code} and
+		mark = 1
+	</select>
+
+	<select id="querySum" resultType="java.lang.Integer">
+		select
+		SUM(type_value) as AD
+		from d_star_type where is_system=1 and mark = 1
+	</select>
+
+	<select id="queryUserSum" resultType="java.lang.Integer"
+		parameterType="java.lang.Integer">
+		select sum(type_value) as user from d_star_module as sm
+		INNER JOIN
+		d_star_type as st ON sm.module_code = st.type_code where
+		sm.user_id =
+		#{userId} and st.is_system=1 and st.mark = 1
+	</select>
+</mapper>

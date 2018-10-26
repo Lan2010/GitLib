@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.auth.grpc.proto.mobile";
+option java_outer_classname = "MobileValidationProto";
+
+package mobile;
+
+//手机验证服务类
+service MobileValidationSerivce {
+
+    //发送验证码
+    rpc send(SendCodeInfo) returns (SendCodeResult) {}
+    //执行验证
+    rpc validate(ValidationCodeInfo) returns (ValidationResult) {}
+    //根据手机号码查询验证码（仅能够检索到24小时内且未被使用过的记录信息）
+    rpc search(SearchCodeInfo) returns (SearchResultInfo){}
+}
+
+//发送验证码信息
+message SendCodeInfo {
+    string mobile = 1; //手机号码-必填
+    string token = 2; //平台身份识别-必填
+    enum SendCodeType {
+        SECURITY_CODE = 0; //验证码类
+        MARKETING = 1; //营销短信 - 暂未开通
+    }
+    SendCodeType sendCodeType = 3; //发送代码分类 - 必填
+    int32 codeLength = 4; //验证码长度 -必填(4-8长度)
+}
+
+//检索验证码信息
+message SearchCodeInfo {
+    string mobile = 1; //手机号码-必填
+    string token = 2; //平台身份识别-必填
+}
+
+//检索结果
+message SearchResultInfo {
+    int32 code = 1; //200成功，300业务错误
+    string message = 2; //信息
+    string mobile = 3; //手机号
+    //key = time, value = code info
+    map<string, CodeInfo> map = 4;
+}
+
+message CodeInfo{
+    bool status = 1; //状态
+    string validationCode = 2; //验证码
+    string senderOrg = 3; // 发送机构
+}
+
+//发送验证码反馈结果
+message SendCodeResult {
+    int32 code = 1; //200成功，300业务错误
+    string message = 2; //信息
+    string mobile = 3; //手机号
+    string codeToken = 4; //授权码-验证时使用
+    string sendPlatform = 5; //发送平台
+}
+
+//验证
+message ValidationCodeInfo {
+    string inputCode = 1; //输入的验证码 - 必填
+    string codeToken = 2; //验证授权码 - 必填
+    string mobile = 3; //手机号 - 必填
+    string token = 4; //平台身份识别 - 必填
+}
+
+//验证结果
+message ValidationResult {
+    int32 code = 1; //200成功，200-300业务错误
+    string message = 2; //信息
+    enum Status {
+        SUC = 0; //验证成功
+        FAILED = 1; //验证失败
+    }
+    Status status = 3; //验证状态信息
+}

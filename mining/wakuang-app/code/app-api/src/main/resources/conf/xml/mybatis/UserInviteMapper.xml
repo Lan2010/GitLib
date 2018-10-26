@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.UserInviteMapper">
+	<!-- 根据用户ID获取用户与星星奖励模块的关联信息 -->
+	<select id="getInviteCount" resultType="java.lang.Integer">
+		select count(invite_id) from d_user_invite 
+		<where>
+			<if test="startDate != null">
+				and add_datetime &gt;= #{startDate}
+			</if>
+			<if test="endDate != null">
+				and add_datetime  &lt;= #{endDate}
+			</if>
+			<!-- 邀请人 -->
+			and invite_user_id = #{userId}
+		</where> 
+	</select>
+	
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianzhixing.app.dao.mapper.UserBankMapper">
+	
+	<select id="getBankByCode" resultType="UserBank" parameterType="java.lang.String">
+		select * from d_user_bank where bank_card_no = #{bank_card_no}
+	</select>
+	
+	<!-- 添加用户银行卡信息 -->
+	<insert id="addUserBank" parameterType="UserBank">
+		insert into d_user_bank(user_id,bank_name,bank_card_no,branch,status,terminal,add_datetime,bank_img) 
+		values(#{user_id},#{bank_name},#{bank_card_no},#{branch},#{status},#{terminal},#{add_datetime},#{bank_img})
+	</insert>
+	
+</mapper>

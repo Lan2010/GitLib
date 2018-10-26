@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianzhixing.app.dao.mapper.GeneMapper">
+
+	<!-- 添加基因数据 -->
+	<insert id="addGene" parameterType="Gene">
+		insert into d_gene(name,birth_date,native_place,exercise_time,sex,user_id,add_datetime,ill,height,weight) 
+		values(#{name},#{birth_date},#{native_place},#{exercise_time},#{sex},#{user_id},#{add_datetime},#{ill},#{height},#{weight})
+	</insert>
+
+	<!--  -->
+	<select id="findGene" parameterType="java.lang.Integer" resultType="Gene">
+		select name,birth_date,native_place,exercise_time,sex,add_datetime,ill,height,weight from d_gene where user_id = #{userId}
+	</select>
+	
+</mapper>

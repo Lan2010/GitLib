@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianzhixing.app.dao.mapper.UserRealNameMapper">
+
+	<select id="getRealByCardID" resultType="UserRealName" parameterType="java.lang.String">
+		select card_id,user_id from d_user_realname where
+		card_id = #{card_id}
+	</select>
+
+	<insert id="addRealName" parameterType="UserRealName">
+		insert into
+		d_user_realname(card_id,user_id,real_name,operate_ip,card_address,user_age,birth_day,birth_year,card_type,audit_status,user_sex,add_datetime)
+		values(#{card_id},#{user_id},#{real_name},#{operate_ip},#{card_address},#{user_age},#{birth_day},#{birth_year},#{card_type},#{audit_status},#{user_sex},#{add_datetime})
+	</insert>
+
+	<select id="getRealByUserID" resultType="UserRealName" parameterType="java.lang.Integer">
+		select card_id,real_name,birth_day,user_age,audit_status,card_address from d_user_realname where user_id = #{userId}
+	</select>
+
+</mapper>

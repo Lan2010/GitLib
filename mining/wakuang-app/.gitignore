@@ -1,0 +1,8 @@
+code/api/.idea/
+code/api/Publish/logs/
+code/api/Publish/Runtime/
+
+code/app-api/.classpath
+code/app-api/.project
+code/app-api/.settings/
+code/app-api/target

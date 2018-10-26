@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.PhoneListMapper">
+	<!-- 获取到通讯录中手机号注册情况 -->
+	<select id="getPhoneLists" resultType="PhoneList">
+		select um.name,um.phone,IF(u.user_token is NULL,0,1) as steta from
+		d_user_maillist as um LEFT JOIN d_user as u ON um.phone = u.phone
+		WHERE um.user_id = #{userId}
+		<if test="registerType == 1 ">
+			and u.user_token is NULL
+		</if>
+		<if test="registerType == 2 ">
+			and u.user_token is not null
+		</if>
+	</select>
+
+	<!-- 获取某用户通讯录信息的绑定条数 -->
+	<select id="countPhoneList" parameterType="java.lang.Integer"
+		resultType="java.lang.Integer">
+		select count('user_id') from d_user_maillist where user_id
+		= #{userId}
+	</select>
+
+	<!-- 批量插入 -->
+	<insert id="addPhoneLists" parameterType="java.util.List">
+		<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into d_user_maillist (user_id, phone, name,add_datetime) values
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+				#{item.userId}, 
+				#{item.phone},
+				#{item.name},
+				#{item.addDatetime}
+			)
+		</foreach>
+	</insert>
+
+	<delete id="delPhoneLists" parameterType="java.lang.Integer">
+		delete from d_user_maillist where user_id = #{userId}
+	</delete>
+
+</mapper>

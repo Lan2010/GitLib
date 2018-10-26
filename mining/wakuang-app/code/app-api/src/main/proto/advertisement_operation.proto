@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.kernel.grpc.proto.advertisement.operation";
+option java_outer_classname = "AdvertisementOperationServiceProto";
+
+package advertisement.operation;
+
+import "response_entity.proto";
+
+//广告操作服务
+service AdvertisementOperationService {
+    //广告操作接口
+    rpc clickOrAccess (AdvertisementInfo) returns (ClickResult) {}
+}
+
+//广告信息
+message AdvertisementInfo{
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    string advertId = 3; //广告ID-必填
+    string starPoint = 4; //点击一次产生的星点数量 - 必填
+    int64 clickTime = 5; //点击时间-必填
+    int32 operationType = 6; //操作类型-必填(0=访问, 1=点击)
+}
+
+message ClickResult{
+    string availableStarPoint = 1; //可用星点数
+    string frozenStarPoint = 2; //冻结星点数量
+    string starPoint = 4; //奖励的星点数
+    ResponseEntity responseEntity = 3; //code : 200=ok, 300=param error, 502=operation error
+}

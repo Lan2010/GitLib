@@ -1,0 +1,19 @@
+公众号：chaorenchihe   100msh@888
+
+
+IP地址：119.147.180.12
+端口：21354
+用户:root
+密码:!@#qweASDzxc&*(10
+
+
+:
+先登录到服务器，然后切换到/data001/data/sites目录下的指定目录下，然后上传文件
+:
+1、redis服务 端口：6379  密码：sky!@#123
+
+
+2、mysql服务 端口：3306  用户名：root   密码：abc123#@!
+
+
+https://tzxapp.100msh.com/test.php

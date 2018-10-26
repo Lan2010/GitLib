@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.TaskMapper">
+
+
+	<!-- 获取用户信息 -->
+	<select id="getTaskId" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		select task_id FROM `d_task` where order_no = #{order}
+	</select>
+
+
+
+	<select id="getStarPoint" parameterType="java.util.Map"
+		resultType="java.lang.String">
+		SELECT starPoint FROM `d_task_user` WHERE task_id =
+		#{task_id} AND user_id = #{user_id}
+	</select>
+
+	<update id="saveStarPoint" parameterType="java.util.Map">
+		UPDATE d_task_user SET
+		starPoint=#{starPoint} WHERE task_id = #{task_id} AND user_id =
+		#{user_id}
+	</update>
+
+	<select id="getMyTaskList" resultType="Task"
+		parameterType="java.util.Map">
+		SELECT t.task_id,ts.starPoint, t.order_no, t.task_radius,
+		tl.lat,
+		tl.lng,
+		t.task_level,t.task_award,t.task_remark,t.task_name,
+		t.task_lcon, t.city, t.city_code,
+		FROM_UNIXTIME(t.begin_time,"%Y-%m-%d %H:%i") as begin_time ,
+		FROM_UNIXTIME(t.end_time,"%Y-%m-%d %H:%i") as
+		end_time, t.keyword,
+		ts.status FROM d_task t INNER JOIN d_task_user ts
+		ON ts.task_id =
+		t.task_id INNER JOIN d_task_list tl ON tl.tl_id =
+		ts.tl_id AND ts.user_id = #{user_id} AND ts.status = #{status}
+		<where>
+			<if test="type == 1 ">
+				and t.end_time &lt;= unix_timestamp(now()) and
+				ts.starPoint != 0
+			</if>
+			<if test="type == 2 ">
+				and t.end_time &gt;= unix_timestamp(now())
+			</if>
+		</where>
+		order by begin_time ASC limit ${start} , ${pageSize}
+	</select>
+
+	<select id="getMyTaskCount" resultType="Integer"
+		parameterType="java.util.Map">
+		SELECT count( t.task_id) FROM d_task t INNER JOIN d_task_user ts ON
+		ts.task_id =
+		t.task_id INNER JOIN d_task_list tl ON tl.tl_id = ts.tl_id
+		AND ts.user_id = #{user_id} AND ts.status = #{status}
+		<where>
+			<if test="type == 1 ">
+				and t.end_time &lt;= unix_timestamp(now()) and
+				ts.starPoint != 0
+			</if>
+			<if test="type == 2 ">
+				and t.end_time &gt;= unix_timestamp(now())
+			</if>
+		</where>
+	</select>
+
+	<select id="getRemind" parameterType="Task" resultType="Task">
+		SELECT
+		t.task_id, t.order_no,
+		t.task_radius,tl.lat,tl.lng,
+		t.task_level,t.task_award,t.task_remark,t.task_name,
+		t.task_lcon,
+		t.city, t.city_code,
+		FROM_UNIXTIME(t.begin_time,"%Y-%m-%d %H:%i") AS
+		begin_time ,
+		FROM_UNIXTIME(t.end_time,"%Y-%m-%d %H:%i") AS
+		end_time,
+		t.keyword,tl.tl_id,tl.name,tl.address, ROUND(6378.138 * 2 *
+		ASIN(SQRT(POW( SIN( ( #{lat} * PI() / 180 - tl.lat * PI() / 180 ) / 2
+		), 2 ) + COS( #{lat} * PI() / 180) * COS(tl.lat * PI() / 180) * POW(
+		SIN( (#{lng} * PI() / 180 - tl.lng * PI() / 180 ) / 2 ), 2 ) ) ) *
+		1000 )
+		AS distance
+		FROM d_task AS t INNER JOIN d_task_list tl on
+		t.order_no = tl.order_no WHERE t.task_level=1 AND
+		t.end_time &gt;
+		UNIX_TIMESTAMP(NOW()) AND t.add_detatime
+		&gt;=
+		UNIX_TIMESTAMP(CAST(SYSDATE()AS DATE))
+		AND ROUND(6378.138 * 2 *
+		ASIN(SQRT(POW( SIN( ( #{lat} * PI() / 180 -
+		tl.lat * PI() / 180 ) / 2
+		), 2 ) + COS( #{lat} * PI() / 180) *
+		COS(tl.lat * PI() / 180) * POW(
+		SIN( (#{lng} * PI() / 180 - tl.lng *
+		PI() / 180 ) / 2 ), 2 ) ) ) *
+		1000
+		) &lt;= 5000 AND t.task_id NOT IN
+		(SELECT task_id FROM d_task_user
+		WHERE user_id = #{userId}) order by
+		distance
+	</select>
+
+
+	<select id="getTaskList" resultType="Task"
+		parameterType="java.util.Map">
+		SELECT t.task_id, t.order_no,
+		t.task_radius,tl.lat,tl.lng,
+		t.task_level,t.task_award,t.task_remark,t.task_name,
+		t.task_lcon,
+		t.city, t.city_code,
+		FROM_UNIXTIME(t.begin_time,"%Y-%m-%d %H:%i") AS
+		begin_time ,
+		FROM_UNIXTIME(t.end_time,"%Y-%m-%d %H:%i") AS
+		end_time,
+		t.keyword,ts.status,tl.tl_id,tl.name,tl.address, ROUND(6378.138 * 2 *
+		ASIN(SQRT(POW( SIN( ( #{lat} * PI() / 180 - tl.lat * PI() / 180 ) / 2
+		), 2 ) + COS( #{lat} * PI() / 180) * COS(tl.lat * PI() / 180) * POW(
+		SIN( (#{lng} * PI() / 180 - tl.lng * PI() / 180 ) / 2 ), 2 ) ) ) *
+		1000 )
+		AS distance FROM d_task t INNER JOIN d_task_user ts ON
+		ts.task_id = t.task_id
+		INNER JOIN d_task_list tl ON tl.tl_id = ts.tl_id AND ts.user_id =
+		#{userId} where t.end_time &gt;
+		UNIX_TIMESTAMP(NOW()) and
+		city_code=#{cityCode} ORDER BY begin_time
+		ASC,distance ASC
+		LIMIT ${start} , ${pageSize}
+	</select>
+
+	<select id="getTaskCount" resultType="Integer"
+		parameterType="java.util.Map">
+		SELECT count(t.task_id) FROM d_task t INNER JOIN
+		d_task_user ts ON
+		ts.task_id = t.task_id
+		INNER JOIN d_task_list tl ON
+		tl.tl_id = ts.tl_id AND ts.user_id =
+		#{userId} where t.end_time
+		&gt;
+		UNIX_TIMESTAMP(NOW()) and
+		city_code=#{cityCode}
+	</select>
+
+	<select id="getTask" resultType="Task"
+		parameterType="java.lang.String">
+		SELECT order_no,task_id,task_name,task_remark FROM
+		d_task t WHERE order_no =
+		#{orderNO}
+	</select>
+
+
+	<select id="getUserTaskList" resultType="Task"
+		parameterType="Task">
+		SELECT t.task_id,t.order_no,
+		t.task_radius,t.task_level,t.task_award,t.task_remark,t.task_name,
+		t.task_lcon,
+		t.city, t.city_code,
+		FROM_UNIXTIME(t.begin_time,"%Y-%m-%d %H:%i") AS
+		begin_time ,
+		FROM_UNIXTIME(t.end_time,"%Y-%m-%d %H:%i") AS
+		end_time,
+		t.keyword,ts.status FROM d_task t INNER JOIN d_task_user ts
+		ON
+		ts.task_id = t.task_id WHERE ts.user_id=#{userId} AND
+		ts.task_id=#{task_id}
+	</select>
+
+	<insert id="addUserTask" parameterType="java.util.Map">
+		INSERT INTO d_task_user
+		(user_id,task_id,receive_date,STATUS,tl_id)
+		VALUES(#{user_id},#{task_id},#{receive_date},#{status},#{tl_id})
+	</insert>
+
+</mapper>

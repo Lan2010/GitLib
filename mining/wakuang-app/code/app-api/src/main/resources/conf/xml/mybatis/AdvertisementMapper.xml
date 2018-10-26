@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.tianzhixing.app.dao.mapper.AdvertisementMapper">
+	<select id="getAds" resultType="AdvertisementModel"
+		parameterType="AdvertisementModel">
+		SELECT total_count as totalCount,advert_pic as
+		advertPic,ad_url,advertisement_type as advertisementType,advert_name
+		as
+		advertName,area,ad_url,city,city_code as cityCode, advert_icon as
+		advertIcon,order_no as
+		ad_id,once_starpoint
+		as onceStarPoint,
+		advert_remark as
+		advertRemark,advertisement_describe,total_click_starpoint as
+		totalClickStarPoint,
+		once_click_starpoint as
+		onceClickStarPoint,user_browse_starpoint,total_starpoint as
+		totalStarPoint,FROM_UNIXTIME(begin_time,"%Y-%m-%d %H:%i:%s") as
+		beginTime,FROM_UNIXTIME(end_time,"%Y-%m-%d %H:%i:%s") as endTime FROM
+		`d_advertisement`
+		<where>
+			<if test="cityCode != null and cityCode != '' ">
+				and city_code = #{cityCode}
+			</if>
+			<if
+				test="advertisement_attribute != null and advertisement_attribute != '' ">
+				and advertisement_attribute=#{advertisement_attribute}
+			</if>
+			and total_count > 0 and
+			begin_time &lt;= unix_timestamp(now()) and
+			end_time &gt;=unix_timestamp(now())
+		</where>
+	</select>
+
+	<select id="getAd" resultType="AdvertisementModel"
+		parameterType="java.lang.String">
+		SELECT total_count as totalCount,advert_pic as
+		advertPic,ad_url,city,city_code as cityCode,advertisement_type as
+		advertisementType,advert_name
+		as
+		advertName, advert_icon as
+		advertIcon,order_no as
+		ad_id,once_starpoint
+		as onceStarPoint,
+		advert_remark as
+		advertRemark,advertisement_describe,total_click_starpoint as
+		totalClickStarPoint,
+		once_click_starpoint as
+		onceClickStarPoint,user_browse_starpoint,total_starpoint as
+		totalStarPoint FROM `d_advertisement` where order_no = #{order_no}
+	</select>
+
+	<update id="setDec" parameterType="java.lang.String">
+		UPDATE d_advertisement SET
+		total_count=total_count-1 WHERE order_no = #{advertId}
+	</update>
+	<update id="addNum" parameterType="java.lang.String">
+		UPDATE d_advertisement SET
+		user_browse_starpoint=user_browse_starpoint + #{onceStarPoint} WHERE
+		order_no = #{order_no}
+	</update>
+
+	<!-- 添加广告信息 -->
+	<insert id="insert" parameterType="AdvertisementModel">
+		insert into
+		d_advertisement(advert_name,area,city,city_code,advertisement_type,total_count,advert_pic,advert_icon,total_starpoint,advert_remark,once_starpoint,begin_time,order_no,end_time,ad_url,advertisement_attribute,advertisement_describe,total_click_starpoint,once_click_starpoint,total_count_view,user_browse_starpoint,user_click_starpoint)
+		values(#{advertName},#{area},#{city},#{cityCode},#{advertisementType},#{totalCount},#{advertPic},#{advertIcon},#{totalStarPoint},#{advertRemark},#{onceStarPoint},#{beginTime},#{order_no},#{endTime},#{ad_url},#{advertisement_attribute},#{advertisement_describe},#{totalClickStarPoint},#{onceClickStarPoint},#{total_count_view},#{user_browse_starpoint},#{user_click_starpoint})
+	</insert>
+
+	<update id="update" parameterType="AdvertisementModel">
+		UPDATE d_advertisement
+		<set>
+			<if test=" advertName != null and advertName != ''">
+				advert_name = #{advertName},
+			</if>
+			<if test=" area != null and area != ''">
+				area = #{area},
+			</if>
+			<if test=" city != null and city != ''">
+				city = #{city},
+			</if>
+			<if test=" cityCode != null and cityCode != ''">
+				city_code = #{cityCode},
+			</if>
+			<if test=" advertisementType != null and advertisementType != ''">
+				advertisement_type = #{advertisementType},
+			</if>
+			<if test=" totalCount != null and totalCount != ''">
+				total_count = #{totalCount},
+			</if>
+			<if test=" advertPic != null and advertPic != ''">
+				advert_pic = #{advertPic},
+			</if>
+			<if test=" advertIcon != null and advertIcon != ''">
+				advert_icon = #{advertIcon},
+			</if>
+			<if test=" totalStarPoint != null and totalStarPoint != ''">
+				total_starpoint = #{totalStarPoint},
+			</if>
+			<if test=" advertRemark != null and advertRemark != ''">
+				advert_remark = #{advertRemark},
+			</if>
+			<if test=" onceStarPoint != null and onceStarPoint != ''">
+				once_starpoint = #{onceStarPoint},
+			</if>
+			<if test=" beginTime != null and beginTime != ''">
+				begin_time = #{beginTime},
+			</if>
+			<if test=" order_no != null and order_no != ''">
+				order_no = #{order_no},
+			</if>
+			<if test=" endTime != null and endTime != ''">
+				end_time = #{endTime},
+			</if>
+			<if test=" ad_url != null and ad_url != ''">
+				ad_url = #{ad_url},
+			</if>
+			<if
+				test=" advertisement_attribute != null and advertisement_attribute != ''">
+				advertisement_attribute = #{advertisement_attribute},
+			</if>
+			<if
+				test=" advertisement_describe != null and advertisement_describe != ''">
+				advertisement_describe = #{advertisement_describe},
+			</if>
+			<if
+				test=" totalClickStarPoint != null and totalClickStarPoint != ''">
+				total_click_starpoint = #{totalClickStarPoint},
+			</if>
+			<if
+				test=" onceClickStarPoint != null and onceClickStarPoint != ''">
+				once_click_starpoint = #{onceClickStarPoint},
+			</if>
+			<if test=" total_count_view != null and total_count_view != ''">
+				total_count_view = #{total_count_view},
+			</if>
+			<if
+				test=" user_browse_starpoint != null and user_browse_starpoint != ''">
+				user_browse_starpoint = #{user_browse_starpoint},
+			</if>
+			<if
+				test=" user_click_starpoint != null and user_click_starpoint != ''">
+				user_click_starpoint = #{user_click_starpoint},
+			</if>
+		</set>
+		WHERE order_no = #{order_no}
+	</update>
+
+</mapper>

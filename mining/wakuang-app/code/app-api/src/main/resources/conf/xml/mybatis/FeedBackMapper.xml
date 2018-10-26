@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianzhixing.app.dao.mapper.FeedBackMapper">
+
+	<select id="getOneDayTimes" resultType="java.lang.Integer" >
+		select count(equipment_id) from d_app_feedback where add_datetime  &gt;  #{startTime} and add_datetime  &lt; #{endTime} and equipment_id = #{deviceID}
+		group by equipment_id
+	</select>
+
+	<insert id="addFeedBack" parameterType="FeedBack">
+		insert into d_app_feedback(user_id,phone,feback_type,feback_info,terminal,versions,equipment_id,add_datetime) 
+		values(#{user_id},#{phone},#{feback_type},#{feback_info},#{terminal},#{versions},#{equipment_id},#{add_datetime})
+	</insert>
+
+</mapper>

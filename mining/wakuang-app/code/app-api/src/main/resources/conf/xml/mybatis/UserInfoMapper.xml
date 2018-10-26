@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.UserMapper">
+
+	<!-- 用户登录 -->
+	<select id="userLogin" parameterType="User" resultType="User">
+		select user_id as userId,phone from d_user
+		<where>
+			<if test="phone != null and phone != '' ">
+				phone = #{phone}
+			</if>
+			<if test="password != null and password != '' ">
+				and password = #{password}
+			</if>
+		</where>
+	</select>
+
+
+	<!-- 通过token获取用户信息 -->
+	<select id="getUserByToken" parameterType="java.lang.String"
+		resultType="User">
+		select user_id as userId,phone,user_sex as
+		userSex,reg_datetime as regDatetime from d_user where user_token =
+		#{userToken}
+	</select>
+
+	<!-- 通过userId获取用户信息 -->
+	<select id="getUserById" parameterType="java.lang.Integer"
+		resultType="User">
+		select user_id as userId,
+		phone,
+		user_key as userKey,
+		head_url as headUrl,
+		open_id as openId,
+		user_nickname as userNickname,
+		real_name as realName,
+		user_sex as userSex ,
+		reg_datetime as
+		regDatetime,
+		user_status as userStatus,
+		invitation_code as
+		invitationCode,
+		password,
+		user_token as userToken
+		from d_user where
+		user_id =
+		#{userId} and user_status = 1
+	</select>
+
+	<!-- 通过userId获取用户信息 -->
+	<select id="getByPhone" parameterType="java.lang.String"
+		resultType="User">
+		select user_id as userId,user_key as
+		userKey,phone,real_name as realName,reg_datetime as regDatetime from
+		d_user where phone = #{phone} and user_status = 1
+	</select>
+
+	<!-- 通过邀请码获取用户信息 -->
+	<select id="getUserByInviter" parameterType="java.lang.String"
+		resultType="User">
+		select user_id as userId,user_key as
+		userKey,phone,real_name as realName,reg_datetime as
+		regDatetime,user_token as userToken from d_user where invitation_code
+		= #{invitation_code} and user_status = 1
+	</select>
+
+	<!-- 添加用户 -->
+	<insert id="addUser" parameterType="User">
+		insert into
+		d_user(phone,password,reg_terminal,user_key,pay_password,phone_status,reg_datetime,reg_ip)
+		values(#{phone},#{password},#{regTerminal},#{userKey},#{payPassword},#{phoneStatus},#{regDatetime},#{regIp})
+	</insert>
+
+	<!-- 添加邀请信息 -->
+	<insert id="addInviter">
+		insert into
+		d_user_invite(user_id,invite_user_id,add_datetime)
+		values(#{userId},#{inviterUserId},#{addDatetime})
+	</insert>
+
+	<!-- 删除用户信息 -->
+	<delete id="delUser" parameterType="java.lang.Integer">
+		delete from d_user where
+		user_id = #{userId}
+	</delete>
+
+	<!-- 更新用户user_token -->
+	<!-- <update id="editUser"> update d_user set user_token = #{accountToken} 
+		where user_id = #{userId} </update> -->
+
+	<insert id="addModule" parameterType="java.util.Map">
+		insert into
+		d_star_module(user_id,module_code,status,add_detatime)
+		values(#{userId},#{module_code},#{status},unix_timestamp(now()))
+	</insert>
+
+	<update id="updateModule" parameterType="java.util.Map">
+		update
+		d_star_module set
+		status =
+		#{status} where user_id = #{userId} and
+		module_code =
+		#{module_code}
+	</update>
+
+	<!-- 更新用户 -->
+	<update id="updateUser" parameterType="User">
+		update d_user
+		<set>
+			<if test="editDatetime != null">edit_datetime = #{editDatetime},</if>
+			<if test="invitationCode != null and invitationCode != ''">invitation_code = #{invitationCode},</if>
+			<if test="userToken != null and userToken != ''">user_token = #{userToken},</if>
+			<if test="password != null and password != ''">password = #{password},</if>
+		</set>
+		<where>
+			<if test="userStatus != null">
+				and user_status = #{userStatus}
+			</if>
+			and user_id = #{userId}
+		</where>
+	</update>
+
+
+	<select id="checkUserUpload" parameterType="java.util.Map"
+		resultType="java.lang.Integer">
+		SELECT COUNT(u.up_id) FROM `d_upload_user` u WHERE
+		u.user_id = #{userId} AND
+		u.type = #{type}
+	</select>
+	
+	
+	<insert id="saveFile" parameterType="FileInfo">
+		insert into
+		d_upload_user(user_id,path,add_detatime,type,name)
+		values(#{user_id},#{path},unix_timestamp(now()),#{type},#{name})
+	</insert>
+
+</mapper>

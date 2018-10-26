@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.UserActionLogMapper">
+	<!-- 添加登录日志-->
+	<insert id="addLoginLog" parameterType="java.util.Map">
+		insert into
+		d_user_action_log(user_id,phone,log_ip,action,ret,terminal,add_datetime)
+		values(#{user_id},#{phone},#{log_ip},#{action},#{ret},#{terminal},#{add_datetime})
+	</insert>
+
+	<!-- 执行存储过程，计算用户登录次数-->
+    <select id="callLoginlog" parameterType="java.util.Map" statementType="CALLABLE" resultType="User">
+       	CALL sp_Login_log(
+       		#{user_id,mode=IN},
+       		#{phone,mode=IN},
+       		#{terminal,mode=IN},
+       		#{equipment,mode=IN},
+       		#{operate_ip,mode=IN}
+       	)
+    </select>
+
+</mapper>

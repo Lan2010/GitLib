@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianzhixing.app.dao.mapper.AppInfoMapper">
+	<!-- 添加app信息 -->
+	<insert id="addAppInfo" parameterType="AppInfo">
+		insert into d_app_info(equipment_id,type,jph_reg_id,versions,phone_info,latitude,longitude,terminal,province,city,area,place,chan_key,channel,add_datetime) 
+		values(#{equipment_id},#{type},#{jph_reg_id},#{versions},#{phone_info},#{latitude},#{longitude},#{terminal},#{province},#{city},#{area},#{place},#{chan_key},#{channel},#{add_datetime})
+	</insert>
+
+</mapper>

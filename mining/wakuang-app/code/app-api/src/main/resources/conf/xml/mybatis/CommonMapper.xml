@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.CommonMapper">
+	<!-- 悬浮窗数据获取 -->
+	<select id="getSuspensionFrame" resultType="SuspensionFrame">
+		select
+		frame_id as id ,frame_icon ,link ,begin_datetime,end_datetime,frame_word ,add_datetime from
+		d_suspension_frame order by add_datetime DESC limit 1;
+	</select>
+
+</mapper>

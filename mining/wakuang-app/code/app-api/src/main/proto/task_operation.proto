@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.kernel.grpc.proto.task.operation";
+option java_outer_classname = "TaskOperationServiceProto";
+
+package task.operation;
+
+import "response_entity.proto";
+
+//任务操作服务
+service TaskOperationService {
+    //接受任务
+    rpc accept(TaskInfo) returns (Result) {}
+    //取消任务
+    rpc cancel(TaskInfo) returns (Result){}
+}
+
+//任务信息
+message TaskInfo{
+    string accountToken = 1; //accountToken-必填
+    string token = 2;//安全校验码-必填
+    string taskId = 3; //任务ID-必填
+    int64 operationTime = 4; //操作时间-必填
+}
+
+message Result{
+    ResponseEntity responseEntity = 1;
+}

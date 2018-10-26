@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tianzhixing.app.dao.mapper.ChargeMapper">
+	<select id="getInfoByUser" resultType="ChargeInfo"
+		parameterType="java.lang.Integer">
+		select
+		charge_id,device_id,device_type,device_model,device_mac,state,bind_user_id,bind_datetime,add_datetime,remark
+		from d_charge where bind_user_id = #{userId}
+	</select>
+	<select id="getBindInfo" resultType="ChargeInfo"
+		parameterType="java.lang.String">
+		select
+		charge_id,device_id,device_type,device_model,device_mac,state,bind_user_id,bind_datetime,add_datetime,remark
+		from d_charge where device_id = #{devid}
+	</select>
+
+	<insert id="chargeOpLog" parameterType="ChargeInfo">
+		INSERT INTO d_charge_log
+		(user_id,op_type,add_datetime,device_id)
+		VALUES(#{bind_user_id},#{op_type},#{bind_datetime},#{device_id})
+	</insert>
+
+	<update id="updateBindInfo" parameterType="ChargeInfo">
+		UPDATE d_charge SET
+		bind_user_id = #{bind_user_id},state =
+		#{state},bind_datetime =
+		#{bind_datetime} where device_id = #{device_id}
+	</update>
+	<!-- 根据用户ID获取用户与星星奖励模块的关联信息 -->
+	<select id="getByUserId" resultType="ChargeInfo"
+		parameterType="java.lang.Integer">
+		select
+		charge_id,device_id,device_type,device_model,device_mac,state,bind_user_id,bind_datetime,add_datetime,remark
+		from d_charge
+		where bind_user_id = #{userId} ORDER BY bind_datetime
+		DESC LIMIT 1
+	</select>
+</mapper>
