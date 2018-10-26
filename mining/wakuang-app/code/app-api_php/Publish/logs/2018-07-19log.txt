@@ -1,0 +1,120 @@
+2018-07-19 14:05:45 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531895780608,"recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"},{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531912087651,"recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"}]}
+
+
+2018-07-19 14:05:45 关键索引：merge_start token is WAAPP-1531882322466-6820333358622854  内容：[{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 19:08:07","recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"},{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 14:36:20","recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"}]
+
+
+2018-07-19 14:05:50 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531895780608,"recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"},{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531912087651,"recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"}]}
+
+
+2018-07-19 14:05:50 关键索引：merge_start token is WAAPP-1531882322466-6820333358622854  内容：[{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 19:08:07","recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"},{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 14:36:20","recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"}]
+
+
+2018-07-19 14:06:36 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531895780608,"recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"},{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531912087651,"recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"}]}
+
+
+2018-07-19 14:06:36 关键索引：merge_start token is WAAPP-1531882322466-6820333358622854  内容：[{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 19:08:07","recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"},{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 14:36:20","recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"}]
+
+
+2018-07-19 14:06:41 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531895780608,"recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"},{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531912087651,"recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"}]}
+
+
+2018-07-19 14:06:41 关键索引：merge_start token is WAAPP-1531882322466-6820333358622854  内容：[{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 19:08:07","recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"},{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 14:36:20","recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"}]
+
+
+2018-07-19 14:08:27 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531895780608,"recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"},{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531912087651,"recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"}]}
+
+
+2018-07-19 14:08:27 关键索引：merge_start token is WAAPP-1531882322466-6820333358622854  内容：[{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 19:08:07","recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"},{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 14:36:20","recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"}]
+
+
+2018-07-19 14:08:29 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531895780608,"recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"},{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":1531912087651,"recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"}]}
+
+
+2018-07-19 14:08:29 关键索引：merge_start token is WAAPP-1531882322466-6820333358622854  内容：[{"operStarPoint":"50.0000","longitudeAndLatitude":"lat:22.537514|lng:113.960202","recordsType":"TASK","taskId":"47","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 19:08:07","recordToken":"aab6bd07-a30c-451c-9743-aa5d553b31f3-316"},{"operStarPoint":"57.0000","longitudeAndLatitude":"lat:22.538210|lng:113.960653","recordsType":"RANDOM","taskId":"","advertisementId":"","remark":"a1c8eea63486b8","createTime":"2018-07-18 14:36:20","recordToken":"5363509d-43b9-45e2-9aba-bb030936d67b-316"}]
+
+
+2018-07-19 14:08:53 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:08:56 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:09:00 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:09:02 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:09:06 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:09:08 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:09:09 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:09:15 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:10:04 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:10:06 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:10:11 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:10:15 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:10:19 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:10:21 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:12:35 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:12:36 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:19:17 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:19:19 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:20:40 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:20:44 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:20:46 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:20:49 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:21:34 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:21:37 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:22:00 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:22:37 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:22:43 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+
+2018-07-19 14:22:46 关键索引：Original_start token is WAAPP-1531882322466-6820333358622854  内容：{"code":200,"msg":"\u5904\u7406\u6210\u529f","records":[]}
+
+

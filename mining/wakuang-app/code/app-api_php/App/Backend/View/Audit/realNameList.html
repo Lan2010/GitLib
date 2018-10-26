@@ -1,0 +1,61 @@
+<div id="sub-realName-list"> 
+    <script type="text/javascript" src="{$Think.BPATH}js/datejs/WdatePicker.js"></script> 
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME, $_GET)}">
+    <h4 class="title">实名认证记录  <span class="titleqit">默认查询最近三天数据</span></h4>   
+    <form class="form-inline" id="query_RealName">      
+        <div class="form-group ">
+            <label class="control-label">手机号: </label>
+            <input type="text" class="form-control mr-10" value="{$Think.post.txtuserName}" name="txtuserName" id="txtuserName" placeholder="请输入">   
+            <label class="control-label">姓名: </label>
+            <input type="text" class="form-control mr-10" value="{$Think.post.txtrealName}" name="txtrealName" id="txtrealName"   placeholder="请输入"> 
+        </div>  
+        <div class="form-group mr-10">
+            <label class="control-label">日期: </label>
+            <input type="text" class="form-control mr-5" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" value="{$Think.post.txtstart}" id="txtstart" name="txtstart" placeholder="请输入">     
+            <label class="control-label">- </label>
+            <input type="text" class="form-control mr-5" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" value="{$Think.post.txtend}" id="txtend" name="txtend" placeholder="请输入">   
+        </div>   
+
+        <a href="{:U(ACTION_NAME, $_GET)}"  onclick="$Util.openQuery(this, event, 'query_RealName')"  class="btn btn-info"><i class="icon-search"></i>查询</a>  
+        <a href="/Backend/Audit/expRealName"  onclick="$Util.openExport(this, event, 'query_RealName')"  class="btn btn-info"><i class="icon-search"></i>导出</a>
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>       
+                <th>手机号</th>
+                <th>姓名</th> 
+                <th>单号</th>
+                <th>证件号</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>证件地址</th>
+                <th>申请时间</th>
+                <th>终端</th>
+            </tr>
+        </thead>
+        <tbody>
+        <volist name="realuser" id="item">
+            <tr> 
+                <td>{$item.phone}</td>
+                <td>{$item.real_name|aes='DECODE'}</td>
+                <td>{$item.order_no}</td>
+                <td>{$item.card_id|aes='DECODE'|hidCard8}</td>
+                <td>{$item.card_id|aes='DECODE'|getCardAge}</td>
+                <td>{$item.user_sex|formatSex}</td>
+                <td style="text-align: left">{$item.card_address}</td>
+
+            <td>{$item.add_datetime|formatlongDate}</td>
+            <td>{$item.terminal|formatterminal}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <nav class=" pagination-centered">
+        <ul class="pagination">  
+            {$pageHtml}
+        </ul>
+    </nav> 
+</div>
+
+
+

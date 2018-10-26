@@ -1,0 +1,179 @@
+<div id="sub-Cash-list">
+    <script type="text/javascript" src="{$Think.BPATH}js/datejs/WdatePicker.js"></script> 
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME, $_GET)}">
+    <h4 class="title">提现审核 <span class="titleqit">默认查询一周内记录</span></h4>
+    <form class="form-inline" id="query_Cash"> 
+        <div class="form-group ">
+            <label class="control-label">基本信息:</label>
+            <input type="text" class="form-control ipt mr-10" value="{$Think.post.txtrealName}" name="txtrealName" id="txtrealName" placeholder="请输入姓名"> 
+            <input type="text" class="form-control ipt mr-10" value="{$Think.post.txtphone}" name="txtphone" id="txtphone" placeholder="请输入手机号"> 
+        </div>    
+        <div class="form-group mr-10">
+            <label class="control-label">审核时间:</label>
+            <input type="text" class="form-control mr-5" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" value="{$Think.post.txtDateStart}" id="txtDateStart" name="txtDateStart" placeholder="请输入开始日期">     
+            <label class="control-label">～</label>
+            <input type="text" class="form-control mr-5" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" value="{$Think.post.txtDateEnd}" id="txtDateEnd" name="txtDateEnd" placeholder="请输入结束日期">   
+        </div>    
+        <div class="form-group mr-10">
+            <label class="control-label">提现状态:</label>
+            <select class="form-control mr-10" name="txtStatus" id="txtStatus" style="width: 180px">
+                <option value="">所有</option>
+                <option value="5">提现初始</option>
+                <option value="1">申请中</option>
+                <option value="2">审核通过</option>
+                <option value="3">审核不通过</option>
+                <option value="4">取消提现</option>
+            </select>
+                        <label class="control-label">用户类型:</label>
+            <select class="form-control mr-10" name="txtuserType" id="txtuserType" style="width: 100px">
+                <option value="">所有</option>
+                <foreach name="userTypeArr" item="vo" key="k">
+                    <option value="{$k}">{$vo}</option>
+                </foreach>
+            </select>
+              <label class="control-label">客服查询:</label>
+            <select name="serviceID" id="serviceID" class="form-control">
+                <option value="">--请选择--</option>
+                <volist name="serinfo" id="vo">
+                    <option value="{$vo.userID}" <eq name="Think.post.serviceID" value="$vo.userID" >selected="selected"</eq>  >{$vo.cusName}</option>
+                </volist>
+            </select>
+        </div><br>
+        <div class="form-group mr-10">
+            <label class="control-label">提现单号：</label>
+            <input type="text" class="form-control" value="{$Think.post.orderNO}" name="orderNO" id="orderNO" placeholder="请输入提现单号"> 
+            <label class="control-label">存管查询</label>
+            <label class="checkbox">
+                <input type="checkbox" class="form-control" value="1" id="hx" name="hx" <eq name="Think.post.hx" value="1">checked</eq>>              
+                <span class="lbl"> </span>     
+            </label>
+        </div>
+        <div class="form-group">
+            <a href="{:U(ACTION_NAME, $_GET)}"  onclick="$Util.openQuery(this, event, 'query_Cash')"  class="btn btn-info"><i class="icon-search"></i>查询</a> 
+            <a href="javascript:void(0);" id="exportData"   class="btn btn-primary"><i class="icon-circle-arrow-down"></i>导出</a>
+            <a id="dowonload"> </a>
+        </div>
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr> 
+                <th>手机号</th>
+                <th>姓名</th>
+                <th>类型</th>
+                <th>单号</th>              
+                <th>提现金额</th>
+                <th>终端</th>
+                <th>提现状态</th>
+                <th>客服</th>
+                <th>存管状态</th> 
+                <th>申请时间</th>
+                <th>审核人</th>
+                <th>审核时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        <volist name="result" id="vo">
+            <tr> 
+                <td>{$vo.phone}</td>
+                <td>{$vo.realName|aes='DECODE'}</td>
+                <td><span class='{$coloArr[$vo[userType]]}'>{$userTypeArr[$vo[userType]]}</span></td>
+                <td>{$vo.orderNO}</td>              
+                <td style="text-align: right">{$vo.cashMoney|formatMoney}</td>
+                <td>{$vo.terminal|formatterminal} </td>
+                <td><switch name="vo.cashStatus" >
+            <case value="0"><span class="text-info">提现初始</span></case>
+            <case value="1"><span class="text-warning">申请中</span></case>
+            <case value="2"><span class="text-success">审核通过</span></case>
+            <case value="3"><span class="text-error">审核不通过</span></case>
+            <case value="4"><span class="text-error">取消提现</span></case>
+            <default />未知
+            </switch></td>
+            <td>{$vo.attendantUserName}</td>
+            <td>{$vo.hxTxt}</td>  
+            <td>{$vo.addDatetime|formatlongDate}</td>
+            <td>{$vo.verifyUserName}</td>
+            <td>{$vo.verifyDatetime|formatlongDate}</td>
+            <td>
+                <a class="btn btn-xs btn-primary pr-10" href="/Backend/Audit/hxCashSelect/key/{$vo.orderNO}" title="查看-详情"  onclick="$win.dialog(this, event)"><span class="icon-search"></span>查看</a>
+            <if condition="($vo[cashStatus] neq 2) and ($vo[hxStatus] eq 1) "> 
+                <a class="btn btn-xs btn-primary pr-10" href="/Backend/Audit/cashSupt/key/{$vo.cashID}" title="补单-提现"  onclick="$win.dialog(this, event)"><span class="icon-search"></span>补单</a>
+            </if>
+            <if condition="($vo[cashStatus] eq 2) and ($vo[hxStatus] eq 1) "> 
+                <a class="btn btn-xs btn-primary pr-10" href="/Backend/Audit/cashRemi/key/{$vo.cashID}" title="补单-退汇"  onclick="$win.dialog(this, event)"><span class="icon-search"></span>退汇</a>
+            </if>
+               <if condition="($ownership eq 1) "> 
+                <a class="btn btn-xs btn-primary pr-10" href="/Backend/Audit/cashRemi/key/{$vo.cashID}" title="补单-退汇"  onclick="$win.dialog(this, event)"><span class="icon-search"></span>退汇</a>
+            </if>
+            
+            </td>               
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <nav class=" pagination-centered">
+        <ul class="pagination">  
+            {$page}
+        </ul>
+    </nav>  
+    <script type="text/javascript" >
+        $(function () {
+            $("#txtTypeID").val("{$Think.post.txtTypeID}");
+            $("#txtStatus").val("{$Think.post.txtStatus}");
+            $("#txtuserType").val("{$Think.post.txtuserType}");
+
+
+            $("#exportData").click(function () {
+                $win.confirm("确定要导出么？").on(function () {
+                    var url = "/Backend/Audit/exportCash";
+                    exportData(url);
+                });
+            });
+
+            function exportData(url) {
+                var emp = getData();
+                $.ajax({
+                    type: "post",
+                    url: url,
+                    data: {"par": emp},
+                    dataType: "json",
+                    beforeSend: function () {
+                        $(".sub-content").showLoading();
+                    },
+                    success: function (data) {
+                        $(".sub-content").hideLoading();
+                        if (data.status == 1) {
+                            $("#dowonload").text("Dowonload");
+                            $("#dowonload").attr("href", data.data);
+                            $win.message(data.msg);
+                        } else {
+                            $win.warn(data.msg);
+                        }
+                    },
+                    complete: function (XMLHttpRequest, textStatus) {
+                        $(".sub-content").hideLoading();
+                    },
+                    error: function () {
+                        $(".sub-content").hideLoading();
+                    }
+                });
+            }
+
+        });
+        function getData() {
+            var emp = new Object();
+            emp.txtrealName = $("#txtrealName").val();
+            emp.txtphone = $("#txtphone").val();
+            emp.txtDateStart = $("#txtDateStart").val();
+            emp.txtDateEnd = $("#txtDateEnd").val();
+            emp.txtStatus = $("#txtStatus").val();
+            emp.orderNO = $("#orderNO").val();
+            emp.txtuserType = $("#txtuserType").val();
+            emp.serviceID = $("#serviceID").val();
+            return emp;
+        }
+    </script>
+</div>
+
+
+

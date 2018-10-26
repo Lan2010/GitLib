@@ -1,0 +1,101 @@
+/*签到*/.sign_box{background-color:#6FD3FC;}
+.sign_box .container{width:1000px;background:none;}
+.quickFlip{height: 208px;/*高度*/width: 190px;/*宽度*/float:left;margin-bottom:30px;box-shadow: 0px 8px 10px 0px #D18305;}
+.sign_icon_box{display:block;width:190px;height:208px;}
+.sign_icon1{background:url(/Public/frontend/images/sign/sign1.png) center center no-repeat;}
+.sign_icon1:hover{background:url(/Public/frontend/images/sign/sign2.png) center center no-repeat;}
+.sign_icon3{background:url(/Public/frontend/images/sign/sign3.png) center center no-repeat;}
+.sign_icon4{background:url(/Public/frontend/images/sign/sign4.png) center center no-repeat;}
+.sian_background1{height:297px;background:url(/Public/frontend/images/sign/sian_background1.png) center top no-repeat;}
+.sian_background2{height:297px;background:url(/Public/frontend/images/sign/sian_background2.png) center top no-repeat;}
+.sian_background3{height:297px;background:url(/Public/frontend/images/sign/sian_background3.png) center top no-repeat;}
+.sian_background4{height:297px;background:url(/Public/frontend/images/sign/sian_background4.png) center top no-repeat;}
+.sian_background5{height:297px;background:url(/Public/frontend/images/sign/sian_background5.png) center top no-repeat;}
+.sian_background6{height:297px;background:url(/Public/frontend/images/sign/sian_background6.png) center top no-repeat;}
+.sian_background7{min-height:297px;background:url(/Public/frontend/images/sign/sian_background7.png) top center no-repeat;}
+.span_content1{min-height:460px;width:100%;background:#FEFCE7;margin-left:0px;}
+.sian_background2 .container{background:#FEFCE5;top:60px;}
+.sian_background4 .container{background:#FEFCE5;top:150px;}
+.sian_background7 .container{top:-200px;}
+.span_content1 .shadow{width: 576px;height:310px;position:absolute;top:130px;left:40px;box-shadow:0 0 2px 2px #efefef;background:#fff;}
+.span_content1 .span_money{width:140px;height:70px;position:absolute;right:-72px;top:13px;z-index:12;background:url(/Public/frontend/images/sign/qiandao-money.png) center center no-repeat;}
+#select #year input{display:none;}
+.calendar select{border:none;font-size:34px;color:#fff;background:#FC9E0A;box-shadow:none;height:45px;font-weight:700;}
+.selectChange select{position:absolute;top:24px;left:410px;z-index:13;font-weight:700;}
+#year .selectChange select{left:278px;z-index:12;}
+#monthPrev{position:absolute;left:218px;border:none;background:#FC9E0A;color:#fff;font-weight:700;font-size:30px;}
+#monthNext{position:absolute;left:515px;border:none;background:#FC9E0A;color:#fff;font-weight:700;font-size:30px;z-index:15;}
+#month .selectChange{width:130px;}
+.sign_next{position:absolute;z-index:16;font-size:18px;color:#FFF;right:125px;top:23px;}
+.sign_next p{line-height:25px;}
+.sign_next p em{color:#980808;margin:0 5px;font-weight:700;}
+.year{display:inline-block;position:absolute;top:22px;left:366px;font-size:34px;font-weight:700;z-index:12;color:#FFF;background: #FC9E0A;padding: 0 6px 2px 2px;}
+.front{display: inline-block;position:absolute;width:25px;height:63px;background:#FC9E0A;left:493px;top:10px;z-index:18;}
+.sign_rule{width:345px;/* min-height:337px;*/position:absolute;top:115px;right:0;}
+.sign_rule_detailed{padding:0 10px 0 30px;}
+.sign_rule_detailed p{line-height:35px;}
+.span_btn{display:inline-block;width:160px;height:90px;text-align:center;line-height:90px;background-color:#FCBB09;position:absolute;z-index:18;color: #fff;font-size:30px;font-weight:700;top:0;left:0}
+.sign_award{background:url(/Public/frontend/images/sign/bluebg.png);opacity:.5 #006DB8;border-radius:20px;padding-bottom:30px;position: absolute;top: 0px;left:0}
+.sign_award h4.text{color:#fff;font-size:24px;padding-left:30px;line-height:60px;}
+.sign_award h4.text em{font-size:40px;color:#FFE953;margin:0 5px;}
+.award_already{color:#FFF;font-size:16px;font-weight:700;margin-top:30px;}
+.award_already em{color:#FFE953;margin:0 5px;}
+.sign_board{background:#FC9E0A;margin:0 30px;}
+.quickFlip_left{margin-left:40px;}
+.quickFlip .sign_icon_box p{text-align:center;color:#FFF;font-size:26px;padding-top:110px;}
+.sian_list{/* position:absolute;top:80px;width:100%;*/padding-bottom:45px;margin: 0 -15px;}
+.sian_list h4.text{text-align:center;font-size:30px;font-weight:700;color:#6391CC;line-height:70px;background-color:#FAEA70;margin-bottom: 0;}
+.sian_list .bs-docs-example table{margin-bottom:0;}
+.sian_list .bs-docs-example table thead th{text-align:center;background:#E5FAFF;font-size:18px;color:#6391CC;padding:0;width:33.33%;height:50px;line-height:50px;}
+.sian_list .bs-docs-example td{padding:0px;height:50px;line-height:50px;border:none;font-size:18px;}
+.sian_list .bs-docs-example tr.white{background:#FFF;}
+.sian_list .bs-docs-example tr.regards{color:#F3513F;}
+.sian_list .bs-docs-example tr.faint_yellow{background:#FEFCE5;}
+.more_list{background-color:#FFF;height:80px;text-align:center;}
+.more_list .more_btn{display:inline-block;width:205px;height:40px;line-height:40px;border-radius:6px;text-align:center;background:#498FCB;box-shadow: 0px 5px 0px 0px #3A7297;color:#FFF;font-size:18px;margin-top:20px;}
+.more_list .more_btn:hover{background-color:#4EA3EB;}
+.more_list .more_btn:active{box-shadow: 0px 2px 0px 0px #3A7297;margin-top:23px;}
+/*===========================签到日历=============================*/
+#wrap{width:582px;margin:10px 0 0 30px;}
+#kalendar{width:574px;border:solid 2px #5AD0FE;margin:0 auto;}
+/* 选择年月 的行*/#kalendar tr#select{height:90px;background:#FC9E0A;z-index:10;position:absolute;top:0;left:15px;width:1000px;}
+#kalendar tr#select td{clear:both;}
+#kalendar tr#select td div{float:left;width:160px;height:30px;line-height:30px;}
+#kalendar tr#select #year,#kalendar tr#select #month{width:135px;padding-left:20px;}
+#select #year ul,#select #month ul{clear:both;}
+#select #year ul li,#select #month ul li{float:left;width:30px;}
+#select #year ul li input,#select #month ul li input{width:30px;height: 60px;line-height:30px;cursor:pointer;top:15px}
+#select #year ul li.selectChange,#select #month ul li.selectChange{width:70px;height:10px;}
+#select #year ul li.selectChange select,#select #month ul li.selectChange select{width:130px;padding-left:2px;cursor:pointer;}
+#select #year ul li.selectChange select option,#select #month ul li.selectChange select option{padding-left:5px;}
+/* 星期表头 的行*//*#kalendar tr#week{height:50px;}*/#kalendar tr#week td ul{display:none;width:574px;clear:both;}
+#kalendar tr#week td ul li{float:left;width:80px;height:0px;line-height:30px;text-align:center;margin-top:-2px;/*border-left:1px solid #dedede;border-right:1px solid #dedede;border-bottom:2px solid #dedede;border-top:1px solid #dedede;background:#FBFBFB;*/}
+/* 某月具体日期 的每�?�?*/#kalendar tr#day ul.dayList{width:574px;overflow: hidden;/*margin:2px auto;*/border-bottom:2px solid #dedede;}
+#kalendar tr#day ul.dayList li{float:left;width:82px;height:55px;line-height:55px;text-align:center;/*margin:0 1px;*/border-left:1px solid #dedede;background:#fff;cursor:pointer;font-weight:700;border-right:1px solid #dedede;}
+/* 日期占用行数(4-6�?)，将不需要显示的行隐�?*/#kalendar tr#day ul.hide{display:none;}
+/* 周末 的特殊样�?*//*#week .weekend,#day .weekend{color:#333;}*//* 下面几个样式注意顺序，�?�择器不能简写，否则日历�? 今天 的样式会被鼠标滑过的样式替换*//* 鼠标经过某个日期 的特殊样�?*/#kalendar tr#day td ul.dayList li.mouseFloat{background:#FFF;}
+/* 当天是周�? 的特殊样�?*/#kalendar tr#day td ul.dayList li.todayWeekend{color:#EA0000;background:#abcdef;font-weight:700;}
+/*签到日期的样�?*/.calendar #kalendar tr#day ul.dayList li.sign_date{background:url(/Public/frontend/images/sign/sign.png) no-repeat center center;}
+/* 当天 还没有签到的特殊样式*/#kalendar tr#day td ul.dayList li.today{background-color:#FEFF99;font-weight:700;}
+/* 当天 已经签到的特殊样�?*/#kalendar tr#day td ul.dayList li.sign_today{background:url(/Public/frontend/Images/sign/sign.png) no-repeat center center;font-weight:700;background-color:#FEFF99;}
+.calendar{width:580px;margin-left:-30px;padding:95px 0 30px 30px;z-index: 2;position: absolute;}
+.calendar #kalendar tr#day ul.dayList li.calendar1{background:#F4F4F4;}
+/*还没有到的日期的样式*/.calendar #kalendar tr#day ul.dayList li.sign_future{color:#D8D4D3;}
+.sign_in{width:580px;background-color:#CCC;margin:20px auto;}
+.sign_in p.time{border-bottom:1px solid #C1C1C1;text-align:center;line-height:40px;font-size:16px;}
+/*.calendar select{padding:0;line-height:25px;height:25px;border:1px solid #ccc;border-radius:0;}*/
+.calendar_modal{width:auto;padding:0;border-radius:0;position: absolute;}
+.calendar_head{height:40px;background-color:#545454;}
+.modal-backdrop, .modal-backdrop.fade.in{opacity: .5;}
+.calendar_head P.text{line-height:40px;}
+.calendar_button{position:absolute;top:22px;}
+.button1{left:77px;}
+.button2{left:211px;}
+.button3{left:382px;}
+.button4{left:510px;}
+.calendar_close{display:inline-block;position:absolute;top:8px;right:8px;width:22px;height:22px;color:#FFF;background:url(/Public/Images/account/close.png) no-repeat center center;border-radius:22px;}
+.calendar_head .close{opacity:.5}
+.calendar_btn .btn2{width:160px;height:45px;margin:20px 0;line-height:45px;font-size:18px;}
+.calendar_grey_btn{background:#B4B5B7;color:#FFF;}
+.calendar_grey_btn:hover{color:#505050;background-color:#eaf3fa;transition:all 0.2S ease-out 0s;}
+.border_none{border:none;}

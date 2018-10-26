@@ -1,0 +1,47 @@
+.product .banner{
+	width: 100%;
+	height: 400px;
+	)
+}
+.product .bg-gray{
+	background: #e3e3e3;
+}
+.product .intro{
+    padding: 4rem 0;
+}
+.product .ico-list{
+    font-size: 16px;
+    padding-left:22px;
+    width:50%;
+    display: inline-block;
+     background: url(/Public/frontend/images/product/pro_12.png) 0 center no-repeat;
+}
+.product .ttz .ico-list{
+    width: 33.33%;
+}
+.product .intro p{		
+	line-height: 2;
+	font-size: 16px;
+	text-align: justify;
+}
+.product .btn{
+    width: 260px;
+}
+.product h2{
+    height: 40px;
+    line-height: 40px;
+}
+.product .ico-qzy{
+    padding-left: 46px;
+    background: url(/Public/frontend/images/product/proicon_04.png) -6px no-repeat;
+}
+.product .ico-ttz{
+    padding-left: 46px;
+    background: url(/Public/frontend/images/product/proicon_01.png) 0 center no-repeat;
+}.product .ico-qcb{
+    padding-left: 46px;
+    background: url(/Public/frontend/images/product/proicon_02.png) 0 center no-repeat;
+}.product .ico-qyx{
+    padding-left: 46px;
+    background: url(/Public/frontend/images/product/proicon_03.png) 0 center no-repeat;
+}

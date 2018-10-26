@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-06-14, 17:06:53
+    Author     : elin
+*/
+/*安全保障*/
+.safety {
+    font-size: 16px;
+    line-height: 1.85;
+}
+.safety .banner{
+    width: 100%;
+    height: 410px;
+}
+.safety .s-nav a{
+    padding: 15px 10px;
+    margin-right: 30px;
+    display: block;
+}
+ 
+.safety .s-nav .active a{
+    border-bottom: 1px solid #F47D30;
+}
+.safety .tit{
+    color: #439be1;
+}
+.safety .section1,.safety .section2,
+.safety .section3,.safety .section4,
+.safety .section5{
+    padding: 30px 0;
+}
+.safety .section1 ul{
+    width: 780px;
+    margin: 0 auto;
+}
+.safety .section1 li{
+    width:346px;
+    display: inline-block;
+    height: 190px;
+    background: #fff;
+    border-radius: 4px;
+}
+.safety .section1 li:first-child {
+	margin-right: 80px;
+}
+.safety .section1 h3{
+    background: #439BE1;
+    padding: 15px 0;
+    margin: 0;
+    color: #fff;
+}
+.safety .section1 p{
+    padding: 20px;
+}
+.safety .section2 .pic{
+    height:225px
+}
+.safety .section2 p{
+    text-align: justify;
+}
+.safety .section5 h3{
+    color: #F47D30;
+}
+.safety .cont-matter li{
+    padding-left: 30px;
+    background: url(/Public/frontend/images/safety/safety_18.png) no-repeat 4px center;
+    line-height: 40px;
+}
+.safety .bg-blue{
+    background: #edf4fa;
+}
+.safety .btn{
+    background: #429adf;
+    padding: 10px 100px;
+    font-size: 28px;
+    box-shadow: 0 6px 0 #0a80dc;
+}

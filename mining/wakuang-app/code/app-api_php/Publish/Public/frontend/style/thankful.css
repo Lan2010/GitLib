@@ -1,0 +1,285 @@
+.thankful .banner{
+	width: 100%;
+	background:url(/Public/frontend/images/thankful/5year_02.jpg) center 0 no-repeat;
+	height: 542px;
+	)
+}
+.thankful h1{
+	width: 100%;
+	height: 66px;
+}
+.thankful .tit1{
+	background:url(/Public/frontend/images/thankful/thankful_05.jpg) center center no-repeat;
+}
+.thankful .tit2{
+	background:url(/Public/frontend/images/thankful/thankful_17.jpg) center center no-repeat;
+}
+.thankful .tit3{
+	background:url(/Public/frontend/images/thankful/thankful_20.jpg) center center no-repeat;
+}
+.thankful .tit4{
+	background:url(/Public/frontend/images/thankful/thankful_43.jpg) center center no-repeat;
+}
+.thankful p{
+	text-indent: 2em;
+	margin-bottom: 10px;
+	
+}.thankful .text-warning{
+	color: #ffff7a;
+}
+.bg-black{
+	background: #282626;
+}
+.bg-red{
+	background: #ee4d4d url(/Public/frontend/images/thankful/trangle.png) center bottom no-repeat; ;
+	color: #fff;
+	padding-bottom: 60px;
+}
+.thankful .bg-gray{
+	background: #f0f0f0;
+}
+.text-danger{
+	color: #ee4d4d;
+}
+.thankful .container{
+	width: 1020px;
+}
+.thankful dd,.thankful dt{
+	float: left;
+	text-align: left;
+	font-weight: 500;
+}
+.thankful dt{
+	padding-right: 15px;
+}
+.thankful .leftbox img{
+	width:675px;
+	height:382px;
+	display: block;
+}
+.thankful .rightbox{
+	width:290px;
+height:382px;
+}
+.bord{
+	border:1px solid #dcdcdc;
+}
+.thankful .dropup{
+	cursor: pointer;
+}
+.thankful .dropup .dropdown-menu {
+    top: auto;
+    bottom: 90%;
+    margin-bottom: 2px;
+}
+.pl-80{
+	padding-left: 80px;
+}
+.thankful .dropdown-menu{
+	top:45px;
+	left:8px;
+	min-width:100px;
+}
+
+.home-goods-list>.row{
+	width: 100%;
+	margin: 30px auto;
+}
+.home-goods-list a{
+	display: block;
+	cursor: pointer;
+}
+.home-goods-list img{
+	width: 100%;
+}
+.home-goods-list img:hover{
+	-webkit-transform:scale(1.01) ; 
+-moz-transform:scale(1.01); 
+-o-transform:scale(1.01) ; 
+
+}
+.home-goods-list .picScroll-left .bd{
+	height: 200px;
+	overflow: hidden;
+}
+.home-goods-list .picScroll-left .bd li{
+	width: 292px;
+	padding: 10px;
+}
+.home-goods-list .picScroll-left .bd li:nth-of-type(3n+1){
+	padding-left: 0;
+}
+.home-goods-list .col-xs-8{
+	
+	height:374px;
+	overflow: hidden;
+}
+.next,.prev {
+    display: block;
+    position: absolute;
+    width: 20px;
+    top: 80px;
+    right: -40px;
+    z-index: 2;
+    cursor: pointer;
+}
+.prev {
+    left: -40px;
+}
+/*base*/
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+ *zoom: 1;
+}
+/*----------相册------------*/
+/*main*/
+
+.imgUl {
+	position: relative;
+	width:2500px;
+}
+.box {
+	width: 100%;
+	
+	overflow: hidden;
+}
+.detailImg{
+	z-index: 100;
+	width: 700px;
+	margin: 80px auto;
+}
+.detailImg,
+.smallImg {
+	position: relative;
+}
+/*detailImg*/
+#detailImg-box {
+	min-height: 200px;
+	
+}
+.detailImg {
+	text-align: center;
+}
+.detailImg img {
+ width: 700px;
+}
+.detailImg p {
+	text-align: left;
+	color: #999;
+}
+#detailImg-pre,
+#detailImg-next {
+	position: absolute;
+	width: 30px;
+	height: 60px;
+	top: 50%;
+	margin-top: :-30px;
+	background: url(/Public/frontend/images/about/next.png) 0 0 no-repeat;
+	cursor: pointer;
+	text-indent:-9999px;
+}
+#detailImg-pre {
+	left: -40px;
+	background: url(/Public/frontend/images/about/prev.png) 0 0 no-repeat;
+}
+#detailImg-next {
+	right: -45px;
+	
+}
+#myModal .close{
+	line-height: .8;
+	font-size: 42px;
+font-weight: 300;
+	color:#666;
+	padding: 0 12px;
+	opacity: .68;
+	background: #fff;
+}
+#myModal .close:hover{
+	opacity: 1;
+}
+.hide{display: none;}
+/*smallImg*/
+#smallImg-box {
+	height: 182px;
+}
+.smallImg ul{
+	margin-left: -20px;
+}
+.smallImg li {
+	float: left;
+	width: 292px;
+	margin-left: 20px;
+}
+.smallImg li a {
+	display: block;
+	width: 292px;
+	height: auto;
+	overflow: hidden;
+	vertical-align: middle;
+	margin: 5px auto;
+}
+.smallImg img {
+ width:292px;;
+}
+.smallImg li a:hover,
+.smallImg .cur a {
+	border-color: #F45E5E;
+}
+#smallImg-pre,
+#smallImg-next {
+	position: absolute;
+	top: 50%;
+	height: 60px;
+	width: 28px;
+	margin-top: -30px;
+	background: url(/Public/frontend/images/about/next.png) 0 0 no-repeat;
+	cursor: pointer;
+	opacity: .8;
+}
+#smallImg-pre {
+	background: url(/Public/frontend/images/about/prev.png) 0 0 no-repeat;
+	left: -88px;
+}
+#smallImg-next {
+	right: -92px;
+	
+}
+#smallImg-pre:hover {
+	opacity: 1;
+}
+#smallImg-next:hover {
+	
+}
+/*superbox*/
+#preview{
+	position:fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	border:1px solid #ccc;background:rgba(0,0,0,0);padding:5px;display:none;color:#fff;
+	
+	}
+#preview img{
+	max-width: 730px;
+	margin: 80px auto;
+	display: block;
+	border: 6px solid #fff;
+	box-shadow: 0 0 5px #333;
+}
+

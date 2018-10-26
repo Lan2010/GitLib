@@ -1,0 +1,273 @@
+.salon{
+   
+    background: #fff;
+    line-height: 1.65;
+}
+.salon .banner{
+    width: 100%;
+    background:url(/Public/frontend/images/salon/bbanner.jpg) center 0 no-repeat;
+    height: 396px;
+}
+.breif .banner{
+    background:url(/Public/frontend/images/salon/cbanner.jpg) center 0 no-repeat;
+}
+.salon .container{
+    width:1190px;
+}
+.salon .nav{
+    overflow: hidden;
+}
+.salon .nav li{
+    float:left;
+    line-height: 80px;
+    padding-left: 1px;
+}
+.salon .nav-bg{
+    margin-top: -16px;
+    width: 100%;
+    background:url(/Public/frontend/images/salon/salon_03.png) center 0 no-repeat;
+}
+.salon .nav{
+    padding: 0 35px;
+}
+.salon .nav a,.salon .nav a:hover {
+    font:  18px/58px 'Microsoft YaHei';
+    color: #fff;
+    padding: 0 25px;
+    
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: underline;
+    background:none;
+}
+.salon .bigbox{
+    width:860px;
+}
+#item1 .smallbox{
+    width: 270px;
+}
+#item2 .smallbox{
+    width: 324px;
+}
+#item2 h4{
+    font-size: 16px;
+    margin: 6px 0;
+}
+.salon .more{
+    font: bold 16px/34px arial;
+    color: #444;
+}
+.salon .bgswf img,.smswf img{
+    width: 100%;
+}
+.salon .bgswf{
+    width: 68%;
+    height: 420px;
+    overflow: hidden;
+}
+.salon .bgswf img{
+    height: 420px;
+}
+.salon .smswf{
+    width: 32%;
+   
+}.salon .smswf img{
+    height: 205px;
+}
+#item4 .pull-left{
+    width: 818px;
+}
+.salon .news h4{
+    color: #666;
+    font-size: 16px;
+    line-height:23px;
+}
+.partner img{
+    width: 100%;
+}
+.salon .news p{
+
+    line-height: 1.65;
+   text-align: right;
+}
+.salon .news img{
+    display: block;
+    width: 100%;
+}
+.salon .f-tit{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    background:rgba(0,0,0,.57);
+    padding: 10px;
+    color: #fff;
+   
+}
+.salon .news .f-tit{
+    font-size: 16px;
+}
+
+.salon .tit{
+    display: inline-block;
+   border-bottom: 1px solid #406dff; 
+  padding-bottom: 8px;
+  margin: 0;
+  color: #333;
+}
+.salon .fc-light{
+    color: #a68a21;
+}
+.bg-blue{
+    background: #e6f0f9;
+}
+.salon .ztyj .qb{
+    width:850px;
+    
+    overflow: auto;
+    
+   
+}
+.salon .ztyj a{
+    display: block;
+}
+.salon .ztyj p{
+    width:100%;
+    
+    line-height: 2.2;
+}.salon .jzwd img{
+    margin-left: -135px;
+    margin-top:35px
+}
+.salon .jzwd .bord{
+    width: 1035px;
+    margin-left: 135px;
+    border-radius: 8px;
+}
+.salon p{
+    margin-bottom: 10px;
+}
+.salon .jzbg{
+    width:835px;
+    padding: 10px;
+    padding-left: 65px;
+    height:341px;
+    overflow-y: auto;
+    color: #333;
+   background: url(/Public/frontend/images/salon/salon_49.jpg) 0 0 no-repeat;
+}
+
+/*superbox*/
+#preview{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border:1px solid #ccc;background:rgba(0,0,0,0);padding:5px;display:none;color:#fff;
+    
+    }
+#preview img{
+    width: 600px;
+    margin: 80px auto;
+    display: block;
+    border: 6px solid #fff;
+    box-shadow: 0 0 5px #333;
+}
+
+
+.home-goods-list a{
+    display: block;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.home-goods-list .row img{
+    width: 100%;
+}
+.home-goods-list .col-xs-4{
+    padding:  10px;
+}
+.home-goods-list .row img:hover{
+    -webkit-transform:scale(1.01) ; 
+-moz-transform:scale(1.01); 
+-o-transform:scale(1.01) ; 
+
+}
+.home-goods-list .picScroll-left .bd{
+    height: 200px;
+    overflow: hidden;
+}
+.home-goods-list .picScroll-left .bd li{
+    width: 292px;
+    padding: 10px;
+}
+.home-goods-list .picScroll-left .bd li:nth-of-type(3n+1){
+    padding-left: 0;
+}
+.home-goods-list .col-xs-8{
+    
+    height:374px;
+    overflow: hidden;
+}
+
+.jdqhz .row{
+    padding: 60px 0;
+}
+.block{
+    display: block;
+}
+.salon .jdqhz font{
+    color: #333;
+}
+.salon .jdqhz p{
+    margin:10px 0
+}
+.salon .jdqhz .row li{
+    float: left;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.salon .media-list{
+   
+    overflow: auto;
+    line-height: 2.5;
+    
+    
+}
+
+.media-list span{
+    float: right;
+    color: #a99136;
+   
+    font: 14px/30px Arial;
+}
+
+/* 本例子slide */
+        .salon .picScroll-left{ overflow:hidden; position:relative; width:100%  }
+        .salon .picScroll-left .hd{ position: absolute;top:50%;left:0;width:100%;  height:60px; margin-top: -15px; overflow: hidden; }
+        .salon .picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:20px; height:30px; float:left;    overflow:hidden;
+             cursor:pointer;
+             background: url(/Public/frontend/images/salon/prev.png) 0 center no-repeat; }
+        .salon .picScroll-left .hd .next{float:right;background: url(/Public/frontend/images/salon/next.png) 0 center no-repeat; }
+        
+        
+        .salon .picScroll-left .bd{ padding:20px 0; height:230px;overflow:hidden; width:94%;margin:10px auto;}
+        .salon .picScroll-left .bd ul{zoom: 1; }
+     .salon .picScroll-left .bd ul li{ position:relative;margin:0 10px; float:left; _display:inline; overflow:hidden; text-align:center; width:200px;  }
+        .salon .picScroll-left .bd ul li .pic{ text-align:center;width:100%;  }
+        .salon .picScroll-left .bd ul li .pic img{ width:100%; height:160px; display:block; }
+        /*slidebox*/
+        .slideBox{ width:100%; height:368px; overflow:hidden; position:relative;  }
+        .slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:5px; bottom:13px; z-index:1; }
+        .slideBox .hd ul{ overflow:hidden; zoom:1; float:left;  }
+        .slideBox .hd ul li{ float:left; margin-right:5px;  width:10px; height:10px; line-height:15px; text-align:center; background:#fff; cursor:pointer; border-radius: 5px;}
+        .slideBox .hd ul li.on{ background:#3865f8; color:#fff; }
+        .slideBox .bd{ position:relative; height:100%; z-index:0;   }
+        .slideBox .bd li{ zoom:1; vertical-align:middle; }
+        .slideBox .bd img{ width:100%;  display:block;  }
+       
+      

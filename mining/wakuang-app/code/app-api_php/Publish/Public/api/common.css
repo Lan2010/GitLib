@@ -1,0 +1,48 @@
+.main-left {float:left; width:300px;}
+.main-right{margin-left:310px; }
+select {min-height: 21px;}
+.left, .right {
+    border: solid 1px gray;
+    padding: 10px;
+    min-height: 90%;
+    position: relative;
+}
+
+.item {
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.item-list .item .label {
+    float: left;
+    width: 100px;
+}
+
+.item-list .item .control {
+    margin-left: 110px;
+    position: relative;
+}
+
+.control input {
+    width: 100%
+}
+.require-red:after { content: "*";color:red }
+
+.full-height { position: relative;}
+.col9 {float:left; width: 75%; height: 100%; }
+.col8 {float:left; width: 66%; height: 100%; }
+.col7 {float:left; width: 58%; height: 100%; }
+.col6 {float:left; width: 50%; height: 100%; }
+.col5 {float:left; width: 42%; height: 100%; }
+.col4 {float:left; width: 34%; height: 100%; }
+.col3 {float:left; width: 25%; height: 100%; }
+
+.clearfix:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0;
+}

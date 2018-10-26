@@ -1,0 +1,53 @@
+<div id="sub-User-list">
+    <script type="text/javascript" src="{$Think.BPATH}js/datejs/WdatePicker.js"></script> 
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME, $_GET)}">
+    <h4 class="title">状态切换</h4>
+    <form class="form-inline" id="query_log"> 
+
+        <div class="form-group">
+            <input type="button"   onclick="btn({$value})"  class="btn btn-info" value='<if condition="$value eq 1">关闭审核<else />开启审核</if>' />
+        </div>
+        </form>
+    <script>
+        function btn(value) {
+            if (value == 1) {  //代表开启
+                value = 0;
+            } else {
+                value = 1;
+            }
+            $.ajax({
+                type: "post",
+                url: "/Backend/Index/changeStatus",
+                data: {'value': value},
+                dataType: "json",
+                beforeSend: function() {
+                    $(".sub-content").showLoading();
+                },
+                success: function(data) {
+                    $(".sub-content").hideLoading();
+                    if (data.status == 1) {
+                        $("#shareID").val(data.data);
+                        $("#hidAction").val("edit");
+                        $win.confirm(data.msg + ",是否关闭窗口？").on(function() {
+                            var va = $('.butReturn').trigger("click");
+                            if(va) {
+                                window.location.reload();
+                            }
+                        });
+                    } else {
+                        $win.warn(data.msg);
+                    }
+                },
+                complete: function() {
+                    $(".sub-content").hideLoading();
+                },
+                error: function() {
+                    $(".sub-content").hideLoading();
+                }
+            });
+        }
+    </script>
+</div>
+
+
+

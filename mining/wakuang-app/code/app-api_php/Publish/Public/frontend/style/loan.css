@@ -1,0 +1,148 @@
+/*---------------我要借款-------------*/
+.loan{font-size: 14px;}
+.loan h4{
+    line-height: 2;
+}
+.loan .banner{height: 410px;width: 100%;background:#ffe95f url(/Public/frontend/images/loan/banner.png) center top no-repeat;}
+.loan .hide-p{height:30px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.loan .hide-p:hover{text-overflow:clip;white-space:normal;text-align: justify;height:auto }
+.loan .data{overflow: hidden;width: 100%;line-height: 50px;color:#4ba6ec;}
+.loan .data b{font-size: 18px;font-weight: bold;}
+.loan .advantages ul{width: 100%;overflow: hidden;}
+.loan .advantages li{float:left;width:25%;}
+.loan .advantages1,.loan .advantages2,.loan .advantages3,.loan .advantages4{width:142px;height:142px;margin:10px auto;}
+.loan .advantages1{background:url(/Public/frontend/images/loan/mkd_icon1.png) top no-repeat;}
+.loan .advantages2{background:url(/Public/frontend/images/loan/edd_icon1.png) top no-repeat;}
+.loan .advantages3{background:url(/Public/frontend/images/loan/fkk_icon1.png) top no-repeat;}
+.loan .advantages4{background:url(/Public/frontend/images/loan/fld_icon1.png) top no-repeat;}
+.loan .advantages1:hover{background:url(/Public/frontend/images/loan/mkd_icon.png) no-repeat;}
+.loan .advantages2:hover{background:url(/Public/frontend/images/loan/edd_icon.png) no-repeat;}
+.loan .advantages3:hover{background:url(/Public/frontend/images/loan/fkk_icon.png) no-repeat;}
+.loan .advantages4:hover{background:url(/Public/frontend/images/loan/fld_icon.png) no-repeat;}
+.loan .advantages h1{color:#535353;font-size:21px;font-weight: 600;line-height: 2;}
+.loan .advantages p{line-height: 26px;font-size: 18px;}
+.loan .process p {font-size: 18px;}
+.loan .process span {margin: 15px 100px;}
+.loan .tit{background:url(/Public/frontend/images/loan/stepbg.png) center top repeat-x ;margin-top: 30px;padding: 0 30px;}
+.loan .tit a{color:#c2c2c2;display: inline-block;width: 154px;text-align: center;line-height: 80px;padding-top:12px; background:url(/Public/frontend/images/loan/step_a.png) center top no-repeat;font-size: 18px;font-weight:bold;}
+.loan .tit a.on,.loan .tit a:hover{ background:url(/Public/frontend/images/loan/step_on.png) center top no-repeat;color:#fd9145}
+.loan .tit.step-2{ background-position: 0 -138px;}
+.loan .tit.step-3{ background-position: 0 -275px;}
+.loan .tit.step-4{ background-position: 0 -415px;}
+.loan .tit.step-5{ background-position: 0 -553px;}
+.loan .tit.step-6{ background-position: 0 -692px;}
+.loan .tip-top{width: 820px;margin:20px auto;padding-right:80px;margin-bottom: 40px;line-height: 26px;}
+.qselect,.tselect,input,.wselect{color: #333;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 3px;
+    width:380px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+}
+.qselect:hover,input:hover {
+	background: #f6f6f6;
+}
+.qselect:focus,.tselect:focus,input:focus,.wselect:focus {
+	outline: none;
+	border: 1px solid #639ad2;
+}
+input[type="checkbox"], input[type="radio"]{
+    height: 20px;width:20px;
+    vertical-align: middle;
+}
+.loan th,.loan td{padding-bottom: 20px;line-height: 30px;
+position: relative;}
+.loan .input-relative{width:382px;position: relative;}
+.loan .add-on{position: absolute;right:8px;top:0;line-height: 40px;}
+.loan th {width: 360px;text-align: right;
+    padding-right: 10px;}
+.loan .success{margin-bottom:-20px;margin-right:10px;display:inline-block;width: 74px;height: 72px; background: url(/Public/frontend/images/icon-reg.png) -14px 0 no-repeat;}
+.loan p{font-size: 14px;}
+.loan .b{font-weight: bold;}
+.loan h1{font-size: 30px;} 
+.loan .car{width: 100%;overflow: hidden;}
+.loan .car>.fr{width: 865px;}
+.loan .car p{line-height: 26px;font-size:16px;margin: 0;letter-spacing: 3px;}
+.loan .intro{font-size:14px;color:#666;line-height: 30px;}
+.loan .intro b{color: #ff8423; font-size:18px;font-weight: 500;}
+.loan .intro .fr{width: 438px;padding:30px 0;text-align: justify;}
+.loan .qabox{padding: 30px 20px;margin-top: 30px;}
+.loan .qa{height:110px;padding-top:20px;padding-left:60px;background: url(/Public/frontend/images/loan/loan22.png) 20px 24px no-repeat;}
+.loan .qa .hd{font-size: 16px;color: #333; line-height: 36px;}
+.loan .upload_contain .hd{text-align: center; background:#d8d8d8;color:#333;line-height: 30px;}
+.loan .upload_contain .hd.review{background: #46cfc1;}
+.loan .upload_contain .hd.passed{background: #f47d30;color: #fff;}
+.loan .upload_contain{margin-left: -30px;}
+.loan .thumbnail{border-top: none;border-radius:0 0 2px 2px}
+.loan .upload_contain li{display: inline-block;margin:20px 30px;}
+/*贷款产品*/
+.loan .bsb,.bcb {width: 360px;height: 480px;border-radius: 10px;position: relative;margin: 0 100px;}
+.loan .cover {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
+    z-index: 2;
+    color: #fff;
+    overflow: hidden;
+}
+.loan .cover p {font-size: 15px;text-align: justify;line-height: 23px;letter-spacing: 0;}
+.loan .bsb:hover .cover {display: block;}
+.loan .bcb:hover .cover {display: block;}
+/*---------借款弹出层----------*/
+.loan .modal{padding: 0;border-radius: 4px;width: 560px;}
+.loan .modal h2{line-height: 30px;}
+.loan .modal ul{overflow: hidden;width: 100%}
+.loan .modal li{float: left;}
+.loan .modal .picboxs{width: 420px;height: auto;}
+.loan .modal-header{background: #F47D30;}
+.loan .modal-header h3{color:#fff}
+.loan .modal-header button.close{background: url(/Public/frontend/images/loan/close.png) center top no-repeat;width: 22px;height: 22px;opacity: 1;}
+.loan .uppic{width: 160px;height: 92px;position: relative;margin-right: 50px;}
+.loan .delete{position: absolute;right: 0;top: 0;width:18px;height: 18px;background: url(/Public/frontend/images/loan/delete.png) top right no-repeat;}
+/*---------借款-样板示例----------*/
+.loan .tip1,.loan .tip2,.loan .tip3,.loan .tip4,.loan .tip5{width:50px;height:30px;background:url(/Public/frontend/images/loan/usmall.jpg) center 0px no-repeat; margin: 5px 0;}
+.loan .tip1-pic,.loan .tip2-pic,.loan .tip3-pic,.loan .tip4-pic,.loan .tip5-pic{position: fixed;width: 440px;height:260px;top:30%;left:50%;margin-left: 170px;display: none;}
+.loan .tip1-pic img,.loan .tip2-pic img,.loan .tip3-pic img,.loan .tip4-pic img,.loan .tip5-pic img{display: block;margin: 0 auto;}
+/*--------上传图片按钮----------*/
+.upfilebox {
+                position: relative;
+                margin-bottom: 10px;
+}
+.upfilebox input {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    z-index: 9;
+    opacity: 0;
+}
+.upfilebox label {
+    position: absolute;
+    background: #66cccc;
+    display: inline-block;
+    color: #fff;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+}
+/*计算器*/
+.caculator{padding: 60px 100px 0;}
+.caculator .wselect,.caculator input {width: 300px;}
+.caculator .add-on {top:3px}
+.caculator .btn-default-empty {border: 1px solid #eaeaea;background: #fff;color: #777;}
+.computeArea {padding: 0 100px;}
+.computeArea th,.computeArea td {text-align: center;}
+.interestWay {padding: 60px 100px 40px;}
+.interestWay li {line-height: 36px;}
+/*广告图*/
+.sk_login_ad{position: absolute;top: 9%;right: 6%;}
+.sk_login_ad img{width: 380px;height: 325px;}

@@ -1,0 +1,119 @@
+.mall .sidebar li{
+    transition: all .3s ease-in;
+}
+.mall .sidebar li:hover{
+    padding-left: 40px;
+    padding-right: 20px;
+}
+.mall .rbox{
+    height: 330px;
+    border-radius: 8px;
+}
+.mall .rbox .tline ul.clearfix {border-top:  1px dashed #dcdcdc;}
+.mall .rbox .tline .btn.btn-primary{
+    margin-top: 102px;
+}
+.mall .rbox .tline .btn.btn-empty {border: 1px solid #dcdcdc;color: #ff8423;font-size: 14px;padding:5px 10px;box-shadow: none;}
+.mall .rbox li{
+    width: 38%;
+    text-align: center;
+}
+.mall .rbox li p{
+    margin-bottom: 10px;
+    color: #999;
+}
+.mall .content .tit{
+    line-height: 30px;
+}
+.mall ul.clearfix {border-radius: 6px;}
+.mall ul.clearfix li:last-child {border-right: none;}
+.mall li img{
+    width: 220px;
+    height: 220px;
+}
+.mall .content li .on{
+    border-color: #F47D30;
+}
+.quantity>div{display:inline-block;border:1px solid #ddd;height:30px;}
+.quantity .subtract,.quantity .plus{display:inline-block;width:30px;height:28px;vertical-align:top;font-size: 24px;text-align: center;line-height: 26px;}
+.quantity input.input{width:60px;height:28px;padding:0;border-radius:0;background:#FFF;text-align:center;border:1px solid #ddd;border-top:0px;border-bottom:0px;margin-bottom:0px;
+box-shadow: none;}
+.mall .detail p{
+    margin-bottom: 25px;
+}
+.mall .detail form{
+    font-size: 16px;
+    
+}
+.mall .detail form h4{
+    font-size: 20px;
+}
+.shoppic img{
+    display: block;
+    width: 320px;
+}
+.mall .address li{
+    
+    margin-top: 10px ;
+}
+.mall .address li .bord{
+    height: 156px;
+}
+.mall .gift-menu{
+    width: 100%;
+    height:120px;
+    vertical-align: middle;
+}
+.mall .gift-menu img{
+    display: block;
+    width: 88px;
+    padding: 5px;
+}
+.mall .address .plus{
+    font-size: 96px;
+    font-weight: 200;
+    margin: auto auto;
+    line-height: 115px;
+  
+}
+.mall .gift-menu tr:nth-child(2) td {
+    height: 150px;
+}
+.mall .gift-menu .giftpic{
+    width:100px;
+    height: 100px;
+}
+.mall .gift-menu .giftname{
+    line-height: 100px;
+}
+.mall .adr{
+    height: 45px;line-height: 20px;
+  word-break: break-all;
+}
+.mall .remark {
+    background: #fef6f1;
+}
+.mall .remark .remarkBox {
+    width: 100%;
+}
+.mall .sprit {
+    display: inline-block;
+    width: 15px;
+    text-align: center;
+}
+.mall .day,.mall .hour,.mall .minute,.mall .second {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+    border: 1px solid #dcdcdc;
+}
+.integral_modal{width:465px;margin:100px auto ;}
+.integral_content1{width:147px;min-height:215px;margin-left:-110px;margin-top:55px;background:url(/Public/Images/beauty.png) no-repeat center center;}
+.integral_content2{padding:20px;margin-right:-85px;width:420px;}
+.integral_content2 h4.text{font-size:24px;}
+.integral_content2 a.close{display:inline-block;width:22px;height:22px;opacity: .9;padding-right:10px;background:url(../Images/account/close.png) center center no-repeat;}
+.ticket_modal .integral_content2{padding:0px;width:450px;}

@@ -1,0 +1,176 @@
+<div id="sub-banner-edit">
+    <script type="text/javascript" src="{$Think.BPATH}js/article/ueditor.config.js?version={$Think.BNO}" ></script>    
+    <h4 class="title">编辑-用户注册来源</h4>   
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <form class="form-horizontal" id="form-source">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">基本信息</a></li>
+        </ul>
+        <input type="hidden" id="sourceID" name="sourceID" value="{$data.sourceID}">
+        <input type="hidden" id="urlCode" name="urlCode" value="{$data.urlCode}">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home" style="position: relative;">
+                <div class="form-group  has-info pt-10">
+                    <label class="col-sm-1 control-label" >来源名称：</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="name" placeholder="用户来源名称" name="name" value="{$data.name}">
+                    </div>
+                </div>
+                <div class="form-group  has-info pt-10">
+                    <label class="col-sm-1 control-label" >投放源：</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" id="media" placeholder="投放源" name="media" value="{$data.media}">
+                    </div>
+                </div>
+                <div class="form-group has-info">
+                    <label class="col-sm-1 control-label" for="inputInfo">链接URL：</label>
+                    <div class="col-sm-4">
+                        <input type="text" id="linkUrl" name="linkUrl" value="{$data.linkUrl}" class="form-control" placeholder="推广链接，如：http://www.qianhezi.cn/Wechat/User/bmreg" disabled="disabled">   
+                    </div>
+                </div>
+                <eq name="data.isOutside"  value="1">
+                <div class="form-group urldiv">
+                    <label class="col-sm-1 control-label" for="inputInfo">推广链接：</label>
+                    <div class="col-sm-4">
+                        <label class="control-label urlCode" >{$data.linkUrl}/origin/{$data.urlCode}</label>
+                    </div>
+                </div>
+                </eq>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="inputInfo">站外推广：</label>
+                    <div class="col-sm-4">
+                        <label class="checkbox">
+                            <input type="checkbox" name="isOutside" id="isOutside" <eq name="data.isOutside"  value="1">checked</eq>>
+                            <span class="lbl"> </span>      
+                            <span style="color: red;">(站外推广，勾选此项。)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" >状态：</label>
+                    <div class="col-sm-4">
+                        <select name="status" id="status"  class="form-control">
+                            <option value="1" <eq name="data['status']" value="1">selected='selected'</eq>>启用</option>
+                            <option value="0">停用</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="inputInfo">备注：</label>
+                    <div class="col-sm-4">
+                        <textarea name="remark" id="remark" rows="3" cols="60" class="form-control">{$data.remark} </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-1 control-label" ></label>
+            <div class="col-sm-4">      
+                <a class="btn btn-primary mt_10 butSaveSource" href="javascript:;">保存</a>  
+                <a class="btn btn-info mt_10 butReturn" href="javascript:;">返回</a> 
+            </div>
+        </div>   
+    </form>
+    <script type="text/javascript" >
+        $(function() {
+            $(".butReturn").click(function() {
+                $Util.returnRefresh();
+            });
+            sourcevalid();
+
+            $("#isOutside").bind("click", function() {
+                changeIsOutside();
+            });
+            changeIsOutside();
+
+            $(".butSaveSource").click(function() {
+                var isOK = $("#form-source").valid();
+                if (isOK) {
+                    saveSource();
+                }
+            });
+
+            $("#linkUrl").on("input propertychange", function() {
+                if (!$("#linkUrl").valid()) {
+                    return;
+                }
+                var url = $("#linkUrl").val();
+                $(".urldiv label[class*='urlCode']").html(url + "/origin/" + $("#urlCode").val());
+            });
+        });
+
+        function changeIsOutside() {
+            if ($("#isOutside").prop('checked')) {
+                $("#linkUrl").removeAttr("disabled");
+                $("#linkUrl").rules("add",
+                        {
+                            required: true,
+                            url: true,
+                            messages: {
+                                required: "请输入URL地址",
+                                url: "请输入有效的URL地址"
+                            }
+                        });
+                if ($("#urlCode").val() != "") {
+                    $("div [class*='urldiv']").show();
+                }
+            } else {
+                $("#linkUrl").val("");
+                $("#form-source").validate().resetForm();
+                $("#linkUrl").attr("disabled", "disabled");
+                $("#linkUrl").rules("remove");
+                $("div [class*='urldiv']").hide();
+            }
+        }
+
+        function saveSource() {
+            var data = $Util.getData($("#form-source"));
+            $.ajax({
+                type: "post",
+                url: "/Backend/User/saveSource",
+                data: {'par': data},
+                dataType: "json",
+                beforeSend: function() {
+                    $(".sub-content").showLoading();
+                },
+                success: function(data, textStatus) {
+                    $(".sub-content").hideLoading();
+                    if (data.status == 1) {
+                        $("#sourceID").val(data.data);
+                        $("#hidAction").val("edit");
+                        $win.confirm(data.msg + ",是否关闭窗口？").on(function() {
+                            $('.butReturn').trigger("click");
+                        });
+                    } else {
+                        $win.warn(data.msg);
+                    }
+                },
+                complete: function() {
+                    $(".sub-content").hideLoading();
+                },
+                error: function() {
+                    $(".sub-content").hideLoading();
+                }
+            });
+        }
+        function sourcevalid() {
+            $.validator.addMethod("chkUrl", function(value, element) {
+                var url = $("#linkUrl").val();
+                if (url.slice(-7) == "/origin" || url.slice(-1) == "/") {
+                    return false;
+                } else {
+                    return true;
+                }
+            }, "不能以(/origin)结尾 或(/)结尾");
+            $("#form-source").validate({
+                rules: {
+                    name: {required: true, maxlength: 30},
+                    linkUrl: {chkUrl: true}
+                },
+                messages: {
+                    name: {required: "来源名称不能为空!", maxlength: "最大长度30个字符"}
+                }
+            });
+        }
+    </script>
+</div>

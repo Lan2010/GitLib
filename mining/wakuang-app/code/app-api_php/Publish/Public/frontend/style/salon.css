@@ -1,0 +1,232 @@
+.salon{
+   
+    background: #fff;
+    line-height: 30px;
+}
+.salon .banner{
+    width: 100%;
+    background:url(/Public/frontend/images/salon/banner.jpg) center 0 no-repeat;
+    height: 396px;
+}
+.salon .container{
+    width:1220px;
+}
+.salon .nav{
+    overflow: hidden;
+}
+.salon .nav li{
+    float:left;
+    line-height: 80px;
+    padding: 0 20px;
+}
+.salon .nav-bg{
+    margin-top: -16px;
+    width: 100%;
+    background:url(/Public/frontend/images/salon/salon_03.png) center 0 no-repeat;
+}
+.salon .nav{
+    padding: 0 45px;
+}
+.salon .nav a,.salon .nav a:hover {
+    font: bold 19px/58px arial;
+    color: #fff;
+    padding: 0 25px;
+    
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: underline;
+    background:none;
+}
+.salon .bigbox{
+    width:766px;
+}
+.salon .smallbox{
+    width: 360px;
+}
+.salon .smallbox p{
+    text-indent: 2em;
+}
+.salon .more{
+    font: bold 16px/34px arial;
+    color: #444;
+}
+.salon .tit1{
+    height: 32px;
+    background: url(/Public/frontend/images/salon/salon_07.jpg) center 0 no-repeat;;
+}
+.salon .tit2{
+    height: 32px;
+    background: url(/Public/frontend/images/salon/salon_09.jpg) center 0 no-repeat;;
+}
+.salon .tit3{
+    height: 32px;
+    background: url(/Public/frontend/images/salon/salon_20.jpg) center 0 no-repeat;;
+}
+.salon .tit4{
+    height: 32px;
+    background: url(/Public/frontend/images/salon/salon_25.jpg) center 0 no-repeat;;
+}
+.salon .tit5{
+    height: 32px;
+    background: url(/Public/frontend/images/salon/salon_27.jpg) center 0 no-repeat;;
+}
+.salon .tit6{
+    height: 32px;
+    background: url(/Public/frontend/images/salon/salon_35.png) center 0 no-repeat;;
+}
+
+.salon .tit10{
+    height: 38px;
+    background: #a99136 url(/Public/frontend/images/salon/salon_60.jpg) center 0 no-repeat;
+}
+.salon .news h3{
+    color: #a68a21;
+    font: bold 17px/34px arial;
+}
+.salon .news li{
+    
+}
+.salon .news p{
+    width:542px;
+    line-height: 2;
+}
+.salon .news img{
+    width:190px;
+    border: 1px solid #DCDCDC;
+    margin-top: 21px;
+}
+.salon h3{
+    
+    font: bold 28px/32px arial;
+}
+.salon h4{
+    
+    font: bold 20px/22px arial;
+}
+.salon .fc-light{
+    color: #a68a21;
+}
+.bg-blue{
+    background: #e6f0f9;
+}
+.salon .ztyj .bord{
+    width:832px;
+    height:300px;
+    overflow: auto;
+    padding-top: 6px;
+}
+.salon .ztyj p{
+    width:790px;
+    text-indent: 2em;
+    line-height: 2;
+}
+.salon p{
+    margin-bottom: 10px;
+}
+.salon .jzbg{
+    width:835px;
+    padding: 10px;
+    padding-left: 65px;
+    height:341px;
+    overflow-y: auto;
+    color: #333;
+   background: url(/Public/frontend/images/salon/salon_49.jpg) 0 0 no-repeat;
+}
+
+/*superbox*/
+#preview{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border:1px solid #ccc;background:rgba(0,0,0,0);padding:5px;display:none;color:#fff;
+    
+    }
+#preview img{
+    width: 600px;
+    margin: 80px auto;
+    display: block;
+    border: 6px solid #fff;
+    box-shadow: 0 0 5px #333;
+}
+
+.home-goods-list>.row{
+    width: 100%;
+    margin: 30px auto;
+}
+.home-goods-list a{
+    display: block;
+    cursor: pointer;
+}
+.home-goods-list .row img{
+    width: 100%;
+}
+.home-goods-list .col-xs-4{
+    padding:  10px;
+}
+.home-goods-list .row img:hover{
+    -webkit-transform:scale(1.01) ; 
+-moz-transform:scale(1.01); 
+-o-transform:scale(1.01) ; 
+
+}
+.home-goods-list .picScroll-left .bd{
+    height: 200px;
+    overflow: hidden;
+}
+.home-goods-list .picScroll-left .bd li{
+    width: 292px;
+    padding: 10px;
+}
+.home-goods-list .picScroll-left .bd li:nth-of-type(3n+1){
+    padding-left: 0;
+}
+.home-goods-list .col-xs-8{
+    
+    height:374px;
+    overflow: hidden;
+}
+.jdqhz{
+    background: #1d2288;
+}
+.jdqhz .row{
+    padding: 60px 0;
+}
+.block{
+    display: block;
+}
+.salon .jdqhz font{
+    color: #333;
+}
+.salon .jdqhz p{
+    margin:10px 0
+}
+.salon .jdqhz .row li{
+    float: left;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.salon .media-list{
+    height: 345px;
+    overflow: auto;
+    line-height: 2.5;
+    margin:  30px;
+    padding: 10px 30px;
+}
+.salon .media-list li{
+    padding: 5px 0;
+}
+.media-list span{
+    float: right;
+    color: #a99136;
+    padding-right: 50px;
+    font: 14px/40px Arial;
+}
+.salon .ztyj .qb{
+    height: 341px;
+}

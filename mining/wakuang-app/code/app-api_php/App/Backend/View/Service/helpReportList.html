@@ -1,0 +1,41 @@
+<div id="sub-article-list">
+    <input  type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME, $_GET)}" >
+    <h4 class="title">帮助中心反馈</h4>
+    <form class="form-inline" id="query_Article">      
+        <label class="control-label">类型: </label>
+        <select class="form-control mr-10" name="txtTypeID" style="width: 180px">
+            {$htmlType}
+        </select>    
+        <label class="control-label">标题: </label>
+        <input type="text" class="form-control" value="{$Think.post.txtTitle}" name="txtTitle" placeholder="请输入">     
+        <a href="{:U(ACTION_NAME, $_GET)}"  onclick="$Util.openQuery(this, event, 'query_Article')"  class="btn btn-info"><i class="icon-search"></i>查询</a>
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>          
+                <th>文章类型</th>
+                <th>标题</th>
+                <th>有用统计</th>
+                <th>无用统计</th>
+            </tr>
+        </thead>
+        <tbody>
+        <volist name="article" id="item">
+            <tr>         
+                <td>{$item.typeName}</td>
+                <td style="text-align: left"><a href="#" data-toggle="tooltip" data-placement="top" title="{$item.articleTitle}" title="" >{$item.articleTitle|sub_str=0,15,'...'}</a></td>
+            <td>{$item.usefulCount}</td>
+            <td>{$item.nouseCount}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <nav class=" pagination-centered">
+        <ul class="pagination">  
+            {$pageHtml}
+        </ul>
+    </nav>
+</div>
+
+
+

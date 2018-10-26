@@ -1,0 +1,76 @@
+<div class="modal-body">
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <form class="form-horizontal" id="form1">       
+        <input type="hidden" name='rechargeID' id='rechargeID' value="{$data.rechargeID}"/>
+        <div class="form-group ">
+            <label class="col-sm-1 control-label" >用户名：</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="text"   value=" {$data.userName}"  disabled="disabled" >
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-sm-1 control-label" >充值金额：</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="text"   value="{$data.rechargeMoney|formatMoney}"  disabled="disabled" >
+            </div>
+        </div> 
+        <div class="form-group ">
+            <label class="col-sm-1 control-label" >备注：</label>
+            <div class="col-sm-4">
+                <textarea  class=" form-control" cols="50" rows="3" name="rechargeRemark" id="rechargeRemark" >{$data.rechargeRemark}</textarea>
+                <span style="color: red">(1) 补单前，请注意查看用户充值是否已到 与华兴关联的存管账户。  <br> 
+                 <br>(2)  用户存管账户余额查询 菜单 : 账户管理=》账户查询 
+                </span>
+            </div>
+            
+        </div>  
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" id="butCancel" class="btn btn-default" data-dismiss="modal">关闭</button>
+    <button type="button" id="butSave" class="btn btn-primary" >保存</button>
+</div>  
+<script type="text/javascript" >
+    $(function($) {
+
+        $("#butSave").click(function() {
+            $win.confirm("确定要补单吗?").on(function() {
+                saveInfo();
+            });
+        });
+
+    });
+
+    function saveInfo() {
+        var data = $Util.getData($("#form1"));
+        $.ajax({
+            type: "post",
+            url: "/Backend/Audit/saveRechargeAjax",
+            data: {'par': data},
+            dataType: "json",
+            beforeSend: function(XMLHttpRequest) {
+                $(".sub-content").showLoading();
+            },
+            success: function(data, textStatus) {
+                $(".sub-content").hideLoading();
+                if (data.status == 1) {
+                    $("#integralTypeID").val(data.data);
+ 
+                    $win.confirm(data.msg + ",是否关闭窗口？").on(function() {
+                        $('#butCancel').trigger("click");
+                    });
+                } else {
+                    $win.warn(data.msg);
+                }
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                $(".sub-content").hideLoading();
+            },
+            error: function() {
+                $(".sub-content").hideLoading();
+            }
+        });
+    }
+
+</script>

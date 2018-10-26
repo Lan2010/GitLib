@@ -1,0 +1,97 @@
+<div id="sub_track_list">
+    <script type="text/javascript" src="{$Think.BPATH}js/datejs/WdatePicker.js"></script>
+    <script type="text/javascript" src="{$Think.BPATH}js/clipboard.min.js"></script>
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME,$_GET)}">
+    <h4 class="title">客服跟踪记录</h4>
+    <form class="form-inline" id="query_track">       
+        <div class="form-group">
+            <label class="control-label">电话:</label>
+            <input type="text" name="phone" id="phone" value="{$Think.post.phone}" class="form-control" placeholder="请输入">
+        </div>
+        <div class="form-group">
+            <label class="control-label">客服:</label>
+            <select name="serviceID" id="serviceID" class="form-control">
+                <option value="">--请选择--</option>
+                <volist name="serinfo" id="vo">
+                    <option value="{$vo.userID}" >{$vo.cusName}</option>
+                </volist>
+            </select>
+        </div> 
+        <div class="form-group">
+            <label class="control-label">回访日期:</label>
+            <input type="text" class="form-control" name="textstart" id="textstart" value="{$Think.post.textstart}" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" placeholder="请输入开始时间">
+            <label class="control-label">～</label>
+            <input type="text" name="textend" id="textend" value="{$Think.post.textend}" class="form-control" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" placeholder="请输入结束时间">
+        </div>
+        <div class="form-group">
+            <label class="control-label">沟通方式</label>
+            <select name="speak" id="speak" class="form-control">
+                {$speakoption}
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label">沟通类型:</label>
+            <select name="serviceCode" id="serviceCode" class="form-control">
+                {$serviceoption}
+            </select>
+        </div>
+        <div class="form-group">
+            <a href="{:U(ACTION_NAME,$_GET)}" onclick="$Util.openQuery(this, event, 'query_track')" class="btn btn-info"><i class="icon-search"></i>查询</a>
+        </div>
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>回访日期</th>
+                <th>用户名</th>
+                <th>手机号</th>
+                <th>注册时间</th>
+                <th>沟通方式</th>
+                <th>沟通类型</th>
+                <th>服务内容</th>
+                <th>回访客服</th>
+            </tr>
+        </thead>
+        <tbody>
+        <volist name="result" id="vo">
+            <tr>
+                <td>{$vo.addDateTime|formatlongDate}</td>
+                <td>{$vo.userName}</td>
+                <td>{$vo.phone}</td>
+                <td>{$vo.regDatetime|formatlongDate}</td>
+                <td>{$vo.speakName}</td>
+                <td>{$vo.serviceName}</td>
+                <td style="text-align: left">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="{$vo.serviceContent}" title="" >{$vo.serviceContent|sub_str=0,15,'...'}</a>
+                    <a class="btn btn-xs btn-info pr-10 btnCopy" href="javascript:void(0)" title="复制" data-clipboard-demo="" data-clipboard-action="copy" data-clipboard-text="{$vo.serviceContent}"><span class="icon-copy"></span>复制</a>
+                </td>
+                <td>{$vo.serviceUserName}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <nav class=" pagination-centered">
+        <ul class="pagination">  
+            {$pageHtml}
+        </ul>
+    </nav>
+    <script src="{$Think.BPATH}js/common.js?version={$Think.BNO}"></script>
+    <script>
+                $(function () {
+                    $("#serviceID").val("{$Think.post.serviceID}");
+                    $('[data-toggle="tooltip"]').tooltip();
+
+                    var clipboard = new Clipboard('.btnCopy');
+
+                    clipboard.on('success', function (e) {
+                        layer.msg("已复制到剪切板!");
+                        e.clearSelection();
+                    });
+
+                    clipboard.on('error', function (e) {
+                        layer.msg("复制失败!");
+                    });
+                });
+    </script>
+
+</div>

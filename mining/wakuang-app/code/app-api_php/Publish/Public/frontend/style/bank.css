@@ -1,0 +1,66 @@
+/*bank*/#setPwdForm{margin-top:10px;}
+#setPwdForm .footerCnt{margin-top: 30px;}
+#setPwdForm .control-label{width:120px;}
+.bank-lists{position:relative;zoom:1;}
+.bank-lists input{vertical-align:middle;width:13px;height:13px;}
+.bank-lists li{float:left;margin:0 22px 16px 0;}
+.bank-lists li label{display: block;cursor: pointer;}
+.orderBox{width:560px;margin-right: 10px;}
+.orderBox > form{margin-left: 8px;}
+.mt2{margin-top: 2px;}
+.acc .label-image{display: inline-block;width: 200px;padding:12px 0 12px 8px;border:1px solid #e2e2e2;margin-left: 15px;background-color: #fff;}
+.label-radio-on .label-image{border-color:#E87F02;}
+.label-image i{display:inline-block;width:126px;height:30px;vertical-align:middle;background-image:url(/Public/frontend/images/bank/bank.png);background-repeat:no-repeat;}
+.label-image .bank_0,.label-image .bank_10{background-position:0 0;}
+/* 银联*/.label-image .bank_YBOC{background-position:0 -105px;}
+/* 中国银行*/.label-image .bank_YICBC{background-position:0 -717px;}
+/* 工商*/.label-image .bank_YBJBANK{background-position:0 -70px;}
+/* 招商*/.label-image .bank_YCMB{background-position:0 -392px;}
+/* 招商*/.label-image .bank_YCCB{background-position:0 -249px;}
+/* 建设*/.label-image .bank_YABC{background-position:0 -30px;}
+/* 农业*/.label-image .bank_YCOMM{background-position:0 -465px;}
+/* 交通*/.label-image .bank_YWZCB{background-position:0 -1223px;}
+/* 交通*/.label-image .bank_YGDB{background-position:0 -608px;}
+/* 广发*/.label-image .bank_YCMBC{background-position:0 -430px;}
+/* 民生*/.label-image .bank_YBEA{background-position:0 -1480px;}
+/* 东亚*/.label-image .bank_YPSBC{background-position:0 -968px;}
+/* 邮政*/.label-image .bank_YCITIC{background-position:0 -357px;}
+/* 中信*/.label-image .bank_YSPDB{background-position:0 -1076px;}
+/* 浦发*/.label-image .bank_YCEB{background-position:0 -284px;}
+/* 光大*/.label-image .bank_YSPAB,.label-image .bank_84{background-position:0 -1041px;}
+/* 平安，深发展*/.label-image .bank_YCIB{background-position:0 -321px;}
+/* 兴业*/.label-image .bank_YHXB{background-position:0 -645px;}
+/* 华夏*/.label-image .bank_18{background-position:0 -862px;}
+/* 宁波*/.label-image .bank_19{background-position:0 -680px;}
+/* 杭州*/.label-image .bank_YCZSB{background-position:0 -1330px;}
+/* 浙商*/.label-image .bank_YBHB{background-position:0 -1388px;}
+/* 河北*/.label-image .bank_YLZB{background-position:0 -1360px;}
+/* 兰州*/.label-image .bank_35{background-position:0 -68px;}
+/* 北京银行*/.label-image .bank_YBJB{background-position:0 -68px;}
+/* 台州银行*/.label-image .bank_43{background-position:0 -788px;}
+/* 江苏银行*/.label-image .bank_24{background-position:0 -1004px;}
+/* 上海*/.label-image .bank_71{background-position:0 -213px;}
+/* 包商银行*/.label-image .bank_74{background-position:0 -898px;}
+/* 鄞州银行*/.label-image .bank_YSHRCB{background-position:0 -1451px;}
+/* 上海农商银行*/.bankInfoTab .table-bordered thead tr th,.bankInfoTab .table-bordered tbody tr td{padding: 8px 4px;}
+.bankInfoTab .table-bordered thead tr th{background-color: #F2F2F2;border-bottom-width:1px;}
+.orderBox .btnRow{margin-top: 72px;}
+.payFormWrap{padding-left:0;padding-top: 40px;}
+.payFormWrap .orderBox > form,.payFormWrap .orderBox .row{margin-left: 0;}
+.payFormWrap .orderBox .row{margin-bottom: 15px;}
+.chooseBankForm .label-image{margin:0 10px 0 0;}
+.payFormWrap .row .inputWrap{width:360px;}
+.chooseBankForm .control-label{font-size: 16px;width: 100px;}
+.chooseBankForm .orderBox .btnRow{margin-top: 0;}
+.chooseBankForm .footerCnt{margin-top: 25px;}
+.acc .payFormWrap .footerCnt .btn-smal{width:148px;}
+.payFormWrap .row .inputWrap.w80{width:260px;}
+.payFormWrap .row .inputWrap.w80 .input{*width:234px;}
+.chooseBankForm .label-image{width:226px;}
+.w720 .label-image{display:inline-block;width:160px;}
+.changeBankModal .modalSubCnt{padding:40px 15px 0 15px;}
+.changeBankModal .modalSubCnt .changeBankForm{padding-left: 32px;border-bottom: 1px dashed #e7e7e7;}
+.changeBankModal .footerCnt{border-top:none;}
+.w720 .markPadd{padding:12px 24px 12px 68px;color:#666;line-height: 20px;}
+.changeBankModal .footerCnt{width: auto;margin-top: 0;}
+.changeBankModal .footerCnt .btnRow{margin-left: 21px;}

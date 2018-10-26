@@ -1,0 +1,106 @@
+<div class="modal-body">
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <form class="form-horizontal" id="form-track">
+        <div class="form-group has-success">
+            <label class="control-label col-sm-2" for="inputInfo">服务日期:</label>
+            <label class="control-label" for="inputInfo"> {$data.serviceDate}</label>
+            <input type="hidden" name='userID' id='userID' value="{$data.userID}"/>
+            <input type="hidden" name='userName' id='userName' value="{$data.userName}"/>
+            <input type="hidden" name='serviceDate' id='serviceDate' value="{$data.serviceDate}"/>
+            <input type="hidden" name='serviceUserID' id='serviceUserID' value="{$data.serviceUserID}"/>
+            <input type="hidden" name='serviceUserName' id='serviceUserName' value="{$data.serviceUserName}"/>
+        </div>
+        <div class="form-group has-success">
+            <label class="control-label col-sm-2" for="inputInfo">沟通方式:</label>
+            <div class="col-sm-9">
+                <select  name="selSpeak" id="selSpeak" class="form-control" style="width: 180px">            
+                    {$speakoption}
+                </select>      
+            </div>         
+        </div>
+        <div class="form-group has-success">
+            <label class="control-label col-sm-2" for="inputInfo">沟通类型:</label> 
+            <div class="col-sm-9">
+                <select  name="selServiceCode" id="selServiceCode" class="form-control" style="width: 180px">            
+                    {$serviceoption}
+                </select>      
+            </div>          
+        </div>
+        <div class="form-group has-success">
+            <label class="control-label col-sm-2" for="inputInfo">说明：</label>  
+            <div class="col-sm-9">
+                <textarea  id="txtContent" name="txtContent"  class="form-control" style="width:60%"> </textarea>       
+            </div>          
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" id="butCancel" class="btn btn-default" data-dismiss="modal">取消</button>
+    <button type="button" id="butSavetrack" class="btn btn-primary" >保存</button>
+</div>  
+<script type="text/javascript" >
+    $(function($) {
+        trackvalid();
+        $("#butSavetrack").click(function() {
+            var isOK = $("#form-track").valid();
+            if (isOK) {
+                saveUser();
+            }
+        });
+    });
+
+    function saveUser() {
+        var data = {};
+        data.userID = $("#userID").val();
+        data.userName = $("#userName").val();
+        data.serviceDate = $("#serviceDate").val();
+        data.serviceUserID = $("#serviceUserID").val();
+        data.serviceUserName = $("#serviceUserName").val();
+        data.speak = $("#selSpeak").val();
+        data.speakName = $("#selSpeak").find("option:selected").text();
+        data.serviceCode = $("#selServiceCode").val();
+        data.serviceName = $("#selServiceCode").find("option:selected").text();
+        data.serviceContent = $("#txtContent").val();
+        $.ajax({
+            type: "post",
+            url: "/Backend/Service/savetrack",
+            data: {'par': data},
+            dataType: "json",
+            beforeSend: function(XMLHttpRequest) {
+                $(".sub-content").showLoading();
+            },
+            success: function(data, textStatus) {
+                $(".sub-content").hideLoading();
+                if (data.status == 1) {
+                    $("#hidAction").val("edit");
+                    $win.message(data.msg).on(function() {
+                        $('#butCancel').trigger("click");
+                    });
+                } else {
+                    $win.warn(data.msg);
+                }
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                $(".sub-content").hideLoading();
+            },
+            error: function() {
+                $(".sub-content").hideLoading();
+            }
+        });
+    }
+
+    function trackvalid() {
+        $("#form-track").validate({
+            rules: {
+                selSpeak: {required: true},
+                selServiceCode: {required: true},
+                txtContent: {required: true, maxlength: 300}
+            },
+            messages: {
+                selSpeak: {required: "沟通方式不能为空"},
+                selServiceCode: {required: "服务类型不能为空"},
+                txtContent: {required: "内容不能为空!", maxlength: "最大长度300个字符"}
+            }
+        });
+    }
+</script>

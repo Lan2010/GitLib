@@ -1,0 +1,86 @@
+<div id="sub-sen-list">
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME, $_GET)}">
+    <h4 class="title">VIP折扣</h4>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>          
+                <th>VIP等级</th>
+                <th>VIP折扣</th> 
+                <th>更新时间</th>    
+            </tr>
+        </thead>
+        <tbody>
+        <form id="form-dst">
+            <volist name='result' id='vo'>
+                <input type="hidden" name="id" value="{$vo.id}" id="id{$vo.id}" >
+                <tr>
+                    <td>{$vo.level}</td>
+
+                    <td>
+                        <input class="form-control" type="text" id="disCount{$vo.id}" name="disCount{$vo.id}" value="{$vo.disCount}"  style="width: 80px;display:inline-block"
+                               onkeyup="if (this.value.length == 1) {
+                                           this.value = this.value.replace(/[^1-9]/g, '')
+                                       } else {
+                                           this.value = this.value.replace(/\D/g, '')
+                                       }"  
+                               onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" /> 
+                        <span class="lbl"> 折 </span>
+                        <button type="button" id="butSaveLevel"  rel="{$vo.id}" class="btn btn-primary butSaveLevel">保存</button>
+                    </td>
+                    <td>{$vo.editDatetime|formatlongDate}</td>
+                </tr>
+            </volist>
+        </form>
+        </tbody>
+    </table>
+    <script>
+        $(function($) {
+            $(".butSaveLevel").click(function() {
+                var id = $(this).attr("rel");
+                data = {};
+                data.id = $("#id" + id).val();
+                data.rate = $("#rate" + id).val();
+                data.disCount = $("#disCount" + id).val();
+                $.ajax({
+                    type: "post",
+                    url: "/Backend/System/saveLevel/",
+                    data: {"par": data},
+                    dataType: "json",
+                    beforeSend: function(XMLHttpRequest) {
+                        $(".sub-content").showLoading();
+                    },
+                    success: function(data, textStatus) {
+                        $(".sub-content").hideLoading();
+                        if (data.status == 1) {
+                            $("#hidAction").val("edit");
+                            $win.message(data.msg);
+                        } else {
+                            $win.warn(data.msg);
+                        }
+                    },
+                    complete: function(XMLHttpRequest, textStatus) {
+                        $(".sub-content").hideLoading();
+                    },
+                    error: function() {
+                        $(".sub-content").hideLoading();
+                    }
+                });
+            });
+        });
+        //验证输入的信息是否合格
+        function checkLevelInfo() {
+            $("#form-dst").validate({
+                rules: {
+                    dicName: {required: true, max: 100}
+                },
+                messages: {
+                    dicName: {required: "菜单名称不能为空!", max: "请输入不大于100的数"}
+                }
+            });
+        }
+    </script>
+
+</div>
+
+
+

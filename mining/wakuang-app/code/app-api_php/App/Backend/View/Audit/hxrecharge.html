@@ -1,0 +1,48 @@
+<div class="modal-body">
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <table class="table table-striped table-bordered" style="table-layout:fixed;word-wrap:break-word;">
+        <tr>
+            <td width="10%">
+                错误代码：
+            </td>
+            <td style="text-align: left" width="40%">
+                {$errorCode}【0:表示提交成功】
+            </td>
+        </tr>
+        <tr>
+            <td>
+                错误信息：
+            </td>
+            <td style="text-align: left">
+                {$errorMsg}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                交易状态：
+            </td>
+            <td style="text-align: left">
+                {$data[RETURN_STATUS]}<br>
+              【
+                R: 页面处理中（客户仍停留在页面操作，25分钟后仍收到此状态可置交易为失败）<br>
+                N: 未知（已提交后台，商户需再次发查询接口。）<br>
+                P: 预授权成功（目前未到账，下一工作日到账，当天无需再进行查询，下一工作日上午6点再进行查询，状态会变成S，如状态不变则也无需再查询，可在下一工作日在对账文件中确认交易状态。）<br>
+                D: 后台支付系统处理中（如果 ERRORMSG值为“ORDER_CREATED”，并超过25分钟未变，则可置交易是失败。其他情况商户需再次发查询接口。但2小时后状态仍未变的则可置为异常，无需再发起查询，后续在对账文件中确认交易状态或线下人工处理）<br>
+                S: 成功 <br>
+                F: 失败
+                】
+            </td>
+        </tr>
+        <tr>
+            <td>
+                交易时间：
+            </td>
+            <td style="text-align: left">
+                {$data[TRANSDT]} {$data[TRANSTM]}
+            </td>
+        </tr>
+ 
+    </table>
+</div>
+<div class="modal-footer">
+</div>  

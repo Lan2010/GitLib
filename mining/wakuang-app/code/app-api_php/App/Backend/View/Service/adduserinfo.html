@@ -1,0 +1,96 @@
+<div class="modal-body">
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <form class="form-horizontal" id="form-service">       
+        <input type="hidden" name='userID' id='userID' value="{$data.userID}"/>
+        <div class="form-group has-success">
+            <label class="control-label col-sm-2" for="inputInfo">手机号：</label>
+            <label class="control-label" for="inputInfo"> {$phone}</label>
+        </div>
+        <div class="form-group has-success">
+            <label class="control-label col-sm-2" for="inputInfo">姓名：</label>
+            <label class="control-label" for="inputInfo"> {$name}</label>
+        </div>
+        <div class="form-group has-info">
+            <label class="control-label col-sm-2" for="inputInfo">QQ：</label>
+            <div class=" col-sm-6">
+                <input type="text" id="userQQ" name="userQQ" value="{$data.userQQ}"  class="form-control"  >          
+            </div>
+        </div>
+        <div class="form-group has-info">
+            <label class="control-label col-sm-2" for="inputInfo">微信：</label>
+            <div class=" col-sm-6">
+                <input type="text" id="WeChat" name="WeChat" value="{$data.WeChat}"  class="form-control"  >          
+            </div>
+        </div>
+        <div class="form-group has-info">
+            <label class="control-label col-sm-2" for="inputInfo">备注：</label>
+            <div class=" col-sm-6">
+                <input type="text" id="remark" name="remark" value="{$data.remark}"  class="form-control"  >          
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" id="butCancel" class="btn btn-default" data-dismiss="modal">取消</button>
+    <button type="button" id="butSaveInfo" class="btn btn-primary" >保存</button>
+</div>  
+<script type="text/javascript" >
+    $(function($) {
+        servicevalid();
+        $("#butSaveInfo").click(function() {
+            var isOK = $("#form-service").valid();
+            if (isOK) {
+                saveInfo();
+            }
+        });
+    });
+
+    function saveInfo() {
+        var data = {};
+        data.userID = $("#userID").val();
+        data.userQQ = $("#userQQ").val();
+        data.WeChat = $("#WeChat").val();
+        data.remark = $("#remark").val();
+        $.ajax({
+            type: "post",
+            url: "/Backend/Service/saveinfo",
+            data: {'par': data},
+            dataType: "json",
+            beforeSend: function(XMLHttpRequest) {
+                $(".sub-content").showLoading();
+            },
+            success: function(data, textStatus) {
+                $(".sub-content").hideLoading();
+                if (data.status == 1) {
+                    $("#hidAction").val("edit");
+                    $win.message(data.msg).on(function() {
+                        $('#butCancel').trigger("click");
+                    });
+                } else {
+                    $win.warn(data.msg);
+                }
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                $(".sub-content").hideLoading();
+            },
+            error: function() {
+                $(".sub-content").hideLoading();
+            }
+        });
+    }
+
+    function servicevalid() {
+        $("#form-service").validate({
+            rules: {
+                WeChat: {maxlength: 30},
+                userQQ: {maxlength: 15},
+                remark: {maxlength: 40}
+            },
+            messages: {
+                WeChat: {maxlength: "最大长度30个字符"},
+                userQQ: {maxlength: "最大长度15个字符"},
+                remark: {maxlength: "最大长度40个字符"}
+            }
+        });
+    }
+</script>

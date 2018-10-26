@@ -1,0 +1,112 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-10-4, 22:06:13
+    Author     : DREAM
+*/
+
+.control-error {
+    display: none;
+    position: absolute;
+    border-radius:2px;
+    padding: 2px 0 2px 3px;
+    left: 50px;
+    top: 40px;
+    font-size: 12px;
+    border: 1px solid #ffbdbf;
+    color: #e6393d;
+    background: #ffebec;
+    float: none;
+    line-height: 16px;
+    font-weight:normal;
+    z-index: 100;
+}
+
+.third-error {
+    display: none;
+    position: absolute;
+    border-radius:2px;
+    padding: 2px 0 2px 3px;
+    border: 1px solid #ffbdbf;
+    color: #e6393d;
+    background: #ffebec;
+    float: none;
+    line-height: 16px;
+    font-weight:normal;
+    z-index: 100;
+}
+
+.has-error .control-error {
+    display: block;
+}
+.has-error input {border:1px solid red;color: red;border-radius:2px;}
+.has-error select {border:1px solid red;color: red;}
+
+.login-error {   
+    display: none;
+    position: absolute;
+    border-radius:2px;
+    padding: 2px 3px;
+    left: 50px;
+    top: 40px;
+    font-size: 12px;
+    border: 1px solid #ffbdbf;
+    color: #e6393d;
+    background: #ffebec;
+    float: none;
+    line-height: 16px;
+    font-weight:normal;
+    z-index: 100;
+
+}
+
+.wx-error {
+    display: none;
+  
+    border-radius:2px;
+    padding: 2px 0 2px 3px;
+    left: 0px;
+    top: 0px;
+    font-size: 14px;
+    border: 1px solid #ffbdbf;
+    color: #e6393d;
+    background: #ffebec;
+    float: none;
+    line-height: 16px;
+    z-index: 100;
+}
+
+.recharge-error {
+    display: none;
+    position: absolute;
+    border-radius:2px;
+    padding: 2px 0 2px 3px;
+    left: 0px;
+    top: 33px;
+    font-size: 14px;
+    border: 1px solid #ffbdbf;
+    color: #e6393d;
+    background: #ffebec;
+    float: none;
+    line-height: 16px;
+    z-index: 100;
+}
+
+.search-error {
+    display: none;
+    position: absolute;
+    border-radius:2px;
+    padding: 2px 0 2px 3px;
+    left: 0px;
+    top: 33px;
+    font-size: 14px;
+    border: 1px solid #ffbdbf;
+    color: #e6393d;
+    background: #ffebec;
+    float: none;
+    line-height: 16px;
+    z-index: 100;
+}

@@ -1,0 +1,98 @@
+.sk-tree {
+    padding-right: 5px;
+    overflow: auto;
+}
+
+.tree-item {
+}
+
+.tree-item-sub{
+    margin-left: 15px;
+}
+.tree-item.closeTree > .tree-item-sub {
+    display: none;
+}
+
+.tree-item-item {
+    position: relative;
+    clear: both;
+    width: 100%;
+    min-height: 25px;
+    line-height: 25px;
+}
+
+.tree-item-title {
+    float: left;
+}
+
+.tree-item-title .text {
+    /*border-bottom: 1px solid gray;*/
+    cursor: pointer;
+    /*white-space:nowrap;*/
+
+}
+
+.sk-tree > .tree-item {
+    margin-left: 0px;
+}
+
+.active > .tree-item-item > .tree-item-title .text, .tree-item-item .text:hover {
+    font-weight: bold;
+}
+
+.tree-item.active > .tree-item-item > .tree-item-title .text {
+    /*font-size: 18px;*/
+}
+
+.tree-item-title .img, i.delete {
+    display: inline-block;
+    margin: 5px 8px 0px 6px;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+}
+
+.tree-item > .tree-item-item > .tree-item-title .img, i.delete {
+    background-image: url(image/icon16x16.gif);
+    background-position: -145px -1034px;
+}
+
+i.delete {
+    background-position: -249px -437px;opacity:0.5; cursor:pointer;
+}
+i.delete:hover { opacity:1;}
+
+.tree-item[f-type="query"] > .tree-item-item > .tree-item-title .img {
+    background-position: -41px -2230px;
+}
+
+.tree-item[f-type="action"] > .tree-item-item > .tree-item-title .img {
+    background-position: -171px -2204px;
+}
+
+.tree-item[f-type="event"] > .tree-item-item > .tree-item-title .img {
+    background-position: -15px -1633px;
+}
+.tree-item[f-type="entity"] > .tree-item-item > .tree-item-title .img {
+    background-position: -93px -982px;
+}
+
+.tree-item[f-type="column"] > .tree-item-item > .tree-item-title .img {
+    background-position: -145px -1138px;
+}
+
+i.check {
+    display: inline-block;
+    float: left;
+    margin: 5px 0px 0px 6px;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    background: url(image/checkbox.png);
+
+}
+
+.check.unCheck {  opacity: 0.5;}
+.check.active, .tree-item.active > .tree-item-item > .check {
+    background-position: 0px -18px;
+}

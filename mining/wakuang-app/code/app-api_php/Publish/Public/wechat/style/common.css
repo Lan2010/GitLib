@@ -1,0 +1,870 @@
+@charset "utf-8";
+
+/* CSS Document */
+*{ margin:0; padding:0;}
+html{-webkit-text-size-adjust:none;-webkit-user-select:none; }
+body{ background:#f8f8f8;line-height:1.538;font-family:"冬青黑体","微软雅黑",Helvetica,Arial,\5FAE\8F6F\96C5\9ED1,sans-serif;color:#666;}
+header,section,footer,article,nav,aside,figure,menu{display:block}
+ol,ul{padding-left:0; list-style-type:none; list-style:none;}
+table{border-collapse:collapse;border-spacing:0;}
+select {border: none;background: none;width: 100%;appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+th,dt{font-style:normal;font-weight:normal;}
+h1,h2,h3,h4,h5,h6,b{font-weight:normal;}
+h1, h2, h3, h4, h5, h6, b {font-weight: normal;line-height: 1.628;}
+img{border:none; display:inline-block; vertical-align:middle;}
+em,i{font-style:normal;}
+a {color: #333;}
+a:hover{ text-decoration:none;}
+
+/*common*/
+.fl{float: left;}
+.fr{float: right;}
+.glyphicon{top: 6px;}
+.block{display: block;}
+.none{display: none;}
+.inline-block{display: inline-block;}
+.relative{position: relative;}
+.absolute{position: absolute;}
+.fixed{position: fixed}
+.of_h{overflow: hidden;}
+.text_indent{text-indent: 2em;}
+.text_ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.clearfix:before,.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.table>tbody+tbody {
+    border-top: none;
+}
+
+/*font,text*/
+h1,.h1{font-size: 1.52rem;}
+h2,.h2{font-size: 1.34rem;}
+h3,.h3{font-size: 1.18rem;}
+h4,.h4{font-size: 1rem;}
+.fs_36{font-size: 3rem;}
+.fs_34{font-size: 2.4rem;}
+.fs_28{font-size: 2rem;}
+.fs_24{font-size: 1.7rem;}
+.fs_18{font-size: 1.5rem;}
+.fs_16{font-size: 1.3rem;}
+.fs_14{font-size: 1.14rem;}
+.fs_13{font-size: 1.1rem;}
+.fs_12{font-size: .85rem;}
+.fs_10{font-size: .7rem;}
+.fs_content{font-size: .92rem;}
+.b{font-weight: bold;}
+.fw_500{font-weight: 500;}
+.color_hlight{color: #ff8423;}
+.color_white{color: #fff;}
+.color_orange{color: #ff8423;}
+.color_green{color: #3eb02b;}
+.color_green1{color: #91c9ad;}
+.color_green2{color: #40bb6b;}
+.color_purple{color: #ad98f8;}
+.color_purple1{color: #525baf;}
+.color_purple2{color: #350f68;}
+.color_orange1{color: #f9ac73;}
+.color_orange2{color: #fc9947;}
+.color_beige{color: #FEE2CA;}
+.color_yellow{color: #feea74;}
+.color_brown{color: #5b3725;}
+.color-blue{color: #39a0ff;}
+.color_blue{color: #1e85ee;}
+.color_blue1{color: #79bff0;}
+.color_blue2{color: #00b1e4;}
+.color_blue3{color: #5aa7f9;}
+.color_blue4{color: #43a7ff;}
+.color_red{color: #f86a1d;}
+.color_red1{color: #ff2c28;}
+.color_red2{color: #fd342f !important;}
+.color_red3{color: #f62d2d;}
+.color_red4{color: #c33830;}
+.color_3{color: #333;}
+.color_title,.color_30{color: #303030;}
+.color_6{color: #666;}
+.color_7{color: #777;}
+.color_9{color: #999;}
+.color_c{color:#ccc}
+.color_8a{color: #8A8A8A;}
+.color_a0{color: #a0a0a0;}
+.color_a8{color: #a8a8a8;}
+.lp_1{letter-spacing: .1rem;}
+.underline{text-decoration:underline;}
+.text_justify{text-align: justify;}
+.middle {vertical-align: middle;}
+.ellipsis{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+
+/*边框*/
+.bord{border: 1px solid #eaeaea;}
+.bord0{border: none !important;}
+.bord_b{border-bottom:1px solid #eaeaea;}
+.bord_b_d{border-bottom: 2px dotted #eaeaea;}
+.bord_t{border-top:1px solid #eaeaea;}
+.bord_l{border-left:1px solid #eaeaea;}
+.bord_r{border-right:1px solid #eaeaea;}
+.bord_t_none{ border-top:none !important;}
+.bord_b_none{ border-bottom:none !important;}
+.bord_l_none{ border-left:none !important;}
+.bord_r_none{ border-right:none !important;}
+.bord_t_white{border-top: 1px solid #fcc99e;}
+.bord_l_white{border-left: 1px solid #fcc99e;}
+.bord_white{border: 1px solid #fff;}
+.bord_orange{border: 1px solid #f47d30 !important;}
+.bord_blue {border: 1px solid #48b4ff !important;}
+.bord_gray{border: 1px solid #ddd;}
+.bord_green{border: 2px dotted #40bb6b;}
+.radiu_3{border-radius: 3px;}
+.radiu_6{border-radius: 6px !important;}
+.radius_7{border-radius: .5rem;}
+.radiu_10{border-radius: .72rem !important;}
+.radiu_12{border-radius: 12px;}
+.radiu_14{border-radius: 1rem;}
+.radiu_42{border-radius: 3rem;}
+
+/*通用边距*/
+.mar_0{margin: 0;}
+.pad_0{padding: 0 !important;}
+.pad_10{padding: .769rem;}
+.pad_15{padding: 1.153rem !important;}
+.pad_20{padding: 1.538rem;}
+.pad_40{padding: 3.076rem;}
+.pt_5{padding-top: .384rem;}
+.pt_10{padding-top:.769rem;}
+.pt_15{padding-top:1.153rem;}
+.pt_20{padding-top: 1.538rem;}
+.pt_30{padding-top: 2.307rem;}
+.pt_40{padding-top: 3.077rem;}
+.pt_65{padding-top: 4.992rem;}
+.pt_75{padding-top: 6.144rem;}
+.pt_85{padding-top: 6.7rem;}
+.pb_5{ padding-bottom: .384rem;}
+.pb_10{padding-bottom: .769rem;}
+.pb_15{padding-bottom: 1.153rem;}
+.pb_20{padding-bottom: 1.538rem;}
+.pb_40{padding-bottom: 3.076rem;}
+.pl_0{padding-left: 0;}
+.pl_1{padding-left: .1rem;}
+.pl_5{padding-left: .384rem;}
+.pl_10{padding-left: .769rem;}
+.pl_15{padding-left: 1.153rem;}
+.pl_20{padding-left: 1.538rem;}
+.pl_30{padding-left: 2.308rem !important;}
+.pl_35{padding-left: 2.692rem;}
+.pl_40{padding-left: 3.08rem;}
+.pl_45{padding-left: 3.4605rem;}
+.pr_0{padding-right: 0;}
+.pr_5{padding-right: .384rem;}
+.pr_10{padding-right: .769rem;}
+.pr_15{padding-right: 1.153rem;}
+.pr_20{padding-right: 1.538rem;}
+.pr_30{padding-right: 2.308rem;}
+.pr_40{padding-right: 3.076rem;}
+.mt_0{ margin-top:0;}
+.mt_5{margin-top: .384rem;}
+.mt_10{margin-top: .769rem;}
+.mt_15{margin-top: 1.153rem;}
+.mt_20{margin-top: 1.538rem;}
+.mt_30{margin-top: 2.308rem;}
+.mt_40{margin-top: 3.076rem;}
+.mt_50{margin-top: 3.84rem;}
+.mt_60{margin-top: 4.608rem;}
+.mt_70{margin-top: 5.144rem;}
+.mt_90{margin-top: 6.921rem;}
+.mb_0{ margin-bottom:0;}
+.mb_5{margin-bottom: .384rem;}
+.mb_10{margin-bottom: .769rem;}
+.mb_15{margin-bottom: 1.153rem;}
+.mb_20{margin-bottom: 1.538rem;}
+.mb_25{margin-bottom: 1.922rem;}
+.mb_30{margin-bottom: 2.307rem;}
+.mb_40{margin-bottom: 3.076rem;}
+.mr_0{margin-right: 0 !important;}
+.mr_5{margin-right: .384rem;}
+.mr_10{margin-right: .769rem;}
+.mr_20{margin-right: 1.538rem;}
+.mr_30{margin-right: 2.58rem;}
+.ml_5{margin-left: .384rem;}
+.ml_10{margin-left: .769rem;}
+.ml_20{margin-left: 1.538rem;}
+.ml_40{margin-left: 3.076rem;}
+
+/*表单*/
+.form-control {
+  display: block;
+  width: 100%;
+  height: 3.3rem; 
+  padding: 6px 10px;
+  font-size: 1.0769rem; 
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border-radius: .5rem;
+}
+
+/*按钮*/
+.btn {
+    padding: .8rem 1rem;
+    font-size: 1.34rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;    
+}
+.btn:hover, .btn:active, .btn:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+.btn-primary {
+  background: #ff7510;
+  color: #fff;
+  border-color: #ff7510;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background: #f89d69 !important;
+  border-color: #f89d69 !important;
+}
+.btn-orange {
+	color: #fff;
+	font-size: 1.2rem;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #ff8423), color-stop(100%, #ffb643));
+    background: -webkit-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+    background: linear-gradient(to right, #ff8423 0%, #ffb643 100%); 
+    border-radius: 3rem;  
+    border: none;        
+    box-shadow:0 3.46px 8px rgba(255, 132, 35, 0.3);   
+}
+.btn-orange:hover, .btn-orange:focus, .btn-orange:active {
+	color: #fff;
+  	background: #ff8423 !important;
+  	border-color: #ff8423 !important;
+}
+.btn-blue {
+    font-size: 1.2rem;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #39a0ff), color-stop(100%, #43d4ff));
+    background: -webkit-linear-gradient(left, #39a0ff 50%, #43d4ff 100%);
+    background: linear-gradient(to right, #39a0ff 0%, #43d4ff 100%);
+    border: none;           
+}
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active {
+    color: #fff;
+    background: #2c90ff !important;
+    border-color: transparent !important;
+}
+.btn-default {
+	font-size: 1.2rem;
+	color: #fff;
+    background: linear-gradient(to right, #cecece 0%, #dcdcdc 100%);
+    border: none; 
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+	color: #fff;
+  	background: #cecece !important;
+  	border-color: #cecece !important;
+}
+.btn-check {
+    padding: .3rem .5rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+.weui_cell {
+    padding: .7rem 15px;
+}
+.weui_switch {
+    width: 50px;
+    height: 30px;
+}
+.weui_switch:after {
+    top: -1px;
+    left: -1px;
+}
+.weui_switch:checked {
+    border-color: #04be02;
+    background-color: #04be02;
+}
+.weui_cells_checkbox .weui_check:checked + .weui_icon_checked:before {
+    content: '\EA06';
+    color: #09bb07;
+}
+.weui_loading {
+    position: absolute;
+    width: 0px;
+    z-index: 2000000000;
+    left: 33%;
+    top: 0%;
+}
+.weui-dialog__btn.primary {
+    color: #ff7610;
+}
+.weui-dialog__btn.default {
+    color: #333;
+}
+
+/*错误提示*/
+label.error[for] {color: #f86a1d;font-weight: 500;margin-bottom: 0;}
+.control-error {left: 6.6rem !important;width: 18rem;}
+
+/*选项卡*/
+.nav-tabs{
+    padding: 1.153rem 0;
+    font-size: 1.14rem;
+    text-align: center;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover ,.nav-tabs>li.active>a:active {
+    border: none;
+    border-right: 1px solid #ddd;
+    color: #ff8423;
+    background: none;
+}
+.nav-tabs>li a {
+    border: none;
+    background: #fff;
+    text-align: center;
+    color: #666;
+    padding: 0;
+    line-height: 1rem;
+    border-right: 1px solid #ddd;
+    border-top-width: 0px;
+    border-radius: 0;
+    margin: 0;
+    font-size: 1.07rem;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #fff;
+}
+
+/*背景色*/
+.bg_white{background: #fff;}
+.bg_red1{background: #c33830;}
+.bg_yellow{background: #feea74;}
+.bg_yellow1{background: #ffee9e;}
+.bg_yellow2{background: #fdc739;}
+.bg_yellow3{background: #fff9e3;}
+.bg_yellow4{background: #ffbc34;}
+.bg_yellow5{background: #feb410;}
+.bg_yellow6{background: #fcd034;}
+.bg_gray{background: #f2f2f2;}
+.bg_gray1{background: #c2c2c2;}
+.bg_blue{background: #48b4ff !important;}
+.bg_blue1{background: #47b4ff;}
+.bg_blue2{background: #72c4f4;}
+.bg_blue3{background: #00b1e4;}
+.bg_purlple{background: #350f68;}
+.bg_fa{background: #FAFAFA !important;}
+.bg_orange{background: #ff7510;}
+.bg_orange1{background: #ff910f;}
+.bg_black{background: rgba(0, 0, 0, 0.45);}
+.bg_green{background: #91c9ad;}
+.bg_green1{background: #f0fff5;}
+
+/*重置*/
+.container {
+  width:100%;
+  padding-right: 1.1538rem;
+  padding-left: 1.1538rem;
+  margin-right: auto;
+  margin-left: auto;
+  overflow:hidden;
+}
+
+/*icon图标*/
+.back_icon{background:url(/Public/wechat/images/icon/back_icon.png) center center no-repeat; background-size:100% 100%;}
+.footer .home_icon{background:url(/Public/wechat/images/icon/home_icon01.png) center center no-repeat; background-size:100% 100%;}
+.footer .shop_icon{background:url(/Public/wechat/images/icon/shop_icon01.png) center center no-repeat; background-size:100% 100%;}
+.footer .account_icon{background:url(/Public/wechat/images/icon/account_icon01.png) center center no-repeat; background-size:100% 100%;}
+.footer .more_icon{background:url(/Public/wechat/images/icon/more_icon01.png) center center no-repeat; background-size:100% 100%;}
+.footer .active .home_icon{background:url(/Public/wechat/images/icon/home_icon02.png) center center no-repeat; background-size:100% 100%;}
+.footer .active .shop_icon{background:url(/Public/wechat/images/icon/shop_icon02.png) center center no-repeat; background-size:100% 100%;}
+.footer .active .account_icon{background:url(/Public/wechat/images/icon/account_icon02.png) center center no-repeat; background-size:100% 100%;}
+.footer .active .more_icon{background:url(/Public/wechat/images/icon/more_icon02.png) center center no-repeat; background-size:100% 100%;}
+.user .username {background: url(/Public/wechat/images/user/iphone_icon.png) no-repeat .5rem;background-size: 5%;}
+.user .pwd {background: url(/Public/wechat/images/user/lock_icon.png) no-repeat .5rem;background-size: 5%;}
+.user .checkCode {background: url(/Public/wechat/images/user/safe_icon.png) no-repeat .5rem;background-size: 5%;}
+.user .write {background: url(/Public/wechat/images/user/write_icon.png) no-repeat .5rem;background-size: 5%;}
+i.icon-scheck{display:inline-block;vertical-align:middle;width:1.5rem;height:1.5rem;margin-right:.5rem;background:url(/Public/wechat/images/icon/success.png) center center no-repeat; background-size:100% 100%;}
+
+/*去色*/
+.desaturate{ filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter:grayscale(100%);}
+
+/*message*/
+.nodata {font-size: 3rem;text-align: center;line-height: 2rem;color: #999;padding-top: 3rem;padding-bottom: 3rem;}
+.nodataImg {width: 12rem;height: 10rem;background: url(/Public/wechat/images/common/nodata.png) center no-repeat;margin: 0 auto;background-size: 70%;}
+
+/*footer*/
+.footer_hd {height: 3.8rem;}
+.footer {position: fixed;bottom: 0px;z-index: 9996;width: 100%;height: 3.8rem;font-size: .89rem;padding: .2rem 0;background: #fff;line-height: 1;border-top: 1px solid #ddd;}
+.footer a { text-align: center;color: #999;}
+.footer .icon{ text-align:center;width:1.7rem;height:1.7rem; margin:.33rem auto;}
+.footer .active {color:#f47d30;}
+
+/*index*/
+.index .banner{ width:100%; height:12.5rem;  margin:0 auto; position:relative; overflow:hidden;}
+.index .banner .hd {height: 8px;width: 100%;position: absolute;bottom: 10px;z-index: 4;}
+.index .banner .hd ul {overflow: hidden;text-align: center;}
+.index .banner .hd ul li{
+      margin: 0 4px;
+      display: inline-block;
+      zoom: 1;
+      width: 8px;
+      height: 8px;
+      background: #666;
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      text-indent: -9999px;
+      -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+}
+.index .banner .hd ul li:hover {background: #333;background: rgba(0, 0, 0, 0.7);}
+.index .banner .hd ul .on{ background:#f60;background: rgba(255, 102, 0, 0.9);cursor: default;}
+.index .banner .bd{ position:relative; z-index:0; }
+.index .banner .bd li img{ width:100%; height:12.5rem; }
+.index .nav img {width: 2.85rem;}
+.index .nav a {width: 20%;}
+.index .mainBox {width: 24.7rem;}
+.index .mainBox p {background: url(/Public/wechat/images/icon/safe_icon.png) no-repeat 6%;background-size: 1rem;}
+.index .netloan img {box-shadow: 0px -1px 20px rgba(194, 194, 194, 0.75);}
+.index .riskTip {color: #D2D2D2;}
+.index .risk-tip {left: 6%;top: 44%;border-radius: 1rem;box-shadow: 0 2px 8px rgba(255, 132, 35, .3);padding: .5rem;}
+ 
+/*account*/
+.account .tx img {width: 3.98rem;padding: .2rem;}
+.account .vipLevel {width: 1.85rem;height: 1.21rem;top: 2.8rem;left: 3rem;}
+.account .signbtn {display: block;font-size: 1.2rem;color: #fff;}
+.account .signbtn img {height: 1.3rem;vertical-align: middle;display: inline-block;}
+.account .weui_cell_hd img {width: 1.6rem;display: block;margin-right: .7em;}
+.account .weui_cell_ft {background: url(/Public/wechat/images/account/jr_icon.png) no-repeat right 53.2%;}
+.account .weui_cell:before {border-left-width: 3.5rem;}
+
+/*more*/
+.more .list td img {width: 1.8rem;}
+.more h4 a {line-height: 1.78rem;background: url(/Public/wechat/images/about/more/more.png) no-repeat right;background-size: 30%;}
+.more .focus .bd .bg_black h4 {line-height: 1.4;}
+.more .shop img {width: 6rem;}
+
+/*friend*/
+.friend .txtScroll-top {position: fixed;top: 0;width: 100%;height: 2.14rem;background:rgba(51, 51, 51, 0.62);}
+.friend .txtScroll-top .bd ul li {line-height: 2.14rem;}
+.friend .top {width: 100%;height: 18.56rem;background: url(/Public/wechat/images/friend/one.png) no-repeat top;background-size: 100% 100%;}
+.friend .toFriend {width: 5rem;height: 2.5rem;}
+.friend .center {width: 100%;height: 10.72rem;background: url(/Public/wechat/images/friend/two.png) no-repeat top;background-size: 100% 100%;}
+.friend .bottom>a {width: 18.78rem;height: 3.18rem;line-height: 3rem;}
+.friend .bottom .invitate {background: url(/Public/wechat/images/friend/btn_01.png) no-repeat;background-size: 100%;}
+.friend .bottom .faceInvita {background: url(/Public/wechat/images/friend/btn_02.png) no-repeat;background-size: 100%;}
+.friend .modalM {width: 100%;height: 100%;position: fixed;background: rgba(0, 0, 0, 0.7);top: 0;left: 0;right: 0;bottom: 0;z-index: 9999;}
+.friend .orange {color: #f76827;}
+.friend .reward {top:27rem;right: .2rem;}
+.friend .reward a {width: 5.14rem;height: 6.14rem;background: url(/Public/wechat/images/friend/reward.png) no-repeat;background-size: 100%;}
+
+/*project*/
+.p-nav.nav-tabs {width: 48%;margin: 0 auto;border-radius: 1rem;border: 1px solid #FFB643;padding: 0;overflow: hidden;}
+.p-nav.nav-tabs li {width: 50%;}
+.p-nav.nav-tabs li a {font-size: 1.14rem;border: none;color: #FFB643;height: 1.92rem;line-height: 1.92rem;padding: 0 .8rem;}
+.p-nav.nav-tabs li.active a {color: #fff;background: #FFB643;border: none;}
+.plist .list.selling:after,.plist .tList.selling:after {content:'';display:block;position:absolute;width:5.7rem;height: 2.14rem;background: url(/Public/wechat/images/project/selling.png) no-repeat;background-size: 100% 100%;right: 0;top: 1.17rem;}/*在售状态*/
+.plist .list.soldout2:after {content:'';display:block;position:absolute;width:5.7rem;height: 2.14rem;background: url(/Public/wechat/images/project/soldout2.png) no-repeat;background-size: 100% 100%;right: 0;top: 1.17rem;}/*接近满标状态*/
+.plist .list.soldout:after,.plist .tlist.soldout:after {content:'';display:block;position:absolute;width:5.7rem;height: 2.14rem;background: url(/Public/wechat/images/project/soldout1.png) no-repeat;background-size: 100% 100%;right: 0;top: 1.17rem;}/*满标状态*/
+.plist .tList.selling:after,.plist .tList.soldout:after {top: .5rem;}
+.plist .list .fl {width: 33%;}
+.plist .hd {font-size: 1.1428rem;}
+.plist .tag .inline-block {border: 1px solid #f9c66d;color: #f9c66d;border-radius: .2rem;padding: 0 .1rem;}
+.plist .tag .inline-block.sepcial {border: 1px solid transparent;color: #fff;background: background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #fd4b50), color-stop(100%, #f77659));background: -webkit-linear-gradient(left, #fd4b50 50%, #f77659 100%);background: linear-gradient(to right, #fd4b50 0%, #f77659 100%);}
+.plist .p_icon {font-size: .9rem;color: #fff;width: 1.6rem;height: 1.6rem;-moz-border-radius: .8rem;-webkit-border-radius: .8rem;border-radius: .8rem;text-align: center;line-height: 1.6rem;display: inline-block;}
+.p_y {background: #b097ee;}
+.p_z {background: #ffd01b;}
+.p_c {background: #6fbcfb;}
+.p_t {background: #fe7dae;}
+.plist h2 {line-height: 1.3;}
+
+/*counp*/
+.counp .nav-tabs li {width: 50%;}
+.counp .clearfix {width: 22rem;height: 10rem;padding-left: 7.2rem;margin: 1.5rem auto 0;}
+.counp .clearfix .fl:first-child {width: 28.2%;}
+.counp .interest {background: url(/Public/wechat/images/project/interest.png) no-repeat;background-size: 100%;} 
+.counp .cash {background: url(/Public/wechat/images/project/cash.png) no-repeat;background-size: 100%;}
+.counp .deduction {background: url(/Public/wechat/images/project/deduction.png) no-repeat;background-size: 100%;}  
+.counpCheck .nav-tabs li {width: 50%;}
+.counpCheck .nocheck:after {content:'';width:1.92rem;height:1.92rem;background: url(/Public/wechat/images/project/nocheck.png) no-repeat;background-size: 100%;position: absolute;right: -.1rem;top: 0;}
+.counpCheck .check:after {content:'';width:1.92rem;height:1.92rem;background: url(/Public/wechat/images/project/check.png) no-repeat;background-size: 100%;position: absolute;right: .2rem;top: 0;}
+.counpCheck .clearfix .fl:first-child {width: 28.2%;}
+.counpCheck .interest {background: url(/Public/wechat/images/project/interest.png) no-repeat;background-size: 100% 100%;height: 8.6rem;} 
+.counpCheck .cash {background: url(/Public/wechat/images/project/cash.png) no-repeat;background-size: 100% 100%;height: 8.6rem;}
+.counpCheck .btnBox,.counp .btnBox {width: 100%;bottom: 0;}
+.counpCheck .btnBox a,.counp .btnBox a {border-radius:initial;}
+
+/*user*/
+input::-webkit-input-placeholder{color: #999;font-size: 1rem;}
+input::-moz-placeholder {color:#999;font-size: 1rem;}
+input::-moz-placeholder {color:#999;font-size: 1rem;}
+input:-ms-input-placeholder{color:#999;font-size: 1rem;}/*改变placeholder样式*/
+
+/*register*/
+.register .login_form{width: 100%;background: url(/Public/wechat/images/user/form_bg.png) no-repeat;background-size: 100% 100%;padding-top: 13rem;}
+.register .btn-primary {background: rgba(58, 25, 103, 0.86);border-color:rgba(58, 25, 103, 0.86);}
+.register .btn {color: #c7920f;border: 1px solid rgba(58, 25, 103, 0.86);}
+.register .checkBox {width: 1rem;height: 1rem;vertical-align: middle;visibility: hidden;}
+.register .checkBox+label {width: .1rem;border-radius: .2rem;border: 1px solid #ddd;margin: 0;padding: .5rem;vertical-align: middle;}
+.register .checkBox:checked+label{background: #fff url(/Public/wechat/images/user/check.png) no-repeat;background-size: 100%;}
+.register input.form-control {border: 1px solid #333;}
+.register .income {width: 100%;height: 8rem;background: url(/Public/wechat/images/user/nreg.png) no-repeat center;background-size: 100%;color:#d7b35c;}
+.register h4:last-child {color: #8c80a3;}
+
+/*detail*/
+.detail .pdetail {background: linear-gradient(0deg, #FFBA49 0%, #FF8423 100%);}
+.detail .pdetail h3 {width: 8.78rem;height: 1.8rem;background: url(/Public/wechat/images/project/line.png) no-repeat center;background-size: 100%;margin: 0 auto;}
+.detail .pdetail h1,.detail .pdetail h2 {line-height: 1.1;}
+.detail .tag:after {content: '';width: .5rem;height:.92rem;background: url(/Public/wechat/images/project/arrow.png) no-repeat right;display: inline-block;vertical-align: middle;}
+.detail .tag .inline-block{border-radius: .2rem;padding: 0 .2rem;border: 1px solid #ffe1c5;}
+.detail .process {width:88%;height: .5rem;background: #D2D2D2;border-radius: 1rem;position: relative;}
+.detail .progress-bar {height: .5rem;background: -webkit-linear-gradient(left,#fff149,#fbc30e);line-height: .5rem;-webkit-box-shadow: initial;border-radius: 1rem;}
+.detail .progress-num {color: #fec212;margin-top: -.5rem;}
+.detail .weui_cell:before, .detail .weui-cell:before {border-left: none;left: 0;}
+.detail .weui_cells_form .weui_cell_hd {padding-right: 4rem;}
+.detail .weui-cells:before {border-top: none;}
+.detail input::-webkit-input-placeholder{color: #999;font-size: 1.2rem;}
+.detail input a:visited {background: #489afe;}
+.detail .introduce {width: 100%;height: 100%;background:rgba(51, 51, 51, 0.7);position: fixed;top: 0;}
+.detail .introTxt {width:23.14rem;height:25.14rem;background: url(/Public/wechat/images/project/introduce.png) no-repeat;background-size: 100% 100%;margin: 8rem auto;}
+.detail .introTxt ol {padding: 7rem 0 0rem;width: 17rem;margin: 0 auto;}
+.detail .introTxt ol li:before {content: '';display: inline-block;width: .4rem;height: .4rem;background: #42a4ff;border-radius: 2rem;margin-right: .384rem;vertical-align: middle;}
+.detail .confirm {width: 10rem;height: 3rem;background: url(/Public/wechat/images/project/btn.png) no-repeat;margin: .8rem auto 0;background-size: 100% 100%;font-size: 1.07rem;line-height: 2.6rem;}
+.detail .btnBox {width: 100%;bottom: 0;}
+.detail em {width:6rem;height:4rem;right: 18%;bottom: 20%;}
+.detail em.recheck {background: url(/Public/wechat/images/project/recheck.png) no-repeat;background-size: 100%;}
+.detail em.repaying {background: url(/Public/wechat/images/project/repaying.png) no-repeat;background-size: 100%;}
+.detail em.over {background: url(/Public/wechat/images/project/over.png) no-repeat;background-size: 100%;}
+.detail em.overdue {background: url(/Public/wechat/images/project/overdue.png) no-repeat;background-size: 100%;}
+.detail .tip, .transferItem .tip  {display: inline-block;vertical-align:bottom;width: 1.7rem;height: 1.7rem;background: url(/Public/wechat/images/project/tip.png) no-repeat;background-size: 100% 100%;margin: 0 0 .2rem .2rem;}
+.detail .tip.transMoney, .detail .tip.undertakes {width: 1.07rem;height: 1.07rem;vertical-align: middle;}
+
+/*moredetail*/
+.moredetail .nav-tabs {position: fixed;top: 0;left: 0;right: 0;width: 100%;z-index: 100;padding: .769rem 0;}
+.moredetail .nav-tabs>li {float:left;border: none;width: 25%;}
+.moredetail .nav-tabs li a {padding: 0 1.07rem;}
+.moredetail .tab-content #paper img {width: 100%;height: auto;border: 1px solid #ddd;}
+.moredetail .tab-content table th {border-bottom: 1px solid #ddd;border-top: none;}
+.moredetail .tab-content td {padding: 1rem;border-bottom: 1px solid #ddd;border-top: none;}
+.moredetail .tab-content .tag .inline-block {width: 1.4rem;height: 1.2rem;line-height:1.1rem;background: #fffaea;color: #f9b548;border: 1px solid #f9b548;border-radius: .2rem;}
+.moredetail #paper ul li{float: left;padding: 20px;padding-top: 0;width: 33.33%;text-align: center;}
+.moredetail .weui-photo-browser-modal .photo-container img {margin: 0 auto}
+
+/*我的积分*/
+.integral .banner{width: 100%;height: 10.6rem;background: url(/Public/wechat/images/integral/bg.png) no-repeat;background-size: 100%;}
+.integral .myintegral {width: 7rem;height: 7rem;border: 8px solid #ffbc88;margin: 0 auto;border-radius: 4rem;padding-top: 1rem;}
+
+/*资金记录*/
+.recordmenu .fund_nav {width: 100%;z-index: 101;background: #fff;}
+.recordmenu .fund_nav .fund_nav-box {width: 100%;height: 100%;z-index: 10;top: 0;left: 0;background: #fff;padding: .8rem 0;}
+.recordmenu .fund_nav .fund_nav-box p {width: 50%;float: left;margin-bottom: 0;;font-size: 1.14rem;}
+.recordmenu .fund_nav .fund_nav-box p i {display: inline-block;width: .8rem;height:.8rem;background: url(/Public/wechat/images/icon/down_icon.png) no-repeat center center;background-size: cover;margin-left: .5rem;}
+.recordmenu .fund_nav .fund_nav-box p.on {color: #ff7610;}
+.recordmenu .fund_nav .fund_nav-box p.on i {background: url(/Public/wechat/images/icon/down_icon2.png) no-repeat center center;background-size: cover;height: .6rem;}
+.recordmenu .fund_nav .fund_nav-box p i.down {-webkit-transform: rotate(360deg);transform: rotate(360deg);-webkit-transition: all ease 0.4s;transition: all ease 0.4s;}
+.recordmenu .fund_nav .fund_nav-box p i.up {-webkit-transform: rotate(180deg);transform: rotate(180deg);-webkit-transition: all ease 0.4s;transition: all ease 0.4s;}
+.recordmenu .fund_nav-list li {width: 20%;float: left;text-align: center;height: 1.325rem;margin-bottom: 0.6rem;}
+.recordmenu .fund_nav-list:nth-child(2) li{width: 33.333%;}
+.recordmenu .fund_nav-list li a {width: 3.07rem;height: 1.6rem;-webkit-border-radius: 4px;border-radius: 4px;text-align: center;line-height: 1.6rem;font-size: 1.07rem;color: #666;background: #fff;border: 1px solid #ddd;display: inline-block;}
+.recordmenu .fund_nav-list:nth-child(2) li a {width: 6.07rem;}
+.recordmenu .fund_nav-list li a.on {background: #ff7610;color: #fff;}
+.recordmenu .fund-bg {width: 100%;height: 800px;background-color: transparent;-webkit-transition: all ease 0.4s;transition: all ease 0.4s;z-index: 1;top: 6.9rem;left: 0;position: fixed;}
+
+/*VIP介绍*/
+.vipInfo img {max-width: 90%;}
+.vipInfo .nav-tabs>li {width: 33.333%;border: none;}
+.vipInfo h4 {border-left: 4px solid #ff7610;line-height: 1.2;}
+.vipInfo .browse {height: 56%;position: absolute;}
+.vipInfo .grade {width: 100%;height: 16rem;background: url(/Public/wechat/images/vip/VIP.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip0 {background: url(/Public/wechat/images/vip/VIP0.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip1 {background: url(/Public/wechat/images/vip/VIP1.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip2 {background: url(/Public/wechat/images/vip/VIP2.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip3 {background: url(/Public/wechat/images/vip/VIP3.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip4 {background: url(/Public/wechat/images/vip/VIP4.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip5 {background: url(/Public/wechat/images/vip/VIP5.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip6 {background: url(/Public/wechat/images/vip/VIP6.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip7 {background: url(/Public/wechat/images/vip/VIP7.png) no-repeat center;background-size: 100%;}
+.vipInfo .vip8 {background: url(/Public/wechat/images/vip/VIP8.png) no-repeat center;background-size: 100%;}
+.vipInfo .income {background: url(/Public/wechat/images/vip/interest.png) no-repeat top;background-size: 100% 100%;width: 3.9rem;height: 3.9rem;margin: 0 auto;padding-top: 1.1rem;}
+
+/*信息披露*/
+.about .nav-tabs {position: fixed;top: 0;left: 0;right: 0;width: 100%;z-index: 999;white-space: nowrap;overflow-x: scroll;padding: .769rem 0;}
+.about .banner {background: url(/Public/wechat/images/about/browse/about-banner.png) no-repeat;background-size: 100%;width: 100%;height: 14rem;}
+.about .nav-tabs li {display: inline-block;float: initial;}
+.about .nav-tabs li a {padding: 0 1.07rem;}
+.about .weui_article {font-size: 1rem;}
+.about .weui_article p span.color_30:before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 12px;
+    background: #303030;
+    vertical-align: unset;
+    margin-right: .5rem;
+    border-radius: .2rem;
+}
+.about h3.title .english {font-size: 1.5rem;color: #fff2e9;}
+.about h3.title .chinese {width: 100%;top: .6rem;}
+.about .bord {padding: 0 1rem 2rem 1rem;}
+.about .bord img {margin-top: -5rem;}
+.about .bord p {line-height: 2.2rem;}
+.about .reports img {max-width: 100%;}
+.about .boss {display: inline-block;width: .8rem;height: .8em;border-radius: .2rem;margin: .384rem .384rem 0 0;}
+.about .boss-one{background: #ff8423;}
+.about .boss-two{background: #69b58e;}
+.about .boss-three{background: #ffb643;}
+.about .boss-four{background: #ed9443;}
+.about .boss-five{background: #ffd68f;}
+.about .boss-six{background: #ffe8c3;}    
+.about .slide{width: 100%;min-height: 180px;overflow: hidden;position: relative;}
+.about .slide .img{overflow: hidden;position: absolute;transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.4s;}
+.about .slide .img img{width: calc(100% - 14px);height: calc(100% - 14px);margin: 7px;}
+.about .slide .img1{width: 40%;height: 40%;top: 30%;left: -50%;z-index: 1;}
+.about .slide .img2{width: 60%;height: 82%;top: 16%;left: -20%;z-index: 2;}
+.about .slide .img3{width: 82%;height: 100%;top: 10%;left: 10%;z-index: 3;}
+.about .slide .img4{width: 60%;height: 82%;top: 16%;left: 60%;z-index: 2;}
+
+/*产品介绍*/
+.prodIntro> .pl_15 {
+    background: #fff url(/Public/wechat/images/about/product/decorate2.png) no-repeat 0 30rem;
+    background-size: 5rem;
+}
+.prodIntro .prodBanner {width: 100%;height: 13.4rem;background: url(/Public/wechat/images/about/product/banner.png) no-repeat;background-size: 100% 100%;}
+.prodIntro .prodTtz h3 {
+    margin-top: 0;
+    font-family: PingFangSC-Regular, sans-serif;
+    background: -webkit-linear-gradient(top,#ff53c2 50%,#ff4a64 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.prodIntro .prodQcb h3 {
+    font-family: PingFangSC-Regular, sans-serif;
+    background: -webkit-linear-gradient(top,#43d4ff 50%,#42a3ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.prodIntro .prodQyx h3 {
+    font-family: PingFangSC-Regular, sans-serif;
+    background: -webkit-linear-gradient(top,#ffb643 50%,#ff8423 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.prodIntro .prodQzy h3 {
+    font-family: PingFangSC-Regular, sans-serif;
+    background: -webkit-linear-gradient(top,#42eabb 50%,#38d4cb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.prodIntro h3 img {width: 1.6rem;vertical-align: sub;margin-right: .6rem;}
+.prodIntro .advantage img {width: 1rem;}
+.prodIntro .prodtxt {line-height: 2;}
+.prodIntro .prodQcb .advantage>div, .prodIntro .prodQyx .advantage>div, .prodIntro .prodQzy .advantage>div {line-height: 1.8;}
+.prodIntro .prodQcb .decorate1 {width:4rem;right: 0;bottom: .4rem;}
+
+/*公告列表*/
+.news .title{width:100%;text-overflow:ellipsis; overflow:hidden;white-space:nowrap;/*设置不折行*/}
+.news img,article img{max-width: 100%;}
+
+/*帮助中心*/
+.help .banner {width: 100%;height: 10rem;background: url(/Public/wechat/images/about/help_banner.png) no-repeat;background-size: 100% 100%;padding: 0 2rem;}
+.help .banner a {width: 10.7rem;height: 5rem;margin-top: 1.4rem}
+.help .icon a {line-height: 2.2rem;}
+.help .icon img {width: 1.85rem;}
+.help img,.help table {max-width: 100%;}
+.hxhelp img {max-width: 68%;}
+.help.itemList li {padding-left: .57rem;height: 3.57rem;line-height: 3.57rem;font-size: 1.14rem;background: url(/Public/wechat/images/icon/right-icon.png) no-repeat 96.5% 1.285rem;background-size: .59rem 1rem;}
+.help.itemList li > a {display: inline-block;width: 92%;height: 100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.help.question .detail {padding: .7rem .57rem;}
+.help.question h3 {font-size: 1.07rem;}
+.help.question .feeback {height: 2.85rem;line-height: 2.85rem;}
+.help.question .feeback > a {width: 50%;}
+.help.question .feeback > a i {display:inline-block;width: 1.428rem;height: 1.428rem;vertical-align: middle;}
+.help.question .feeback a.useful i {background: url(/Public/wechat/images/icon/useful-icon02.png) no-repeat center;background-size: 100% 100%;}
+.help.question .feeback a.useful.selected i {background: url(/Public/wechat/images/icon/useful-icon01.png) no-repeat center;background-size: 100% 100%;}
+.help.question .feeback a.useful.selected,.help.question .feeback a.useless.selected {color: #ff8423;}
+.help.question .feeback a.useless i {background: url(/Public/wechat/images/icon/useless-icon02.png) no-repeat center;background-size: 100% 100%;}
+.help.question .feeback a.useless.selected i {background: url(/Public/wechat/images/icon/useless-icon01.png) no-repeat center;background-size: 100% 100%;background-position: 0 -1px;}
+
+/*存管指引提示*/
+.huaxMask{position: fixed;background: rgba(0,0,0,.6);z-index: 1000;top: 0;right: 0;left: 0;bottom: 0;}
+.huaxBox {width: 18.7rem;height: 33.2rem;margin: 2rem auto;}
+.huaxTip {width: 16.5rem;height: 29rem;margin: 0 auto;padding-top: 1.2rem;}
+.huaxTip .prev {left: -3.2rem;top: 14rem;}
+.huaxTip .next {right: -3.2rem;top: 14rem;}
+.huaxTip .prev img {width: 1rem;height: 2rem;}
+.huaxTip .next img {width: 1rem;height: 2rem;}
+.huaxBox .toBind {line-height: 3.7rem;margin-top: .8rem;}
+
+/*合规*/
+.risk-assesss .risk-assesss-img img {width: 7.14rem;margin: 0 auto;}
+.risk-assesss .risk-assesss-btn a {border-radius: 3rem;}
+.riskQues .progress {
+    width: 100%;
+    height: .36rem;
+    background: #dcdcdc;
+    border-radius: initial;
+    margin: 0;
+    box-shadow: none;
+    position: relative;
+}
+.riskQues .progress-bar {
+    background: linear-gradient(to right, #42a3ff 0%, #43d4ff 100%);
+}
+.riskQues .risk-question {width: 80%;}
+.riskQues .risk-ans input {display:none;}
+.riskQues .risk-ans input+label {
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #acacac;
+    padding: 6px;
+    border-radius: 50px;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.riskQues .risk-ans input:checked+label {
+    width: 14px;
+    height: 14px;
+    background-color: #ff9a4a;
+    border: 1px solid #ff9a4a;
+    color: #fff;
+}
+.riskQues .risk-ans input:checked+label:after {
+    content: ' ';
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    position: absolute;
+    top: 3px;
+    background: #fff;
+    text-shadow: 0px;
+    left: 3px;
+}
+.netLoan .nav-tabs {
+    padding: 1.538rem;
+}    
+.netLoan .nav-tabs li {width: 50%;}
+.netLoan .nav-tabs li a {
+    width: 11.2rem;
+    height: 2.85rem;
+    line-height: 2.85rem;
+    margin: 0 auto;
+    border: 1px solid #42a4ff;
+    border-radius: 3rem;
+    color: #42a4ff;
+    font-size: 1.07rem;
+    background: transparent;
+}
+.netLoan .nav-tabs>li.active>a, .netLoan .nav-tabs>li.active>a:focus,
+.netLoan .nav-tabs>li.active>a:hover, .netLoan .nav-tabs>li.active>a:active {
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #39a0ff), color-stop(100%, #43d4ff));
+    background: -webkit-linear-gradient(left, #39a0ff 50%, #43d4ff 100%);
+    background: linear-gradient(to right, #39a0ff 0%, #43d4ff 100%);
+    border-color: transparent;   
+}
+.netLoan .tab-content {padding: 0 2.4rem;}
+.netLoan .net-loan-ques, .netLoan .tab-content ul li > a {
+    font-size: 1.14rem;
+    padding-left: .769rem;
+    line-height: 1;
+    position: relative;
+}
+.netLoan .net-loan-ques:before, .netLoan .tab-content ul li > a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 14px;
+    background-color: #42a4ff;
+    left: 0;
+    top: 2px;
+}
+.netLoan .tab-content ul li > a:before {
+    top: 4px;
+}
+.loan-detail a {
+    display: inline-block;
+    border: 1px solid #41a3fe;
+    padding: .22rem .85rem;
+    border-radius: 6rem;
+}
+
+/*月度账单*/
+.bill .bill-account {width: 100%;height: 13.8rem;background: url(/Public/wechat/images/user/bill-banner.png) no-repeat;background-size: 100% 10.78rem;}
+.bill .bill-account h6 {margin-bottom: .3rem}
+.bill .bill-account h6:before {content: '';display: inline-block;width: .7rem;height: .7rem;border-radius: .7rem;background:linear-gradient(-180deg, #FFBA49 0%, #FF8423 100%);margin-right: .4rem;}
+.bill .bill-account .radiu_12 {width: 100%;height: 9rem;background: url(/Public/wechat/images/user/bill_bg.png) no-repeat;background-size: 100% 100%;}
+.bill .incomeTrend .tip {display: inline-block;width: 1.42rem;height: 1.42rem;background: url(/Public/wechat/images/icon/bill-icon.png) no-repeat;background-size: 100% 100%;vertical-align: sub;margin-left: .5rem;}
+.bill .statistics {padding: 2.14rem;}
+.bill .statistics ul li {padding-left: 2.4rem;}
+.bill .statistics ul li h6 {margin-bottom: .25rem;}
+.bill .statistics ul li.withdraw {background: url(/Public/wechat/images/icon/bill-icon06.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.principal {background: url(/Public/wechat/images/icon/bill-icon08.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.reward {background: url(/Public/wechat/images/icon/bill-icon05.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.inviteReward {background: url(/Public/wechat/images/icon/bill-icon07.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.recharge {background: url(/Public/wechat/images/icon/bill-icon02.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.interest {background: url(/Public/wechat/images/icon/bill-icon01.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.inviteFriend {background: url(/Public/wechat/images/icon/bill-icon03.png) no-repeat left center;background-size: 2rem 2rem;}
+.bill .statistics ul li.cashReward {background: url(/Public/wechat/images/icon/bill-icon04.png) no-repeat left center;background-size: 2rem 2rem;}
+    
+/*实名认证*/
+.realName .user {background: url(/Public/wechat/images/user/people_icon.png) no-repeat .5rem;background-size: 6%;}
+.realName .id {background: url(/Public/wechat/images/user/id_icon.png) no-repeat .5rem;background-size: 6%;}
+
+/*页面加载*/
+.wxLast {width: 80%;margin-left: 10%;height: 40px;line-height: 40px;text-align: center;font-size: 14px;margin-top: 10px;display: none;}
+
+/*错误页面*/
+.pageerror{background: url(/Public/wechat/images/common/fault.png) no-repeat center 7rem; background-size:60%;padding-top: 16rem;}
+.page404{background: url(/Public/wechat/images/common/notfound.png) no-repeat center 7rem; background-size:60%;padding-top: 16rem;;}
+.message img {width: 4rem;}
+
+/*签到提示框*/
+.signTip {width: 100%;height: 100%;position: fixed;left:0;right:0;top:0;bottom:0;background: rgba(0, 0, 0, 0.72);z-index: 9990;}
+.signTip .sign {width: 20rem;height: 18rem;background: url(/Public/wechat/images/common/sign.png) no-repeat;background-size: 100%;z-index: 9999;margin: 12rem auto;}
+.signTip button {background: #ffea76;width: 11.42rem;}
+
+/*首页悬浮图标*/
+.actIcon {width: 6.78rem;height: 6.78rem;background: url(/Public/wechat/images/common/jan-icon.png) no-repeat;right: 0;top: 50%;z-index: 999;}
+
+/*系统公告*/
+.systemNotice .shadow {position: fixed;z-index: 9998;opacity: 1;visibility: visible;background: rgba(0,0,0,.6);top: 0;right: 0;left: 0;bottom: 0;}
+.systemNotice .content {position: fixed;z-index: 9999;width: 23rem;height: 17.4rem;top: 50%;left: 50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);-webkit-transform-origin: 0 0;transform-origin: 0 0;overflow: hidden;background: url(/Public/wechat/images/common/notice-bg.png) no-repeat;background-size: 100% 100%;}
+.systemNotice .content h3 {margin:.7rem 0 .62rem;}
+
+
+/* for 760 px width screen */
+@media only screen and (max-width:768px) { html, body { font-size: 18px;min-height: 700px;}  }
+/* for 640 px width screen */
+@media only screen and (max-width:640px) { html, body { font-size: 15px; } }
+/* for 540 px width screen */
+@media only screen and (max-width:540px) { html, body { font-size: 15px;  }  }
+/* for 480 px width screen */
+@media only screen and (max-width: 480px) { html, body { font-size: 15px;min-height: 736px;  }  }
+/* for 400 px width screen */
+@media only screen and (max-width: 400px) { html, body {  font-size: 14px;min-height: 667px;  } }
+/* for 360 px width screen */
+@media only screen and (max-width: 360px) { html, body {  font-size: 14px;min-height: 640px;  }  }
+/* for 320 px width screen */
+@media only screen and (max-width: 320px) { html, body {  font-size: 12px;min-height: 520px; } }
+/* for 240 px width screen */
+@media only screen and (max-width: 240px) { html, body {  font-size: 12px; } }

@@ -1,0 +1,64 @@
+<div id="sub_count_list">
+    <script type="text/javascript" src="{$Think.BPATH}js/datejs/WdatePicker.js"></script>
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME,$_GET)}">
+    <h4 class="title">客服跟踪统计</h4>
+    <form class="form-inline" id="query_count"> 
+        <div class="form-group">
+            <label class="control-label">客服:</label>
+            <select name="serviceID" id="serviceID" class="form-control">
+                <option value="">--请选择--</option>
+                <volist name="serinfo" id="vo">
+                    <option value="{$vo.userID}" >{$vo.cusName}</option>
+                </volist>
+            </select>
+        </div> 
+        <div class="form-group">
+            <label class="control-label">回访日期:</label>
+            <input type="text" class="form-control" name="textstart" id="textstart" value="{$Think.post.textstart}" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" placeholder="请输入开始时间">
+            <label class="control-label">～</label>
+            <input type="text" name="textend" id="textend" value="{$Think.post.textend}" class="form-control" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" placeholder="请输入结束时间">
+        </div>  
+        <div class="form-group">
+            <a href="{:U(ACTION_NAME,$_GET)}" onclick="$Util.openQuery(this, event, 'query_count')" class="btn btn-info"><i class="icon-search"></i>查询</a>
+        </div>
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>回访日期</th>
+                <th>回访客服</th>   
+                <th>电话</th>
+                <th>短信</th>
+                <th>QQ</th>
+                <th>微信</th>
+                <th>多客服</th>
+                <th>营销QQ</th>
+            </tr> 
+        </thead>
+        <tbody>
+        <volist name="result" id="vo">
+            <tr>
+                <td>{$vo.serviceDate|formatshortDate}</td>
+                <td>{$vo.serviceUserName}</td>
+                <td>{$vo.dh}</td>
+                <td>{$vo.dx}</td>
+                <td>{$vo.qq}</td>
+                <td>{$vo.wx}</td>
+                <td>{$vo.dkf}</td>
+                <td>{$vo.yxqq}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <nav class=" pagination-centered">
+        <ul class="pagination">  
+            {$pageHtml}
+        </ul>
+    </nav>
+    <script>
+        $(function() {
+            $("#serviceID").val("{$Think.post.serviceID}");
+        });
+    </script>
+
+</div>

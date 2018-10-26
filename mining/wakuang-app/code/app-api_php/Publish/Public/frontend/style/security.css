@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-10-5, 17:06:53
+    Author     : admin
+*/
+/*安全保障*/
+.sub-nav {margin-top:0;background:#f3f3f3;width:100%;height:60px;line-height:60px;border:none;border-bottom:1px solid #e1e1e1;}
+.sub-nav .sub-nav-inner {height:60px;line-height:60px;width:1020px;margin:0 auto;}
+.sub-nav .sub-nav-inner .active a{color:#333;font-weight:bold;}
+.h2{font-size:1.7em;color:#475058;font-weight:bold;margin-top:30px;}
+
+ul.security_con{width:1000px;}
+ul.security_con h4{font-size:1.5em;color:#475058;font-weight:boldl;margin-top:10px;}
+ul.security_con li{ padding:12px 0; border-bottom:1px dashed #ddd;}
+ul.security_con li p{ line-height:30px;font-size:16px;margin-top:10px;padding-left:20px}
+
+.pg-guide-gray{background:#efefef;border-bottom:1px solid #e5e5e5;border-top:1px solid #e5e5e5;float:left;width:100%;}
+.pg-guide-guo{background:#fff;float:left;width:100%;}
+.pg-guide-invest-banner{background:#ff8315;}
+.pg-guide-borrow-banner{background:#85ca6f;}
+.pg-guide-contract-banner{background:#e5e5e5;}
+.pg-guide-safe-banner{background-image:url(/Public/frontend/images/safety/guide-safe-banner.jpg);background-position: 50% 0%;background-repeat: no-repeat no-repeat;width:100%;height:270px;}
+.pg-problem-safe-banner{background-image:url(/Public/frontend/images/safety/problem-safe-banner.jpg);background-position: 50% 0%;background-repeat: no-repeat no-repeat;width:100%;height:270px;}
+/*风控模型add by guoguo 2015-4-16*/
+.pg-safety-banner{background-image:url(/Public/frontend/images/safety/guide-safety-banner.jpg);background-position: 50% 0%;background-repeat: no-repeat no-repeat;width:100%;height:269px;}
+.bg-safety{background:#f5fafc;overflow:hidden;position:relative;width:100%;height:auto;}
+.bg-safety .bg-secure{width:1000px;position:relative;margin:0 auto;overflow: hidden;}
+.bg-secure h2{font-size:24px;font-weight:bold;padding:60px 0 40px;text-align:center;width:100%;color:#2c95b3;float:left;}
+.bg-secure h2 em{font-size:12px;font-weight:normal;position:relative;top:-3px;}
+.bg-secure .safety-clear{float:left;width:1000px;margin:0 auto 30px 0;}
+.bg-secure .bg-grid{width:590px;display:inline;float:left;}
+.bg-secure .bg-grid h3{ext-align:left;color:#2c95b3;}
+.bg-secure .bg-grid p{font-size:14px;line-height:30px;color:#666;letter-spacing:1px;text-indent:2em;margin-bottom: 0;}
+.bg-secure .bg-grid em{color:#2c95b3;}
+.safety-con{width:328px;text-align:center;}
+.safety-con span{color:#666;text-decoration:underline;}
+.safety-ico1{background:url(/Public/frontend/images/safety/ico1.png) no-repeat 0 10px;padding-top:30px;}
+.safety-ico2{background:url(/Public/frontend/images/safety/ico2.png) no-repeat 0 10px;padding-top:30px;}
+
+.bg-secure .bg-rational .safety-top{text-align:center;margin:20px 0;border:1px solid #a2cbd8;height:480px;}
+.bg-secure .bg-rational img{
+    width: 100%;
+}
+.bg-secure .bg-rational h3{font-size:24px;letter-spacing:1px;text-align:center;color:#2c95b3;margin:10px auto;}
+.bg-secure .bg-rational p{font-size:14px;line-height:30px;color:#666;letter-spacing:1px;padding:0 10px 20px 18px;}
+.bg-secure .bg-data{width:560px;margin-left:40px;float:left;display:block;margin-top:20px;}
+.bg-secure .bg-data h3{padding:20px 0;text-align:left;font-size:22px;color:#2c95b3;}
+.bg-secure .bg-data p{font-size:14px;line-height:30px;color:#666;text-indent:2em;}

@@ -1,0 +1,178 @@
+<div id="sub-borrow-edit">
+    <script type="text/javascript" src="{$Think.BPATH}js/validate.extend.js?version={$Think.BNO}" ></script>     
+    <h4 class="title">设备信息</h4>
+    <form class="form-horizontal" id="form-appver">
+        <input  type="hidden" name="charge_id" id="verID" value="{$data.charge_id}" >
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">基本信息</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content form-item">
+            <div class="tab-pane fade in active" id="home">
+                <div class="row">
+                    <div class="span4 has-info">  
+                        <label class="col-sm-2 control-label" for="inputInfo">设备ID：</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="device_id"  maxlength="30" name="device_id" value="{$data.device_id}" class="form-control" >
+                        </div>
+                    </div>
+
+
+                    <div class="span4 has-info">
+                        <label class="col-sm-2 control-label" for="inputInfo">设备类型：</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="device_type"  maxlength="30" name="device_type" value="{$data.device_type}" class="form-control" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span4 has-info">  
+                        <label class="col-sm-2 control-label" for="inputInfo">绑定状态</label>
+                        <div class="col-sm-8">
+                            <select  name="state" id="terminal" class="form-control">
+                                <option  value ="">--请选择--</option>
+                                <option  <eq name="data.state" value="1">selected</eq>  value ="1">未绑定</option>
+                                <option  <eq name="data.state" value="2">selected</eq>   value ="2">已绑定</option>
+                            </select>    
+                        </div>
+                    </div>
+
+                    <div class="span4 has-info">
+                        <label class="col-sm-2 control-label" for="inputInfo">绑定人：</label>
+                        <div class="col-sm-8 ">
+                            <div class="input-group">
+                                <input type="text" id="appSize" name="phone" maxlength="30"  value="{$data.phone}" class="form-control" >
+                                <div class="input-group-addon"></div>
+                            </div>
+                            <span style="color:#d9534f;">输入手机号码修改绑定人</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="span4 has-info">
+                        <label class="col-sm-2 control-label" for="inputInfo">设备模式：</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="device_model"  maxlength="30" name="device_model" value="{$data.device_model}" class="form-control" >
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" id="hidUserDiv">              
+                    <div class="span4 has-info">
+                        <label class="col-sm-2 control-label" for="inputInfo">MAC：</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="versionCode"  maxlength="30" name="device_mac" value="{$data.device_mac}" class="form-control" >
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="span4 has-info">  
+                        <label class="col-sm-2 control-label" for="inputInfo">备注：</label>
+                        <div class="col-sm-8">
+                            <textarea name="remark" clos="40" style="margin-left: 0px; margin-right: 0px; width: 302px;"   rows="8">{$data.remark}</textarea>
+                        </div>
+                    </div>
+                </div>     
+            </div>  
+            <div class="row">
+                <div class="col-sm-2"> </div> 
+                <div class="col-sm-8">    
+                    <a class="btn btn-primary mt_10 butSavever" href="javascript:;">保存</a>  
+                    <a class="btn btn-info mt_10 butReturn" href="javascript:;">返回</a> 
+                </div>
+            </div>     
+        </div>
+    </form>
+    <script type="text/javascript" >
+        $(function() {
+            $(".butReturn").click(function() {
+                $Util.returnRefresh();
+            });
+            $(".updateUrl").hide();
+            $(".checkCode").hide();
+            var hidterminal = $("#hidterminal").val();
+            if (hidterminal == 2) {
+                $(".updateUrl").show();
+                $(".checkCode").show();
+            }
+            appverValid();
+            $(".butSavever").click(function() {
+                var isOK = $("#form-appver").valid();
+                if (isOK) {
+                    savever();
+                }
+            });
+            $("#terminal").change(function() {
+                var terVal = $(this).val();
+                if (terVal == 2) {
+                    $(".updateUrl").show();
+                    $(".checkCode").show();
+                }
+                if (terVal == 3) {
+                    $(".updateUrl").hide();
+                    $(".checkCode").hide();
+                }
+            });
+        });
+        function savever() {
+            var data = $Util.getData($("#form-appver"));
+            $.ajax({
+                type: "post",
+                url: "/Backend/Operate/saveCharge",
+                data: {'par': data},
+                dataType: "json",
+                beforeSend: function() {
+                    $(".sub-content").showLoading();
+                },
+                success: function(data) {
+                    $(".sub-content").hideLoading();
+                    if (data.status == 1) {
+                        $("#shareID").val(data.data);
+                        $("#hidAction").val("edit");
+                        $win.confirm(data.msg + ",是否关闭窗口？").on(function() {
+                            $('.butReturn').trigger("click");
+                        });
+                    } else {
+                        $win.warn(data.msg);
+                    }
+                },
+                complete: function() {
+                    $(".sub-content").hideLoading();
+                },
+                error: function() {
+                    $(".sub-content").hideLoading();
+                }
+            });
+        }
+        function appverValid() {
+            $("#form-appver").validate({
+                rules: {
+                    versionName: {required: true, maxlength: 30},
+                    versionCode: {required: true, maxlength: 30},
+                    terminal: {required: true},
+                    appSize: {required: true, maxlength: 30},
+                    isForced: {required: true},
+                    checkCode: {required: true},
+                    updateUrl: {required: true},
+                    updateDesc: {required: true}
+                },
+                messages: {
+                    versionName: {required: "版本名称不能为空!", maxlength: "最大长度30个字符"},
+                    versionCode: {required: "版本号不能为空!", maxlength: "最大长度30个字符"},
+                    terminal: {required: "终端类型不能为空!"},
+                    appSize: {required: "APP大小不能为空!", maxlength: "最大长度30个字符"},
+                    isForced: {required: "是否强制更新不能为空!"},
+                    checkCode: {required: "校验码不能为空!"},
+                    updateUrl: {required: "更新地址不能为空!"},
+                    updateDesc: {required: "更新说明不能为空!"}
+                }
+            });
+        }
+    </script>
+</div>

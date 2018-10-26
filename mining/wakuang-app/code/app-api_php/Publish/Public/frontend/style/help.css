@@ -1,0 +1,114 @@
+.help-center .crumbs-ui li, .help-center .crumbs-ui li a {height: 72px;line-height: 72px;}
+.help-center .sidebar{width:200px;padding: 0 16px;margin-bottom: 40px;}
+.help-center .sidebar li{padding-bottom: 50px;}
+.help-center .sidebar li .btn {font-size: 14px;padding: 10px 26px;}
+.help-center .sidebar .help-icon {width: 54px;height: 54px;margin: 50px auto 16px;}
+.help-center .sidebar .help-icon.icon-sevice {background: url(/Public/frontend/images/bank/service.png) no-repeat;}
+.help-center .sidebar .help-icon.icon-proposal {background: url(/Public/frontend/images/bank/proposal.png) no-repeat;}
+.help-center .sidebar .help-icon.icon-tel {background: url(/Public/frontend/images/bank/tel.png) no-repeat;}
+.help-center .rbox {width: 970px;margin-bottom: 40px;}
+.help-center .rbox .banner {width: 100%;height: 148px;padding: 28px 77px 47px;background: url(/Public/frontend/images/bank/banner.png) no-repeat;margin-bottom: 40px;}
+.help-center .rbox .banner h2 {border-bottom: 1px solid #fff;}
+.help-center .rbox .step {width: 23.4%;height:114px;padding-top:95px;float: left;padding-left: 42px;}
+.help-center .rbox .step.step-01 {width:21.03%;background: url(/Public/frontend/images/bank/step-01.png) no-repeat;padding-left: 26px;}
+.help-center .rbox .step.step-02 {background: url(/Public/frontend/images/bank/step-02.png) no-repeat 16px top;padding-left: 0;}
+.help-center .rbox .step.step-03 {background: url(/Public/frontend/images/bank/step-03.png) no-repeat 16px top;}
+.help-center .rbox .step.step-04 {background: url(/Public/frontend/images/bank/step-04.png) no-repeat 16px top;}
+.help-center .rbox .step.step-05 {width: 8.66%;background: url(/Public/frontend/images/bank/step-05.png) no-repeat right top;padding-left: 0;}
+.help-center .rbox .question {width: 66px;height: 76px;padding-top: 50px;float: left;margin: 0 53px;}
+.help-center .rbox .question:first-child {margin-left: 0;}
+.help-center .rbox .question:last-child {margin-right: 0;}
+.help-center .rbox .question.question-01 {background: url(/Public/frontend/images/bank/icon-01.png) no-repeat center top;}
+.help-center .rbox .question.question-02 {background: url(/Public/frontend/images/bank/icon-02.png) no-repeat center top;}
+.help-center .rbox .question.question-03 {background: url(/Public/frontend/images/bank/icon-07.png) no-repeat center top;}
+.help-center .rbox .question.question-04 {background: url(/Public/frontend/images/bank/icon-04.png) no-repeat center top;}
+.help-center .rbox .question.question-05 {background: url(/Public/frontend/images/bank/icon-05.png) no-repeat center top;}
+.help-center .rbox .question.question-06 {background: url(/Public/frontend/images/bank/icon-08.png) no-repeat center top;}
+.help-center .rbox .self-service {width: 31.9%;height: 170px;float: left;margin-right:20px;border-radius: 15px;padding-top: 118px;}
+.help-center .rbox .self-service.self-service-01 {background: #e4f5ff url(/Public/frontend/images/bank/register.png) no-repeat center 34px;}
+.help-center .rbox .self-service.self-service-02 {background: #e4f5ff url(/Public/frontend/images/bank/find-pwd.png) no-repeat center 34px;}
+.help-center .rbox .self-service.self-service-03 {background: #e4f5ff url(/Public/frontend/images/bank/invest.png) no-repeat center 34px;}
+.help-center .rbox .self-service:last-child {margin-right: 0;}
+.sideMenu h5{ height: 60px;padding: 20px;padding-left: 20px;cursor: pointer;margin: 0;}
+.sideMenu h5:last-child {border-bottom: none !important;}
+.sideMenu h5 em{float:right;display:block; width:12px; height:19px;background:url(/Public/frontend/images/bank/iconAdd.png) no-repeat center center; cursor:pointer;}
+.sideMenu h5.on{border: none;}
+.sideMenu h5.on em{transform: rotate(180deg);}
+.sideMenu ul{padding: 0 0 0 20px;display:none; /* 默认都隐藏 */ }
+.sideMenu ul.bord-b:last-child {border-bottom: none !important;}
+.hcintro .bor-l{
+    border-width: 4px;
+}
+.hcintro .tit1,.hcintro .tit2,.hcintro .tit3,.hcintro .tit4,.hcintro .tit5{
+    width:184px;
+    height: 39px;
+    margin-left: -48px;
+    padding-left: 35px;
+    line-height: 33px;
+    color: #fff;
+    background:url(/Public/frontend/images/hxcgyd.png) no-repeat;
+}
+.hcintro .tit2{
+    background-position: 0 -40px;
+}
+.hcintro .tit3{
+    background-position: 0 -78px;
+}
+.hcintro .tit4{
+    background-position: 0 -116px;
+}
+.hcintro .tit5{
+    background-position: 0 -155px;
+}
+.hcintro{
+    line-height: 2;
+    font-size: 16px;
+}
+.hcintro p{
+    margin: 20px 0 30px;
+    padding: 20px;
+    background: #ececec;
+    border-radius: 8px;
+    
+}
+.hcintro .czzybox a{
+    width:100px;
+    display: inline-block;
+    margin: 0;
+}
+.hcintro .czzybox .icon-yd{
+    width: 100px;
+    height: 60px;
+    background: url(/Public/frontend/images/hxcgyd.png) no-repeat;
+}
+.hcintro .czzybox .ico-1{
+    background-position: -184px 0;
+}
+.hcintro .czzybox .ico-2{
+    background-position: -284px 0;
+}
+.hcintro .czzybox .ico-3{
+    background-position: -384px 0;
+}
+.hcintro .czzybox .ico-4{
+    background-position: -484px 0;
+}
+.hcintro .czzybox .ico-5{
+    background-position: -584px 0;
+}
+.hcintro .czzybox .icon-yd:hover{
+    background-position-y: -60px;
+}
+.hcintro .czzybox .arrow{
+   width: 70px;
+   height: 70px;
+   display: inline-block;
+   background:url(/Public/frontend/images/hxcgyd.png) no-repeat;
+   background-position: -198px -130px; 
+}
+.hcintro .czzybox div{
+    text-align: center;
+}
+.modal textarea.form-control {height: 140px;}
+.modal .btn {width: 210px;height: 42px;line-height: 42px;padding: 0;}
+.modal .modal-dialog {width: 500px;}

@@ -1,0 +1,135 @@
+clientPlatformType： 平台分配的详细身份字段（IOS, ANDROID, H5IOS, H5ANDROID, PCWEB, WXAPP， WS）， 当不需要client信息时，该字段可选
+platformFrom：平台分配的应用身份字段（取值范围：WKAPP[挖矿APP]， XCWXAPP[星控微信小程序], KERNELACCOUNT[中心账户平台]）， 该字段必填，英文
+id字段，必填，但为空值，不可为空格
+xxxxTime 为操作时间，毫秒数, 必填
+
+
+//程序启动关闭信息
+主题：oms.subject.application.operation
+{
+"id": null, //必填
+"createTime": 1531453134738, //必填
+"platformFrom": "WKWXAPP", //必填
+"clientPlatformType": "WKWXAPP", //选填
+"appOperationTime": 1531453134733,  //必填
+"mobile": "13800138000", //选填
+"wxID": "nowx", //选填
+"ip": "127.0.0.1", //选填
+"operationType": 1   //[操作类型(0=关机，1=开机)], 必填
+}
+
+
+
+
+//设备绑定解绑信息
+主题：oms.subject.device.bind-unbind
+{
+"id": null,//必填
+"createTime": 1531453134823,//必填
+"platformFrom": "WKWXAPP",//必填
+"clientPlatformType": "WKWXAPP",//选填
+"mobile": "1388888888",//选填
+"deviceId": "d_id01",//必填
+"deviceType": "d_type",//必填
+"deviceMac": "d_mac",//选填
+"deviceIp": "d_ip",//选填
+"deviceModel": "d_mo",//选填
+"deviceOperType": "d_p",//选填
+"operationTime": 1531453134823,//必填
+"operationType": 1//必填(0=解除绑定，1=绑定)
+}
+
+
+
+//用户访问/点击广告信息
+主题：oms.subject.user.access-click.advertisement
+{
+"id": null,//必填
+"createTime": 1531453134833,//必填
+"platformFrom": "WKWXAPP",//必填
+"clientPlatformType": "WKWXAPP",//选填
+"mobile": "1388888888",//选填
+"advertId": "25",//必填
+"advertLink": "http://baidu.com",//选填
+"advertType": "type",//选填
+"advertName": "我是广告",
+"advertInfo": "我是广告",
+"operationTime": 1531453134833,//必填
+"operationType": 0,//必填(0=访问，1=点击)
+"ip": "127.0.0.1"//必填
+}
+
+//用户注册信息
+主题：oms.subject.user.basic.info
+{
+"id": null,//必填
+"createTime": 1531453134835,//必填
+"platformFrom": "WKWXAPP",//必填
+"clientPlatformType": "WKWXAPP",//选填
+"mobile": "1388888888",//选填
+"email": null,//选填
+"realName": null,//选填
+"idCard": null,//选填
+"nickName": null,//选填
+"userFromType": "qd01",//必填, 用户来源[非渠道数据填写：RANDOM， 其他渠道，如推广，则填写推广渠道设置的名称-英文]
+"avatar": null,//选填
+"userOperType": "reg",//选填
+"wxID": null,//选填
+"qqID": null,//选填
+"sinaWeiBoID": null,//选填
+"regTime": 1531453134835,//必填
+"ip": "127.0.0.1"
+}
+
+
+
+
+
+//用户认证
+主题：oms.subject.user.auth
+{
+"id": null,//必填
+"createTime": 1531453134837,//必填
+"platformFrom": "WKWXAPP",//必填
+"clientPlatformType": "WKWXAPP",//选填
+"authType": "IDCARD",//必填, [取值范围：AUTHIDCARD-实名认证，GENE-基因数据，ADDRESS-添加地址，ATTENTIONWEBCHAT-关注公众号，VOICEDISCERN-声音识别，FACEDEISCEERN-人脸识别，BINDBANK-绑定银行卡，HARDWAREBIND-绑定矿机, BINDADDRESSLIST=绑定通讯录]
+"authStatus": 1,//必填(0=失败，1=成功)
+"authTime": 1531453134837//必填
+}
+
+//用户登录/登出信息
+主题：oms.subject.user.login-logout
+{
+"id": null,//必填
+"createTime": 1531453134838,//必填
+"platformFrom": "WKWXAPP",//必填
+"clientPlatformType": "WKWXAPP",//选填
+"mobile": "1388888888",//选填
+"operationTime": 1531453134838,//必填
+"operationType": 0,//必填(0=登出，1=登录)
+"wxID": "wx_id",//选填
+"qqID": "qq_id",//选填
+"sinaWeiBoID": "sina_id",//选填
+"ip": "127.0.0.1"//必填
+}
+
+
+
+
+
+
+
+//用户接受/完成任务
+主题：oms.subject.user.task.accept-finished
+{
+"id": null,//必填
+"createTime": 1531453134843,//必填
+"platformFrom": "WKWXAPP",//必填
+"clientPlatformType": "WKWXAPP",//选填
+"mobile": "1388888888",//选填
+"operationTime": 1531453134843,//必填
+"operationType": 1,//必填(0=取消，1=接受)
+"taskId": "28",//必填
+"taskName": "macc",//选填
+"taskInfo": "maccinfo"//选填
+}

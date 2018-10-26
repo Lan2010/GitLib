@@ -1,0 +1,100 @@
+<div class="modal-body">
+    <script type="text/javascript" charset="utf-8" src="{$Think.BPATH}js/uploader/webuploader.min.js"></script>
+    <style>
+        .upload-img {
+            color: #FFF;
+            position: absolute;
+            display: inline-block;
+            width: 100px;
+            height: 35px;
+            line-height: 29px;
+            text-align: center;
+            top: 107px;
+            left: 600px;
+            border-radius: 2px;
+            background-color: #66D491;
+        }
+        .upfilebox label{
+            left: 500px;
+        }
+    </style>
+    <form class="form-horizontal" id="form-ticket" enctype="multipart/form-data">       
+        <div class="form-group has-info">
+            <label class="control-label col-sm-2" for="inputInfo">邀请用户电话：</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"  style='width: 500px;' value="" name="userPhone" id="userPhone" placeholder="请输入11位有效数字"  >
+            </div>
+        </div>
+
+        <div class="form-group has-info" id="pont">
+            <label class="control-label col-sm-2" for="inputInfo">被邀请用户电话：</label>
+            <div class=" col-sm-4">    
+                <input type="text" class="form-control"  style='width: 500px;' value="" name="invitelPhone" id="invitelPhone" placeholder="请输入11位有效的数字"  >
+            </div >
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" id="butCancel" class="btn btn-default" data-dismiss="modal">关闭</button>
+    <button type="button" id="butSave" class="btn btn-primary" >保存</button>
+</div> 
+
+
+<script>
+    
+    $(function () {
+        phoneValid();
+        $("#butSave").click(function () {
+            var isOK = $("#form-ticket").valid();
+            if (isOK) {
+                addInvitelLog();
+            }
+        });
+    });
+
+    function addInvitelLog() {
+        var data = $Util.getData($("#form-ticket"));
+        
+        $.ajax({
+            type: "post",
+            url: "/Backend/User/addInvite",
+            data: {'par': data},
+            dataType: "json",
+            beforeSend: function (XMLHttpRequest) {
+                $(".sub-content").showLoading();
+            },
+            success: function (data, textStatus) {
+                $(".sub-content").hideLoading();
+                if (data.status == 1) {
+                    $win.confirm(data.msg + ",是否关闭窗口？").on(function () {
+                        $('#butCancel').trigger("click");
+                    });
+                } else {
+                    $win.warn(data.msg);
+                }
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+                $(".sub-content").hideLoading();
+            },
+            error: function () {
+                $(".sub-content").hideLoading();
+            }
+        });
+    }
+
+
+    function phoneValid() {
+        $("#form-ticket").validate({
+            rules: {
+                userPhone: {required: true},
+                invitelPhone: {required: true},
+            },
+            messages: {
+                invitelPhone: {required: "请填写被邀请人的电话"},
+                userPhone: {required: "请填写邀请人的电话"},
+            }
+        });
+    }
+
+</script>

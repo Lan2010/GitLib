@@ -1,0 +1,104 @@
+<div class="modal-body">
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <form class="form-horizontal" id="form-Dic">       
+        <input type="hidden" name='dic_id' id='dicID' value="{$data.dic_id}"/>
+        <div class="form-group has-info">
+            <label class="control-label col-sm-2" for="inputInfo">字典名称：</label>
+            <div class=" col-sm-7">
+                <input type="text" id="dicName" name="dic_name" value="{$data.dic_name}" class="form-control"  >
+            </div>
+        </div>
+        <neq name="data.edit" value="edit">
+        <div class="form-group has-info">
+            <label class="control-label col-sm-2" for="inputInfo">父菜单：</label>
+            <div class="col-sm-7">
+                <select name="dic_parent_id" id="dicParentID" >
+                    <option value="">&nbsp;&nbsp;--请选择--</option>
+                    <volist name="dicType" id="vo">
+                        <option value="{$vo.dic_id}" data="{$vo.dic_node}" >{$vo.dic_name}</option>
+                        <volist name="vo.children" id="item">
+                            <option value="{$item.dic_id}" data="{$item.dic_node}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$item.dic_name}</option>
+                            <volist name="item.children" id="dict">
+                                <option value="{$dict.dic_id}" data="{$dict.dic_node}"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$dict.dic_name}</option>
+                            </volist>
+                        </volist>
+                    </volist>
+                </select>
+            </div>
+        </div>
+        </neq>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="inputInfo">字典key：</label>
+            <div class="col-sm-7">
+                <input type="text" id="dicKey" name="dic_key" value="{$data.dic_key}" class="form-control">
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-sm-2" for="inputInfo">备注：</label>
+            <div class="col-sm-7">
+                <input type="text" id="dicRemark" name="dic_remark" value="{$data.dic_remark}" class="form-control">
+            </div>
+        </div>
+        <input type="hidden" name="dic_node"  id="dicNode" >
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" id="butCancel" class="btn btn-default" data-dismiss="modal">关闭</button>
+    <button type="button" id="butSavedic" class="btn btn-primary" >保存</button>
+</div>  
+<script type="text/javascript" >
+    $(function($) {
+        dicvalid();
+        $("#butSavedic").click(function() {
+            var isOK = $("#form-Dic").valid();
+            if (isOK) {
+                var num = $("#dicParentID").find("option:selected").attr("data");
+                var dicNode = parseInt(num) + 1;
+                $("#dicNode").val(dicNode);
+                saveDic();
+            }
+        });
+    });
+    function saveDic() {
+        var data = $Util.getData($("#form-Dic"));
+        $.ajax({
+            type: "post",
+            url: "/Backend/System/saveDic",
+            data: {'par': data},
+            dataType: "json",
+            beforeSend: function(XMLHttpRequest) {
+                $(".sub-content").showLoading();
+            },
+            success: function(data, textStatus) {
+                $(".sub-content").hideLoading();
+                if (data.status == 1) {
+                    $("#menuID").val(data.data);
+                    $("#hidAction").val("edit");
+                    $win.confirm(data.msg + ",是否关闭窗口？").on(function() {
+                        $('#butCancel').trigger("click");
+                    });
+                } else {
+                    $win.warn(data.msg);
+                }
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                $(".sub-content").hideLoading();
+            },
+            error: function() {
+                $(".sub-content").hideLoading();
+            }
+        });
+    }
+    function dicvalid() {
+        $("#form-Dic").validate({
+            rules: {
+                dicName: {required: true},
+                dicParentID: {required: true},
+            },
+            messages: {
+                dicName: {required: "菜单名称不能为空!"},
+                dicParentID: {required: "父菜单不能为空!"},
+            }
+        });
+    }
+</script>

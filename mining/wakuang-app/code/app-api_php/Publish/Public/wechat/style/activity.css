@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/*大转盘*/
+.turntable .banner {width: 100%;height: 10rem;background: url(/Public/wechat/images/activity/turntable/banner.png) no-repeat;background-size: 100%;}
+.turntable .rewardRecord {background: url(/Public/wechat/images/activity/turntable/gd－icon.png) no-repeat right;background-size: 18%;}
+.turntable .tableBox .content {width: 91%;height: 88%;left: 3%;top: 4.5%;padding: 6px;}
+.turntable .tableBox table {overflow: hidden;background: #fff691;height: 103% !important;max-width: 103% !important;width: 103% !important;}
+.turntable .tableBox table td {padding: 2px;background: #fff691;border: 3px solid #ffe370;vertical-align: middle;text-align: center;}
+.turntable .tableBox table td.active {background-color: #ffd63a;border-color: #ffd63a;color: #fdf8d5;}
+.turntable .tableBox table td img {width: 4rem;}
+.turntable .tableBox table td span {width: 100%;bottom: 2.5%;left: 0%;}
+.turntable .tableBox table a {width: 100%;height: 100%;display: block;background: #b12746 url(/Public/wechat/images/activity/turntable/button.png) center no-repeat;background-size: 58%;border-radius: .8rem;cursor: pointer;}
+.turntable .tableBox table a.login {background: #b12746 url(/Public/wechat/images/activity/turntable/login.png) center no-repeat;background-size: 60%;}
+.turntable .rule h4 {width: 6.5rem;}
+.rule{float: right;};
+
+/*新手活动*/
+.newHand .banner {width: 100%;height: 12rem;background: url(/Public/wechat/images/activity/newhand/banner.png) no-repeat;background-size: 100%;}
+.newHand .content div {width: 100%;background-size: 100%;}
+.newHand .content01 {height: 12rem;background: url(/Public/wechat/images/activity/newhand/content01.png) no-repeat;}
+.newHand .content02 {height: 17rem;background: url(/Public/wechat/images/activity/newhand/content02.png) no-repeat;}
+.newHand .content03 {height: 14rem;background: url(/Public/wechat/images/activity/newhand/content03.png) no-repeat;}
+.newHand .btnBox a {width: 10rem;background: #fca000;border-bottom: 4px solid #dc8c00;}
+.newHand .rule h1 {border-radius: 1.6rem;padding: .2rem 1.8rem;}

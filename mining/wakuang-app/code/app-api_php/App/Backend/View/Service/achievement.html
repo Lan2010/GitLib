@@ -1,0 +1,112 @@
+<div id="sub-User-list">
+    <script type="text/javascript" src="{$Think.BPATH}js/datejs/WdatePicker.js"></script> 
+    <input type="hidden" name="hidrefurl" id="hidrefurl" value="{:U(ACTION_NAME, $_GET)}">
+    <h4 class="title">用户信息查询 <span class="titleqit">默认查询一周内记录</span></h4>
+    <form class="form-inline" id="query_User"> 
+
+        <div class="form-group mr-10">
+            <label class="control-label">客服查询:</label>
+            <select name="serviceID" id="serviceID" class="form-control">
+
+                <volist name="serinfo" id="vo">
+                    <option value="{$vo.userID}" <eq name="Think.post.serviceID" value="$vo.userID" >selected="selected"</eq>  >{$vo.cusName}</option>
+                </volist>
+            </select>
+        </div> 
+        <div class="form-group">
+            <label class="control-label">结余时间:</label>
+            <input type="text" class="form-control mr-10" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})"  value="{$txtStart}" name="txtStart" placeholder="请输入开始时间"> 
+            <label class="control-label">～</label>
+            <input type="text" class="form-control mr-10" onclick="WdatePicker({isShowClear: true, readOnly: true, maxDate: '%y-%M-%d'})" value="{$txtEnd}" name="txtEnd" placeholder="请输入结束时间">
+            <span>跨度不要超过15天</span>
+        </div>
+        <div class="form-group">
+            <a href="{:U(ACTION_NAME, $_GET)}"  onclick="$Util.openQuery(this, event, 'query_User')"  class="btn btn-info"><i class="icon-search"></i>查询</a> 
+
+        </div>
+    </form>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr> 
+                <th>日期</th>
+                <th>总额</th>
+                <th>客服</th>
+            </tr>
+        </thead>
+        <tbody>
+        <volist name="result" id="vo">
+            <tr>  
+                <td>{$vo.addDatetimeFormat}</td>
+                <td>{$vo.totalMoney|formatMoney}</td>
+                <td>{$vo.attendantUserName}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <nav class=" pagination-centered">
+        <ul class="pagination">  
+            {$pageHtml}
+        </ul>
+    </nav>  
+    <script type="text/javascript" >
+        $(function($) {
+            $("#txtuserType").val("{$Think.post.txtuserType}");
+            $("#txtrealStatus").val("{$Think.post.txtrealStatus}");
+            $("#txtuserSex").val("{$Think.post.txtuserSex}");
+        });
+        function getUserInfo() {
+            if (!confirm("是否确认导出数据？")) {
+                return;
+            }
+            var url = "/Backend/User/exportUserInfo/";
+            getInfo(url, 1);
+        }
+        function getInfo(url, page) {
+            var emp = getPar();
+            //   $("#missile").attr("disabled", true);
+            $.ajax({
+                type: "post",
+                url: url,
+                data: {"par": emp, "page": page},
+                dataType: "json",
+                beforeSend: function() {
+                    $(".sub-content").showLoading();
+                },
+                success: function(data) {
+                    $(".sub-content").hideLoading();
+                    if (data.status == 1) {
+                        $("#dowonload").text("Dowonload");
+                        $("#dowonload").attr("href", "/" + data.data);
+                        $win.message(data.msg);
+                    } else {
+                        $win.warn(data.msg);
+                    }
+                },
+                complete: function(XMLHttpRequest, textStatus) {
+                    $(".sub-content").hideLoading();
+                },
+                error: function() {
+                    $(".sub-content").hideLoading();
+                }
+            });
+        }
+        function getPar() {
+            var emp = new Object();
+            emp.txtphone = $("#txtphone").val();
+            emp.txtrealName = $("#txtrealName").val();
+            emp.txtrealStatus = $("#txtrealStatus").val();
+            emp.txtuserSex = $("#txtuserSex").val();
+            emp.txtuserType = $("#txtuserType").val();
+            emp.txtDateStart = $("#txtDateStart").val();
+            emp.txtDateEnd = $("#txtDateEnd").val();
+            emp.birthdayStart = $("#birthdayStart").val();
+            emp.birthdayEnd = $("#birthdayEnd").val();
+            emp.vipLerver = $("#vipLerver").val();
+            emp.serviceID = $("#serviceID").val();
+            return emp;
+        }
+    </script>
+</div>
+
+
+

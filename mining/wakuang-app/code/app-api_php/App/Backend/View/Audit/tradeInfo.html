@@ -1,0 +1,57 @@
+<div class="modal-body">
+    <input  type="hidden" name="hidAction" id="hidAction" value="view" >
+    <table class="table table-striped table-bordered" style="table-layout:fixed;word-wrap:break-word;">
+        <tr>
+            <td width="10%">
+                错误代码：
+            </td>
+            <td style="text-align: left" width="40%">
+                {$errorCode}【0:表示提交成功】
+            </td>
+        </tr>
+        <tr>
+            <td>
+                错误信息：
+            </td>
+            <td style="text-align: left">
+                {$errorMsg}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                交易流水号：
+            </td>
+            <td style="text-align: left">
+                {$data[OLDREQSEQNO]}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                交易状态：
+            </td>
+            <td style="text-align: left">
+                {$data[STATUS]}【S 成功 F 失败  X 未知 】
+            </td>
+        </tr>
+        <notempty name="data[ERRORMSG]">
+            <tr>
+                <td>
+                    失败原因：
+                </td>
+                <td style="text-align: left">
+                    {$data[ERRORMSG]}
+                </td>
+        </notempty>
+        </tr>
+        <tr>
+            <td>
+                交易时间：
+            </td>
+            <td style="text-align: left">
+                {$data[TRANSDT]} {$data[TRANSTM]}
+            </td>
+        </tr>
+    </table>   
+</div>
+<div class="modal-footer">
+</div>  

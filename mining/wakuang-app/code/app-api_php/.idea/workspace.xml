@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="965656ab-ac10-4843-b043-e3289f087778" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/dao/mapper/AdvertisementMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/dao/mapper/AdvertisementMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/service/AdvertisementLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/service/AdvertisementLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/service/impl/AdvertisementLogicImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app-api/src/main/java/com/tianzhixing/app/service/impl/AdvertisementLogicImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app-api/src/main/resources/conf/xml/mybatis/AdvertisementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app-api/src/main/resources/conf/xml/mybatis/AdvertisementMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-2100385478">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="45" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="45" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/MobileApi/Controller/IndexController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="183" column="34" selection-start-line="183" selection-start-column="28" selection-end-line="183" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Service/Advertisement/Logic/AdvertisementLogic.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>AddFeback</find>
+      <find>SmsLogin</find>
+      <find>GetStartList</find>
+      <find>userPhone</find>
+      <find>addFeback</find>
+      <find>Feback</find>
+      <find>login</find>
+      <find>version</find>
+      <find>Gene</find>
+      <find>BindMailList</find>
+      <find>HandldMailList</find>
+      <find>gene</find>
+      <find>BaseRes</find>
+      <find>ResponseJson</find>
+      <find>responseJson</find>
+      <find>response</find>
+      <find>4001</find>
+      <find>BaseException</find>
+      <find>MAX_EXPIRE_TIME_FOR_SESSION</find>
+      <find>GetAppInfo</find>
+      <find>loginSucceedCallback</find>
+      <find>login()</find>
+      <find>smslogin()</find>
+      <find>$info</find>
+      <find>award</find>
+      <find>CardReal</find>
+      <find>regCode</find>
+      <find>register</find>
+      <find>GetMailListResInfo</find>
+      <find>/web/web</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/App/MobileApi/Controller/DocController.class.php" />
+        <option value="$PROJECT_DIR$/App/Backend/Controller/BackendController.class.php" />
+        <option value="$PROJECT_DIR$/App/Frontend/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/App/Common/Common/Jpush/PushPayload.class.php" />
+        <option value="$PROJECT_DIR$/App/Service/Coupon/Logic/CouponLogic.class.php" />
+        <option value="$PROJECT_DIR$/App/MobileApi/Api/ApiCoupon.class.php" />
+        <option value="$PROJECT_DIR$/App/Service/Api/Common/ApiDI.class.php" />
+        <option value="$PROJECT_DIR$/App/MobileApi/Api/ApiAccount.class.php" />
+        <option value="$PROJECT_DIR$/Publish/a.php" />
+        <option value="$PROJECT_DIR$/App/Service/Api/Response/BaseResponse.class.php" />
+        <option value="$PROJECT_DIR$/App/Wechat/View/Web/index.html" />
+        <option value="$PROJECT_DIR$/App/Service/User/Logic/UserActionLogLogic.class.php" />
+        <option value="$PROJECT_DIR$/Publish/index.php" />
+        <option value="$PROJECT_DIR$/App/Service/User/Logic/UserLogic.class.php" />
+        <option value="$PROJECT_DIR$/App/Common/Common/function.php" />
+        <option value="$PROJECT_DIR$/App/MobileApi/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Publish/test.php" />
+        <option value="$PROJECT_DIR$/ThinkPHP/Library/Vendor/Grpc/php/AccountStarPointOperation.php" />
+        <option value="$PROJECT_DIR$/App/MobileApi/Api/ApiUser.class.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-131" />
+    <option name="y" value="28" />
+    <option name="width" value="1505" />
+    <option name="height" value="1030" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="MobileApi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="MobileApi" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="Advertisement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="Advertisement" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Wechat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app-api_php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-api_php" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="setAdvertisement&#9;null&#9;null&#10;proto&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\wakuang-app\code\api\App\Wechat\View\Web" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="965656ab-ac10-4843-b043-e3289f087778" name="Default" comment="" />
+      <created>1532571674701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532571674701</updated>
+      <workItem from="1532571686617" duration="26404000" />
+      <workItem from="1532745968893" duration="7508000" />
+      <workItem from="1532922672284" duration="4513000" />
+      <workItem from="1533003359803" duration="653000" />
+      <workItem from="1533090845889" duration="5457000" />
+      <workItem from="1533174214704" duration="418000" />
+      <workItem from="1533174946245" duration="302000" />
+      <workItem from="1533175515115" duration="1343000" />
+      <workItem from="1533176994443" duration="29163000" />
+      <workItem from="1533265960818" duration="32461000" />
+      <workItem from="1533522394382" duration="99036000" />
+      <workItem from="1533894195857" duration="2440000" />
+      <workItem from="1534132456891" duration="78878000" />
+      <workItem from="1534731289012" duration="65046000" />
+      <workItem from="1535338661299" duration="1736000" />
+      <workItem from="1535340732276" duration="9053000" />
+      <workItem from="1535446432079" duration="698000" />
+      <workItem from="1535521013720" duration="2665000" />
+      <workItem from="1535623576011" duration="2154000" />
+      <workItem from="1535710717458" duration="872000" />
+      <workItem from="1535944722922" duration="1903000" />
+      <workItem from="1535960544574" duration="3364000" />
+      <workItem from="1537523184415" duration="103000" />
+      <workItem from="1537864670926" duration="3000" />
+      <workItem from="1540282779792" duration="2730000" />
+      <workItem from="1540348487364" duration="2978000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="381881000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-131" y="28" width="1505" height="1030" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23517098" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Publish/upload/Ad/20180625/ef0d175d-05c5-4c0e-8082-76642fba410f_.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/upload/Ad/20180625/ef0d175d-05c5-4c0e-8082-76642fba410f.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/User/Logic/userMaillistLogic.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newSQL/starchain_ext.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="1793" column="151" lean-forward="true" selection-start-line="1793" selection-start-column="151" selection-end-line="1793" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Mode/Lite/Controller.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/Public/api/image/icon16x16.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/Public/api/image/photo-default.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/upload/Face/201806/201806255b30a445cd5fe.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Wechat/View/Web/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/bg_app_strategy_activity.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publish/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Wechat/View/Web/web.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Api/ApiReal.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/View/Login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Wechat/Controller/WeixinController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/AuditController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3078" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/BackendController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1596" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/ServiceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2993" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/SpreadController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7467" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/SystemController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3639" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10860" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Common/Controller/BaseController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2394" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Frontend/Controller/EmptyController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Frontend/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Controller/DocController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3335" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/GoCallbackController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/BaseEndController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/LoginController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Controller/OperateController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Common/Common/PhpAmqpLib/Helper/Protocol/Protocol080.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Api/ApiTask.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="94" column="47" lean-forward="true" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Api/ApiCoupon.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Api/ApiCommon.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Api/ApiCharge.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Api/Common/ApiCUrl.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Api/Request/ApiRequest.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Api/Request/IRequestFormatter.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Api/Request/RequestVar.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Api/Filter/ApiRequestFilter.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Wechat/Controller/BaseMobileController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="257" column="44" lean-forward="true" selection-start-line="257" selection-start-column="44" selection-end-line="257" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Advertisement/Model/AdvertisementModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Account/Logic/AccountLogic.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Wechat/Controller/WebController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Think/Model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/json/json.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Mode/Lite/Model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Service/Advertisement/Logic/AdvertisementLogic.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/MobileApi/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="183" column="34" selection-start-line="183" selection-start-column="28" selection-end-line="183" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

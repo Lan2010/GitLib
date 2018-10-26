@@ -1,0 +1,804 @@
+@charset "UTF-8";
+.account{margin: 40px auto;}
+.account > .clearfix {background: #fff;}
+
+/*左侧内容区*/
+.account .sidebar{width:20%;background: #eceff6;}
+.account.browse .sidebar {height: 1120px;}
+.account.record_fund .sidebar,.account.payment .sidebar  {height: 1122px;}
+.account.recharge .sidebar, .account.withdraw .sidebar {height: 1130px;}
+.account.ticket .sidebar {height: 1120px;}
+.account.integral .sidebar {height:1140px;}
+.account.investment .sidebar, .account.friend .sidebar {height:1132px;}
+.account.award .sidebar {height:1180px;}
+.account.loanRecord .sidebar {height:1128px;}
+.account.safety .sidebar, .account.friendList .sidebar {height:1130px;}
+.account .sidebar dl{margin: 0;text-align: center;}
+.account dl i{display: inline-block;width: 25px;height: 18px;vertical-align: middle;background: url(/Public/frontend/images/account/account.png) no-repeat;}
+.account .sidebar a{display: block;}
+.account .sidebar dd i{
+    position: absolute;
+    right: 56px;
+    top:6px;
+    z-index: 9;
+    display: inline-block;
+	width: 22px;
+	height: 18px;
+	background: url(/Public/frontend/images/index-icon.png) -32px -120px no-repeat;
+}
+.account .sidebar dt i{
+    display: inline-block;
+	width: 30px;
+	height: 18px;
+	background: url(/Public/frontend/images/account/side-icon.png) no-repeat;
+}
+.account .sidebar .index i{background-position: 0 -8px;}
+.account .sidebar .item1 dt i {background-position: 0 -28px;}
+.account .sidebar .item2 i{background-position: 0 -50px;}
+.account .sidebar .item3 i{background-position: 0 -70px;}
+.account .sidebar .item4 i{background-position: 0 -92px;  }
+.account .sidebar .item5 i{background-position: 0 -112px;}
+.account .sidebar .item6 i {background-position: 0 -130px;height: 22px;}
+.account .sidebar dt,.account .sidebar dd{line-height: 42px;	padding-right: 0;}
+.account .sidebar dt,.account .sidebar dd:last-of-type{border-bottom: 1px solid #F0F0F0;}
+.account .sidebar dt{
+    font-size: 16px;
+	font-weight: 500;
+	padding-right: 22px;
+}
+.account .sidebar dt.index {padding-right: 0;}
+.account .sidebar dl.upsidebar{height: 45px;}
+.account .sidebar .item4 dt{padding-right: 0;background: #eceff6;}
+.account .sidebar dt a{padding-right: 24px;cursor: pointer;}
+.account .sidebar dd a.color-orange {background: #fff;border-left: 2px solid #ff8423;}
+.account .sidebar dt a.on{
+    width: 100.6%;
+    color: #ff8423;
+    background: #fff;
+    border-left: 2px solid #ff8423;
+}
+.account .sidebar dt.index{
+    background: #eceff6;
+    border-bottom: none;
+}
+.account .sidebar .item1{border: none;}
+
+/*右侧内容区*/
+.account .rbox{width: 80%;}
+.account.loanRecord .rbox, .account.repayPlan .rbox, .account.advance .rbox {height: 1084px;}
+.account .mainBox>.fr {
+	width: 384px;
+	padding-left: 50px;
+	margin: 45px 0;
+}
+.account .mainBox>.fr .col-xs-12 a {
+	width: 120px;
+	height: 40px;
+	padding: 9px 18px;
+	margin: 0;
+}
+.account .mainBox .legend {width: 428px;top: 18%;left: 13.3%;z-index: 9;}
+.account .mainBox .legend .fl:first-child {width: 130px;padding-top: 78px;}
+.account .mainBox .legend .fl:nth-child(2) {padding-left: 196px;}
+
+/*菜单栏用户信息*/
+.account_portrait1{
+	display:block;
+	margin:40px auto 20px;
+	width:92px;
+	height:92px;
+	background:url(/Public/frontend/images/account/photo-default.png) no-repeat;
+	border-radius: 46px;
+	border: 2px solid #fff;
+	box-shadow: 0 3px 2px rgba(177, 159, 152, .3);
+}
+.regards span{font-size:14px;}
+.regards span a:hover{color:#FF0000;}
+.regardsLeft a {
+	display: inline-block !important;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 10px;
+	border-radius: 10px;
+	margin-left: 6px;
+	background: -moz-linear-gradient(left, #ff8423 50%, #ffb643 50%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #ff8423), color-stop(100%, #ffb643));
+    background: -webkit-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+    background: -o-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+    background: linear-gradient(to right, #ff8423 0%, #ffb643 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8423', endColorstr='#ffb643',GradientType=1 );
+}
+.regardsLeft a.v0 {
+	background: -moz-linear-gradient(left, #cecece 50%, #dcdcdc 50%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #cecece), color-stop(100%, #dcdcdc));
+    background: -webkit-linear-gradient(left, #cecece 50%, #dcdcdc 100%);
+    background: -o-linear-gradient(left, #cecece 50%, #dcdcdc 100%);
+    background: linear-gradient(to right, #cecece 0%, #dcdcdc 100%);
+}
+.regardsLeft a:hover {color: #fff;}
+.approve {padding:0 80px 0 84px;}
+.approve .icons a{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background:url(/Public/frontend/images/user/icon-safe.png) no-repeat;
+}
+.approve .icons .approve_personage1{background-position: -20px -18px;}
+.approve .icons .approve_personage2{background-position: -20px 1px;}
+.approve .icons .approve_phone1{background-position: 5px -18px;}
+.approve .icons .approve_phone2{background-position: 5px 1px;}
+.approve .icons .approve_email1{background-position:-46px -18px;}
+.approve .icons .approve_email2{background-position:-46px 1px;}
+.approve .icons .approve_bank1{background-position:-70px -18px;}
+.approve .icons .approve_bank2{background-position:-70px 1px;}
+.account.friendList .rbox .bg-white {height: 750px;}
+
+/*账户首页*/
+.browse .signBtn {
+	width: 138px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-right: 15px;
+}
+.browse .acc-hx{
+    width: 266px;
+    height: 130px;
+    padding: 40px 0 0;
+    line-height: 28px;
+    color: #ad6829;
+    background: url(/Public/frontend/images/account/acc-hx.png) no-repeat;
+}
+
+/*资金日历*/
+#wrap{margin-top: 30px;border: 1px solid #eaeaea;}
+#kalendar{position: relative;margin-left: 7px;}
+#select #year input{display:none;}
+.selectChange select{font-weight:500;}
+#select input{width:30px;height:40px;line-height:40px;cursor:pointer;font-size: 14px;color: #a0a0a0;}
+#select input:focus,#select input:active{
+    border: none;
+    box-shadow: none;
+}
+.calendar {height: 620px;}
+.calendar select{
+	border: none;
+	font-size: 14px;
+	color: #303030;
+	padding:0;
+	line-height:25px;
+	height:25px;
+	border-radius:0;
+	box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.calendar input:focus, .calendar select:focus {border: none;outline: none;}
+#monthPrev{
+    background: #fff;
+    border: none;    
+    position: absolute;
+    top: 2px;
+    left: 324px;}
+#monthNext{
+    background: #fff;
+    border:none;    
+ 	position: absolute;
+    top: 2px;
+    left:442px;
+}
+#year li{
+    display: none;
+}
+#year .selectChange{
+    display: block;width:50px;
+}
+#month .selectChange{width:130px;}
+
+#kalendar #select ul li,#kalendar #select ul{
+    border:none;
+    height: 40px;
+    line-height: 46px;
+}
+.calendar .tl{
+    position: absolute;
+    top:140px;
+    right: 40px;
+}
+/* 选择年月 的行*/
+#select{
+    position: absolute;
+    right: -64px;
+    top: -62px;
+}
+#select ul{
+    overflow: hidden;
+}
+#select td{clear:both;vertical-align: top;}
+#select td div{float:left;overflow: hidden;width: 50px;}
+#year{width:70px;margin-left:362px;overflow: hidden;}
+#kalendar #month ul{border: none;}
+#kalendar #month ul li{float:left;width:8px;}
+#kalendar #month ul li.selectChange{width:24px; }
+#month ul li.selectChange select{margin-left:-10px;cursor:pointer;}
+#year ul li.selectChange select{cursor:pointer;}
+#year ul li.selectChange select option,#month ul li.selectChange select option{padding-left:5px;}
+/* 星期表头 的行*/
+#kalendar tr#week{background: #fafafa;}
+#kalendar tr#week td ul{clear:both;background: #fafafa;}
+#kalendar tr#week td ul li{color: #a0a0a0;}
+/* 某月具体日期 的每�?�?*/
+#kalendar tr ul{height:50px;clear:both;}
+#kalendar tr ul li{float:left;width:120px;line-height:64px;height:64px;text-align:center;background: #fff;}
+#kalendar tr#day ul li{
+    line-height:25px;
+    text-align:center;
+    padding: 0 10px;
+    position: relative;
+     z-index: 11;
+}
+#kalendar tr#day ul li span.today {
+	color: #fff;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 20px;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #ff8423), color-stop(100%, #ffb643));
+    background: -webkit-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+    background: -o-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+    background: linear-gradient(to right, #ff8423 0%, #ffb643 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8423', endColorstr='#ffb643',GradientType=1 );
+}
+#kalendar tr#day ul li p{
+	font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+    margin: 0;
+}
+#kalendar tr#day ul li p.overdue{
+    color: #a0a0a0;
+}
+#kalendar tr#day ul li p.repaying{
+    color: #42a3ff;
+}
+/* 日期占用行数(4-6�?)，将不需要显示的行隐�?*/
+#kalendar tr ul.hide{display:none;}
+#kalendar tr#day td ul.dayList li.mouseFloat{}
+/*日期的样�?*/
+.calendar #kalendar tr#day ul.dayList li.sign_date{background:url(/Public/frontend/images/sign/sign.png) no-repeat center center;}
+/* 当天 已经签到的特殊样�?*/
+#kalendar tr#day td ul.dayList li.sign_today{background:url(/Public/frontend/images/sign/sign.png) no-repeat center center;font-weight:700;background-color:#FEFF99;}
+/*还没有到的日期的样式*/
+.calendar #kalendar tr#day ul.dayList li.sign_future{color:#D8D4D3;}
+.sign_in{width:580px;background-color:#CCC;margin:20px auto;}
+.sign_in p.time{border-bottom:1px solid #C1C1C1;text-align:center;line-height:40px;font-size:16px;}
+.calendar_modal{width:auto;padding:0;border-radius:0;position: absolute;}
+.calendar_head{height:40px;background-color:#545454;}
+.modal-backdrop, .modal-backdrop.fade.in{opacity: .5;}
+.calendar_head P.text{line-height:40px;}
+.calendar_button{position:absolute;top:22px;}
+.button1{left:77px;}
+.button2{left:211px;}
+.button3{left:382px;}
+.button4{left:510px;}
+.calendar_close{display:inline-block;position:absolute;top:8px;right:8px;width:22px;height:22px;color:#FFF;background:url(/Public/frontend/images/account/close.png) no-repeat center center;border-radius:22px;}
+.calendar_head .close{opacity:.5}
+.calendar_btn .btn2{width:160px;height:45px;margin:20px 0;line-height:45px;font-size:18px;}
+.calendar_grey_btn{background:#B4B5B7;color:#FFF;}
+.calendar_grey_btn:hover{color:#505050;background-color:#eaf3fa;transition:all 0.2S ease-out 0s;}
+.border_none{border:none;}
+
+/*图标*/
+.wxtip dt,.wxtip dd{
+    padding-left: 20px;
+    line-height: 30px;
+} 
+.wxtip dt{
+    background: #fff;
+    line-height: 44px;
+    color: #303030;
+    margin-bottom: 0;
+}
+.account .wxtip i{
+    background-position: 0px -90px;
+}
+.form-inline input.i_time {
+    width:186px;
+    background: url(/Public/frontend/images/account/time_ico.gif) right center no-repeat;   
+}
+.icon-zhuan{
+   	width: 41px;
+    height: 41px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -8px;
+    background: url(/Public/frontend/images/account/zuan.png) no-repeat;
+}
+.icon-jiang {
+    width: 41px;
+    height: 41px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -8px;
+    background: url(/Public/frontend/images/account/jiang.png) no-repeat;
+}
+#form_collect a,#form_collect2 a{
+    color: #303030;
+    display: inline-block;
+    height: 26px;
+    line-height: 24px;
+    padding: 0 8px;
+    margin: 0 4px;
+    border-radius: 2px;
+}
+#form_collect a.btn-blue,#form_collect2 a.btn-blue {
+	color: #fff;
+	border-radius: 10px;
+}
+#form_collect .form-group>input[type='button'].form-control,#form_collect2 .form-group>input[type='button'].form-control {
+	border: 1px solid #dfdfdf;
+	border-radius: 10px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 21px;
+    color: #303030;
+    box-shadow: 1px 2px 4px rgba(160, 160, 160, 0.15);
+}
+#tagContent{
+    min-height: 280px;
+}
+.account .myfund>div{
+    padding: 0;
+}
+.account .myfund h5{
+    padding: 10px 0;
+}
+#litag1{
+    border-left: none;
+    margin-left: 0;
+}
+
+/*我的卡券*/
+.ticket .module_lc{width: 100%;}
+.ticket #tab1Page,.ticket #tab2Page {margin-top: 0;border-top: 1px solid #ebebeb;}
+.ticket #form_collect a{width: 76px;height: 24px;line-height: 24px;padding: 0;text-align: center;}
+.ticket .ticket_picture{width:388px;height:127px;color: #fff;}
+.ticket .ticket_picture:nth-child(odd){margin-right: 78px;}
+.ticket .ticket_picture1{background:url(/Public/frontend/images/account/counp-blue.png) no-repeat;}
+.ticket .ticket_picture2{background:url(/Public/frontend/images/account/counp-orange.png) no-repeat;}
+.ticket .ticket_picture3{background:url(/Public/frontend/images/account/counp-pink.png) no-repeat;}
+.ticket .ticket_picture4{background:url(/Public/frontend/images/account/counp-gray.png) no-repeat;}
+.ticket .ticket_picture .fl{width: 112px;}
+.ticket .ticket_picture .fr{width: 276px;}
+.ticket .used{background: url(/Public/frontend/images/account/coupon-msg3.png) no-repeat 220px center;}
+.ticket .expire{background: url(/Public/frontend/images/account/coupon-msg4.png) no-repeat 220px center;}
+.ticket_explain{margin:30px;background-color:#fff9f2;padding:5px 15px 15px 20px;border:1px solid #ff8261;}
+.ticket_explain .border_b{border-bottom: solid 1px #ccc;}
+.ticket_explain_text{line-height:35px;font-size:14px;}
+.ticket_picture .digit{font-size:2.5em;}
+
+/*我的积分*/
+.integral #tagContent3>.clearfix a {
+	font-size: 14px;
+    padding: 0;
+    width: 126px;
+    height: 26px;
+    line-height: 26px;
+}
+.integral #tagContent3>.clearfix a.btn-gray {pointer-events: none;}
+.integral #tagContent3>.clearfix span {
+	display: inline-block;
+    height: 26px;
+    line-height: 28px;
+}
+.integral #tagContent3 .addressBox {height: 102px;}
+.integral #tagContent3 .addressBox:hover {border: 1px solid #39a0ff;}
+.integral #tagContent3 .addressBox:hover .fr {display: block;}
+.integral #tagContent3 .addressBox.addDefault:hover .add-defalut {display: none;}
+.integral #tagContent3 .addressBox.addDefault {background: url(/Public/frontend/images/account/add-default.png) no-repeat;background-position: right 0;}
+
+/*更换银行卡 */
+.account .acc .label-image {
+    display: inline-block;
+    width: 158px;
+    padding: 8px 0 8px 8px;
+}
+
+/*邀请好友*/
+.friend .friendAcc {
+    height: 120px;
+    background: #fffaef;
+    padding: 23px 0;
+}
+.friend .friendAcc .fl {border-right: 1px dashed #ff8423;background: url(/Public/frontend/images/account/icon_01.png) no-repeat;background-position: 154px 18px;padding-left: 212px;}
+.friend .friendAcc .fr {background: url(/Public/frontend/images/account/icon_02.png) no-repeat;background-position: 134px 18px;padding-left: 196px;}
+.friend .activity ul.nav-tabs li {
+    line-height: 50px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-right: 40px;
+    padding: 0;
+    border-radius: 0;
+}
+.friend .activity ul.nav-tabs li a {
+	color: #303030;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+}
+.friend .nav-tabs > li.active {
+	border: none;
+    border-bottom: 2px solid #ff8423 !important;
+}
+.friend .nav-tabs > li > a:hover {
+	background: #fff;
+}
+.friend .nav-tabs > li.active > a,.friend .nav-tabs > li.active > a:hover,.friend .nav-tabs > li.active > a:focus {
+	background: #fff;
+    color: #ff8423 !important;
+}
+.friend .invitationWay .invitationLink input {
+    width: 88%;
+    height: 40px;
+    outline: none;
+    border: none;
+}
+.friend .invitationWay .invitationLink a {
+	right: 10px;
+	top: 30px;
+	padding-left: 25px;
+	background: url(/Public/frontend/images/account/copy.png) no-repeat;
+	background-position: 0 5px;
+}
+.friend .invitationWay .logo a {display:inline-block;width: 72px;height: 72px;margin-right: 85px;}
+.friend .invitationWay .logo .weibo {background: url(/Public/frontend/images/account/weibo.png) no-repeat center;background-size: 100%;}
+.friend .invitationWay .logo .qq {background: url(/Public/frontend/images/account/qq.png) no-repeat center;background-size: 100%;}
+.friend .invitationWay .logo .weixin {background: url(/Public/frontend/images/account/wechat.png) no-repeat center;background-size: 100%;}
+.friend .invitationWay .logo .renren {background: url(/Public/frontend/images/account/renrenwang.png) no-repeat center;background-size: 100%;}
+.friend .invitationWay .logo .weixin:hover .popover {display: block;}
+.friend .invitationCode {
+    width: 160px;
+    height: 70px;
+    padding-top: 11px;
+    border: 2px solid #bd59c6;
+    border-radius: 30px;
+    vertical-align: top;
+}
+.friend .invitationCode img {
+    top: 20px;
+    left: 68px;
+}
+.friend .invitationCode input {
+    bottom: 18px;
+    left: 20px;
+    width: 80%;
+}
+.friend .activity .rewardBox .th div,.friend .activity .outbox div {
+    width: 25%;
+    background: #f9f9f9;
+    float: left;
+    line-height: 37px;
+    font-size: 12px;
+    color: #a0a0a0;
+}
+.friend .activity .outbox div {
+	background: #fff;
+	color: #303030;
+}
+.friend .activity .inbox table th,.friend .activity .inbox table td {
+    width: 25%;
+    background: rgba(249, 173, 129, 0.1);
+    color: #666;
+    padding: 6px 10px;
+}
+.friend .activity .inbox:before,.friend .activity .inbox:after {
+    content: "";
+    position: absolute;
+    z-index: 1000;
+    top: -11px;
+    right: 96px;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-bottom: 12px solid #fff7f2;
+    border-top: 0;
+}
+.friend .activity .inbox:before {
+    border-bottom-color: #ddd;
+    top: -12px;
+}
+.friend .activity .inbox table {
+    width:85%;
+    margin: 12px auto 46px;
+    border:1px solid #ddd;
+}
+.friendList .tagContentFriend {
+    width: 760px;
+    height: 420px;
+    border: 6px solid #C5C5C5;
+    border-radius: 4px;
+    position: absolute;
+    top: 125px;
+    left: 20px;
+    z-index: 9999;
+}
+.friendList .tagContentFriend td {
+    padding: 12px 10px;
+}
+/*自动投资*/
+#autoTender-form label.text-right{
+    width: 120px;
+    margin-right: 10px;
+}
+.auto .tit .btn{
+    display: block;
+    margin: 6px 0 0;
+    vertical-align: middle;
+    border: 0;
+    cursor: default;
+    font-size: 14px;
+}
+
+/*充值&提现*/
+.recharge #tagContent1 .form-group{
+    width: 278px;
+}
+.recharge .inp-b{
+    position: absolute;
+    right:20px;
+    bottom:0;
+    line-height: 40px;
+}
+.recharge .nav-tabs li a {border: 1px solid transparent;color: #777;}
+.recharge .nav-tabs li a:first-child {margin-right: 40px;}
+.recharge .nav-tabs li a,.recharge .nav-tabs li a:focus,.recharge .nav-tabs li a:hover {color: #777;border: 1px solid transparent;background: transparent;padding: 10px 0;}
+.recharge .nav-tabs li.active a,.recharge .nav-tabs li.active a:focus,.recharge .nav-tabs li.active a:hover {color: #ff8423;border: 1px solid transparent;border-bottom: 2px solid #ff8423;}
+.recharge .ecard {width: 316px;height: 132px;background: url(/Public/frontend/images/account/ecard-bg.png) no-repeat;padding: 20px 12px 0 26px;}
+.recharge .ecard .copy a {display: inline-block;width: 80px;height: 30px;line-height:30px;color:#ad6829;background: #ffc625;border-radius:4px;box-shadow: 0 2px 6px rgba(255,182,25,.75);}
+.recharge .ecard .userName,.recharge .ecard .userAccNum {color: #ad6829;margin-top: 6px;}
+.recharge .tab-content .rechargeTips,.withdraw .withdrawTips {margin-top: 46px;margin-bottom: 68px;}
+.recharge .tab-content #rechargeTom .rechargeTips {margin-bottom: 102px;}
+.recharge .tab-content #rechargeTom .form-group,.withdraw .tagContent #tagContent1 .form-group {margin-bottom: 20px;}
+.withdraw .acc .label-image{margin:0 20px 20px 0;}
+.wxtip{border-radius: 4px;}
+
+/*平台奖励*/
+.award .legend {width: 410px;height: 108px;top: 57px;left: 474px;z-index: 9;}
+.award .legend ul {width: 130px;}
+.award .legend ul:nth-child(2){padding-left: 106px;}
+.award .legend ul li {padding-bottom: 23px;}
+
+/*安全中心*/
+.safebox th, .safebox > tbody > tr > td {
+    text-align: left;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 14px !important;
+    height: 78px;
+}
+.safebox td.col-xs-3{
+    padding-left: 40px;
+}
+.safebox td.col-xs-7{
+    padding-left: 70px;
+    color: #a0a0a0;
+}
+.safebox td.col-xs-2{text-align: center;}
+.safebox td a {color: #42a3ff !important;}
+.safebox .btn{
+    width: 90px;
+    margin: 0;
+    padding: 2px 10px;
+    font-size: 14px;
+}
+.safebox i{
+    display: inline-block;
+    vertical-align: middle;
+    width:24px;
+    height: 24px;
+    margin-right: 10px;
+    background: url(/Public/frontend/images/index-icon.png) no-repeat;
+}
+.safebox i.risk {
+    background: url(/Public/frontend/images/risk.png) no-repeat;
+}
+.safebox i.risk-gray {
+    background-position: 0 -30px;
+}
+.safebox i.icon-real{
+    background-position: -311px -47px;
+}
+.safebox i.phone{
+    background-position: -341px -47px;
+}
+.safebox i.email{
+    background-position: -373px -47px;
+}
+.safebox i.code{
+    background-position: -434px -47px;
+}
+.safebox i.icon-ok{
+	width: 20px;
+	height: 20px;
+	background: url(/Public/frontend/images/account/icon-ok.png) no-repeat;
+}
+.safebox i.icon-no{
+    width: 20px;
+	height: 20px;
+	background: url(/Public/frontend/images/account/icon-no.png) no-repeat;
+}
+.safebox i.icon-gray{
+    background-position-y: -80px;
+}
+
+/*实名认证*/
+.warm-tip p:first-child {color: #ff0000;}
+.warm-tip a {text-decoration: underline;}
+.warm-tip a:hover{color: #39a0ff;}
+.warm-tip .tip-box {display:none;width: 340px;height: 210px;right: 68px;top:26px;background: url(/Public/frontend/images/user/browser-bg.png) no-repeat;padding: 20px 0 0 15px;}
+.warm-tip .real-icon {display:inline-block;width: 30px;height: 30px;background: url(/Public/frontend/images/user/browser.png) no-repeat;margin: 0 12px 8px 0;}
+.warm-tip .real-icon.browser-tip {width: 22px;height: 18px;background-position: -58px -110px;vertical-align: middle;margin: 0;}
+.warm-tip .real-icon.ie-icon {background-position: -10px -10px;}
+.warm-tip .real-icon.zero-icon {background-position: -10px -110px;}
+.warm-tip .real-icon.sg-icon {background-position: -10px -60px;}
+.warm-tip .real-icon.tt-icon {background-position: -60px -60px;}
+.warm-tip .real-icon.qq-icon {background-position: -110px -10px;}
+.warm-tip .real-icon.lb-icon {background-position: -110px -60px;}
+.warm-tip .real-icon.ant-icon {background-position: -60px -10px;}
+.box {
+    text-align: center;
+    width: 842px;
+    margin: 0 auto;
+}
+.realbox{
+    width: 466px;
+    padding-right: 144px;
+    margin-top: 70px;
+    float: left;
+}
+.hxyh {
+	padding-right: 30px;
+    float: right;
+    overflow: hidden;
+}
+
+/*开通存管弹窗*/
+.pop-hx{
+    position: fixed;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    width: 500px;
+    height: 394px;
+ 	margin: auto;
+    z-index: 1200;
+}
+.pop-hx h4{
+     font-weight: bold;
+}
+.pop-hx .hx-bg{
+    height:270px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url(/Public/frontend/images/account/hx-pop.png) no-repeat center center;
+}
+.pop-hx > .bg-white {border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}
+.pop-hx .btn{
+    width:220px;
+}
+.pop-hx .close{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    margin-top: 6px;
+    text-align: right;
+    background: url(/Public/frontend/images/account/bank-close.png) no-repeat;
+    opacity: 1;
+}
+
+/*平台奖励*/
+.ptjl .add:after {
+    position: absolute;
+    top:22%;
+    right: 0;
+    display: block;
+    content: "+";
+    margin-left: 3px;
+    color: #f60;
+    font: 500 28px Arial;
+}
+.ptjl .all:after {
+    position: absolute;
+    top:22%;
+    right: 0;
+    display: block;
+    content: "=";
+    margin-left: 3px;
+    color: #f60;
+    font: 500 28px Arial;
+}
+
+/*债权转让弹窗*/
+.transItem .modal-header {
+		height: 112px;
+		padding: 5px;
+		background: -moz-linear-gradient(top, #ff8423 50%, #ffb441 50%);
+    	background: -webkit-gradient(linear,top,bottom, color-stop(50%, #ff8423), color-stop(100%, #ffb441));
+        background: -webkit-linear-gradient(top, #ff8423 50%, #ffb441 100%);
+        background: -o-linear-gradient(top, #ff8423 50%, #ffb441 100%);
+        background: linear-gradient(to bottom, #ff8423 0%, #ffb441 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8423', endColorstr='#ffb441',GradientType=1 );
+	}
+.transItem button.close {opacity: 1;outline: none;border: none;}
+.transItem .tooltip:after{content: '';display: inline-block;width: 16px;height: 16px;background: url(/Public/frontend/images/project/tip-icon.png);vertical-align: sub;margin-left: 8px;}
+.transItem .tooltip.gray:after{background: url(/Public/frontend/images/account/tip_gray.png);background-size: 100% 100%;}
+.transItem .tooltip i {left: 90%;}
+.transItem input.money {width: 168px;margin: 0 auto;border: none;border:none;border-bottom: 1px dashed #eaeaea;outline: none;}
+.transItem::-webkit-input-placeholder{color: #a0a0a0;font-size: 14px;}
+.transItem::-ms-input-placeholder{color: #a0a0a0;font-size: 14px;}
+.transItem::-moz-input-placeholder{color: #a0a0a0;font-size: 14px;}
+.transItem .btn-primary {
+		width: 306px;
+		margin: 60px auto 15px;
+		border-radius: 50px;
+		background: -moz-linear-gradient(left, #ff8423 50%, #ffb643 50%);
+    	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #ff8423), color-stop(100%, #ffb643));
+        background: -webkit-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+        background: -o-linear-gradient(left, #ff8423 50%, #ffb643 100%);
+        background: linear-gradient(to right, #ff8423 0%, #ffb643 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8423', endColorstr='#ffb643',GradientType=1 );
+        border: none;
+        -moz-box-shadow: 6px 8px 16px rgba(255, 132, 35, 0.3);
+        -webkit-box-shadow: 6px 8px 16px rgba(255, 132, 35, 0.3);
+        box-shadow: 0 3.46px 8px rgba(255, 132, 35, 0.3);
+}
+
+/*担保记录*/
+.guaranteeRec .th-group {width: 100%;background: #f9f9f9;}
+.guaranteeRec .th-group h5 {display:inline-block;color: #999;padding: 10px;margin:0;font-size:12px;line-height: 1.42857;text-align: center;}
+.guaranteeRec .th-group h5:first-child,.guaranteeRec .td-group .item:first-child {width: 19%;}
+.guaranteeRec .th-group h5:nth-child(2),.guaranteeRec .td-group .item:nth-child(2) {width: 20.35%;}
+.guaranteeRec .th-group h5:nth-child(3),.th-group h5:nth-child(4),.th-group h5:nth-child(5) {width: 12.75%;}
+.guaranteeRec .td-group .item:nth-child(3),.guaranteeRec .td-group .item:nth-child(4),.guaranteeRec .td-group .item:nth-child(5) {width: 11.8%;}
+.guaranteeRec .th-group h5:nth-child(5) {width: 11%;}
+.guaranteeRec .th-group h5:nth-child(6) {width: 8.5%;}
+.guaranteeRec .th-group h5:nth-child(7) {width: 14%;}
+.guaranteeRec .th-group h5:nth-child(8) {width: 11.6%;}
+.guaranteeRec .td-group .item:nth-child(6) {width: 6%;}
+.guaranteeRec .td-group .item:nth-child(7) {width: 15.4%;}
+.guaranteeRec .td-group .item:nth-child(8) {width: 8.2%;}
+.guaranteeRec .td-group {border-bottom: 1px solid #ddd;}
+.guaranteeRec .td-group .item {font-size:12px;color:#303030;display:inline-block;padding: 16px 0;text-align: center;color: #303030}
+.guaranteeRec .td-group ul,.loanRecord .td-group ul {background: #ffede3;margin:0 20px 20px 20px;padding: 20px 0 20px 20px;border-radius: 8px;position: relative;overflow: initial !important;}
+.guaranteeRec .td-group ul:before,.loanRecord .td-group ul:before  {content:'';border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #ffede3;position: absolute;top: -10px;right: 45px;}
+.guaranteeRec .td-group ul li,.loanRecord .td-group ul li {display: inline-block;}
+.guaranteeRec .td-group ul li a,.loanRecord .td-group ul li a {padding-right: 38px;line-height: 32px;}
+
+/*借款记录*/
+.loanRecord  .th-group {width: 100%;background: #f9f9f9;}
+.loanRecord  .th-group h5 {display:inline-block;color: #999;padding: 10px;margin:0;font-size:12px;line-height: 1.42857;text-align: center;}
+.loanRecord  .th-group h5:first-child,.loanRecord  .td-group .item:first-child {width: 19%;}
+.loanRecord  .th-group h5:nth-child(2),.loanRecord  .td-group .item:nth-child(2) {width: 18.8%;}
+.loanRecord  .th-group h5:nth-child(3),.th-group h5:nth-child(4),.th-group h5:nth-child(5) {width: 13%;}
+.loanRecord  .td-group .item:nth-child(3),.loanRecord  .td-group .item:nth-child(4),.loanRecord  .td-group .item:nth-child(5) {width: 11.8%;}
+.loanRecord  .th-group h5:nth-child(5) {width: 11%;}
+.loanRecord  .th-group h5:nth-child(6) {width: 11.5%;}
+.loanRecord  .th-group h5:nth-child(7) {width: 9%;}
+.loanRecord  .th-group h5:nth-child(8) {width: 6.6%;padding: 10px 0;}
+.loanRecord .td-group {border-bottom: 1px solid #ddd;}
+.loanRecord #loanHtml .item {display:inline-block;padding: 10px 0;text-align: center;color: #303030;font-size: 12px;}
+.loanRecord #loanHtml .item .btn {font-size: 12px;border-radius: 6px;padding:2px 6px;}
+.loanRecord #loanHtml .item:first-child {width: 19%;}
+.loanRecord #loanHtml .item:nth-child(2) {width: 19%;}
+.loanRecord #loanHtml .item:nth-child(3),.loanRecord #loanHtml .item:nth-child(4),.loanRecord #loanHtml .item:nth-child(5) {width: 11.8%;}
+.loanRecord #loanHtml .item:nth-child(6) {width: 8%;}
+.loanRecord #loanHtml .item:nth-child(7) {width: 13.4%;}
+.loanRecord #loanHtml .item:nth-child(8) {width: 8.2%;}

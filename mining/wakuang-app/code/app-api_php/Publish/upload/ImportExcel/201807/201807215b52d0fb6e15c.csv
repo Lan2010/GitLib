@@ -1,0 +1,11 @@
+设备ID,设备类型,设备模式,mac,绑定状态,绑定时间,备注,用户电话
+df8,afd,af,AA:CC:bb:2d:34,未绑定,2018/6/16 9:43,测试,0
+adf10,adf,afd,AA:CC:bb:2d:E4,未绑定,2018/6/16 9:43,测试,0
+afd11,adf,fad,abc,未绑定,,,0
+afd12,adf,adf,efg,未绑定,,,0
+afd13,afd,af,addg,未绑定,,,0
+df16,afd,adf,dd,未绑定,,,0
+afd17,afd,df,ss,绑定,,,0
+afa18,af,afd,dd,未绑定,,,0
+AA:CC:bb:2d:E4,d,d,a,绑定,,,0
+AA:CC:bb:2d:E5,e,d,b,未绑定,,,0
