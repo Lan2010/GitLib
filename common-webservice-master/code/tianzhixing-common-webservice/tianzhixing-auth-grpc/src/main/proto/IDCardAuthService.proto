@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.auth.grpc.proto.idcard";
+option java_outer_classname = "IDCardAuthProto";
+
+package idcard;
+
+//身份证验证服务类
+service IDCardAuthSerivce {
+    //验证身份证（请首先验证身份证基本规则信息）
+    rpc authIDCard (IDCardInfo) returns (AuthResult){}
+}
+
+//身份证信息
+message IDCardInfo{
+    string name = 1;//名字
+    string idcard = 2;//身份证件号码
+    string token = 3;//平台token
+}
+
+//身份证验证结果
+message AuthResult{
+    int32 code = 1;//200成功，300业务错误
+    string message = 2;//消息
+    string photo = 3;//照片-如果存在
+    string authPlatform = 4;//验证平台
+}

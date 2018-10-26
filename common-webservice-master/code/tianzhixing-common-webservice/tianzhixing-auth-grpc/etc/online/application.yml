@@ -1,0 +1,28 @@
+server:
+  port:
+    8333
+grpc:
+  server:
+    address: 0.0.0.0
+    port: 9898
+  client:
+      tianzhixing-auth-grpc-server:
+        host: 127.0.0.1
+        port: 9898
+        enableKeepAlive: true
+        keepAliveWithoutCalls: true
+spring:
+  application:
+      name: tianzhixing-auth-grpc-server
+#redis配置
+  redis:
+    database: 3
+    host: r-wz92e5f8e89aa7c4.redis.rds.aliyuncs.com
+    port: 6379
+    password: Redis@Sischain2018*!#sznsCN
+    pool:
+      max-active: 1000
+      max-wait: 10000
+      max-idle: 30
+      min-idle: 10
+    timeout: 10000

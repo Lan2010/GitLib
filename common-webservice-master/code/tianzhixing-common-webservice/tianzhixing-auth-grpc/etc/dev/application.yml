@@ -1,0 +1,28 @@
+server:
+  port:
+    8333
+grpc:
+  server:
+    address: 0.0.0.0
+    port: 9899
+  client:
+      tianzhixing-auth-grpc-server:
+        host: 127.0.0.1
+        port: 9899
+        enableKeepAlive: true
+        keepAliveWithoutCalls: true
+spring:
+  application:
+      name: tianzhixing-auth-grpc-server
+#redis配置
+  redis:
+    database: 0
+    host: 192.168.11.16
+    port: 6379
+    password: sky!@#123
+    pool:
+      max-active: 1000
+      max-wait: 10000
+      max-idle: 30
+      min-idle: 10
+    timeout: 10000
