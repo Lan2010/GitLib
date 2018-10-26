@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-oms-platform-config.properties" ignore-unresolvable="true" />
+
+	<dubbo:application id="TianZhixing-OMS-Customer-DATA-APPID" registry="TianZhixing-OMS-Customer-DATA-REGID" name="${domain.application.name}" logger="${domain.application.logger}" version="${domain.application.version}" organization="${domain.application.organization}" environment="${domain.application.environment}"/>
+	<dubbo:registry id="TianZhixing-OMS-Customer-DATA-REGID" address="${domain.application.registry.address}" port="${domain.application.registry.port}" protocol="${domain.application.registry.protocol}" timeout="${domain.application.registry.timeout}" username="${domain.application.registry.user.name}" password="${domain.application.registry.user.password}"/>
+
+	<dubbo:reference id="RPCApplicationOperationService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCApplicationOperationService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCDeviceCheckinService"
+					interface="com.tianzhixing.oms.rpc.service.RPCDeviceCheckinService" version="${domain.rpc.service.version}"
+					group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOnLineStatusService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCDeviceOnLineStatusService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOperationService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCDeviceOperationService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCPagesOperationService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCPagesOperationService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserAccessAndClickAdvertisementService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserAdvertisementService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserBasicInfoService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserBasicInfoService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserCreateShareGreeterCardService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserGreeterCardService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserCreateSharePostCardService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserPostCardService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserAuthService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserAuthService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserLoginLogoutService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserLoginStatusService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserRecordingService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserRecordingService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserStarPointConsumeService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserStarPointConsumeService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserStarPointIncrementService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserStarPointIncrementService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+	<dubbo:reference id="RPCUserTaskAcceptAndFinishedService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserTaskStatusService" version="${domain.rpc.service.version}"
+					 group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}"
+					 lazy="${domain.rpc.service.lazy}" loadbalance="${domain.rpc.service.reference.loadbalance}" retries="${domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-DATA-REGID" application="TianZhixing-OMS-Customer-DATA-APPID"/>
+
+</beans>

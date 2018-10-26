@@ -1,0 +1,100 @@
+<beans:beans xmlns="http://www.springframework.org/schema/beans" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+
+    <beans:bean id="messageSource"
+                class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <beans:property name="useCodeAsDefaultMessage" value="true" />
+        <beans:property name="defaultEncoding" value="UTF-8" />
+        <beans:property name="basenames">
+            <beans:list>
+                <beans:value>classpath:properties/messages</beans:value>
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+
+    <context:annotation-config/>
+
+    <!-- 指定自己定义的validator -->
+    <mvc:annotation-driven validator="validator"/>
+    <!-- 以下 validator ConversionService 在使用 mvc:annotation-driven 会 自动注册 -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+    </bean>
+    <!-- controller scan -->
+    <context:component-scan base-package="com.tianzhixing.oms.bussiness.backend.web.controller">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>
+    <beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <beans:property name="messageConverters">
+            <beans:list>
+                <beans:ref bean="stringHttpMessageConverter"/>
+                <beans:ref bean="jsonHttpMessageConverter"/>
+                <beans:ref bean="byteArrayMessageConverter"/>
+                <beans:ref bean="bufferedImageHttpMessageConverter"/>
+                <beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <beans:property name="supportedMediaTypes">
+                        <beans:list>
+                            <beans:bean class="org.springframework.http.MediaType">
+                                <beans:constructor-arg index="0" value="text"/>
+                                <beans:constructor-arg index="1" value="plain"/>
+                                <beans:constructor-arg index="2" value="UTF-8"/>
+                            </beans:bean>
+                        </beans:list>
+                    </beans:property>
+                </beans:bean>
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+    <beans:bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>
+    <beans:bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+    <beans:bean id="byteArrayMessageConverter" class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+    <beans:bean id="bufferedImageHttpMessageConverter" class="org.springframework.http.converter.BufferedImageHttpMessageConverter"/>
+    <beans:bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <beans:property name="viewResolvers">
+            <beans:list>
+                <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <beans:property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+                    <beans:property name="prefix" value="/WEB-INF/views/"/>
+                    <beans:property name="suffix" value=".jsp"/>
+                </beans:bean>
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+
+    <!-- 配置MultipartResolver 用于文件上传 使用spring的CommosMultipartResolver -->
+    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="defaultEncoding" value="UTF-8"/>
+        <beans:property name="maxUploadSize" value="80000000" />
+        <!--<property name="uploadTempDir" value="fileUpload/temp" />-->
+    </beans:bean>
+
+    <beans:bean id="exceptionResolver" class="com.tianzhixing.oms.bussiness.backend.web.resolver.ExceptionResolver">
+        <beans:property name="exceptionMappings">
+            <beans:props>
+                <beans:prop key="java.lang.Exception">errors/error</beans:prop>
+                <beans:prop key="java.lang.Throwable">errors/err</beans:prop>
+            </beans:props>
+        </beans:property>
+        <beans:property name="statusCodes">
+            <beans:props>
+                <beans:prop key="errors/error">500</beans:prop>
+                <beans:prop key="errors/404">404</beans:prop>
+            </beans:props>
+        </beans:property>
+        <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+        <beans:property name="warnLogCategory" value="INFO"></beans:property>
+        <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+        <beans:property name="defaultErrorView" value="errors/error"></beans:property>
+        <!-- 默认HTTP状态码 -->
+        <beans:property name="defaultStatusCode" value="500"></beans:property>
+    </beans:bean>
+</beans:beans>

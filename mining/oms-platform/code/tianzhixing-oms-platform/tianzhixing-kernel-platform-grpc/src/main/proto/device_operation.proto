@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.kernel.grpc.proto.device.operation";
+option java_outer_classname = "DeviceOperationServiceProto";
+
+package device.operation;
+
+import "response_entity.proto";
+
+//设备操作服务
+service DeviceOperationService {
+    //绑定
+    rpc bind (DeviceInfo) returns (Result) {}
+    //解除绑定
+    rpc unBind (DeviceInfo) returns (Result) {}
+}
+
+//设备绑定信息
+message DeviceInfo{
+    string accountToken = 1; //accountToken-必填
+    string token = 2;//安全校验码-必填
+    string deviceId = 3; //设备ID-必填
+    string deviceType = 4;//设备类型 - 必填
+    string deviceMAC = 5; //设备MAC地址 - 必填
+    string deviceModel = 6;//设备型号 - 必填
+    int64 operationTime = 7;//绑定时间 - 必填
+}
+
+message Result{
+    ResponseEntity responseEntity = 1; //code : 200=ok, 300=param error, 503=alread bound
+}

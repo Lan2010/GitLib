@@ -1,0 +1,21 @@
+server:
+  port:
+    8335
+spring:
+  application:
+      name: tianzhixing-kernel-nats-listener
+  messages:
+      basename: properties/messages
+      encoding: UTF-8
+###redis 本地配置--暂时未使用, 使用oms-redis-config.properties
+#  redis:
+#    database: 2
+#    host: 192.168.11.16
+#    port: 6379
+#    password: sky!@#123
+#    pool:
+#      max-active: 1000
+#      max-wait: 10000
+#      max-idle: 30
+#      min-idle: 10
+#    timeout: 10000

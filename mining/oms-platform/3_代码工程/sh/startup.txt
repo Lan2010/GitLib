@@ -1,0 +1,11 @@
+kernel grpc startup command:
+nohup java -Xms256m -Xmx1536m -Dgrpc.kernel.log.home=/home/oms/runtime/tianzhixing-account-kernel/tianzhixing-grpc-account-kernel -jar tianzhixing-kernel-platform-grpc-1.0-SNAPSHOT.jar&
+
+kernel listener startup command:
+nohup java -Xms256m -Xmx1024m -Dlistener.kernel.log.home=/home/oms/runtime/tianzhixing-account-kernel/tianzhixing-listener-account-kernel -jar tianzhixing-kernel-platform-listener-1.0-SNAPSHOT.jar&
+
+oms data nats customer startup command:
+nohup java -Xms256m -Xmx1024m -Doms.customer.log.home=/home/oms/runtime/tianzhixing-oms-data/tianzhixing-oms-customer -jar tianzhixing-oms-customer-1.0-SNAPSHOT.jar&
+
+mobile & idcard auth startup command:
+nohup java -Xms256m -Xmx1024m -Dmobile.idcard.auth.log.home=/home/oms/runtime/tianzhixing-mobile-idcardauth -jar tianzhixing-auth-grpc-1.0-SNAPSHOT.jar&

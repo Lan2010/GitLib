@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:service interface="com.tianzhixing.kernel.rpc.service.account.RPCAccountInfoService" ref="RPCAccountInfoService" version="${domain.rpc.service.version}" group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}" retries="${domain.dubbo.context.retries}" application="TianZhixing-Kernel-RPCSVC-APPID" registry="TianZhixing-Kernel-RPCSVC-REGID"/>
+	<dubbo:service interface="com.tianzhixing.kernel.rpc.service.account.RPCAccountStarPointOperationService" ref="RPCAccountStarPointOperationService" version="${domain.rpc.service.version}" group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}" retries="${domain.dubbo.context.retries}" application="TianZhixing-Kernel-RPCSVC-APPID" registry="TianZhixing-Kernel-RPCSVC-REGID"/>
+	<dubbo:service interface="com.tianzhixing.kernel.rpc.service.advertisement.RPCAdvertisementOperationService" ref="RPCAdvertisementOperationService" version="${domain.rpc.service.version}" group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}" retries="${domain.dubbo.context.retries}" application="TianZhixing-Kernel-RPCSVC-APPID" registry="TianZhixing-Kernel-RPCSVC-REGID"/>
+	<dubbo:service interface="com.tianzhixing.kernel.rpc.service.device.RPCDeviceOperationService" ref="RPCDeviceOperationService" version="${domain.rpc.service.version}" group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}" retries="${domain.dubbo.context.retries}" application="TianZhixing-Kernel-RPCSVC-APPID" registry="TianZhixing-Kernel-RPCSVC-REGID"/>
+	<dubbo:service interface="com.tianzhixing.kernel.rpc.service.task.RPCTaskOperationService" ref="RPCTaskOperationService" version="${domain.rpc.service.version}" group="${domain.rpc.service.group}" timeout="${domain.rpc.service.timeout}" retries="${domain.dubbo.context.retries}" application="TianZhixing-Kernel-RPCSVC-APPID" registry="TianZhixing-Kernel-RPCSVC-REGID"/>
+</beans>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <http use-expressions="true" auto-config="false" entry-point-ref="customerAuthenticationEntryPoint">
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <logout invalidate-session="true" logout-url="/logout" logout-success-url="/login" delete-cookies="JSESSIONID"/>
+        <access-denied-handler error-page="/403.html"/>
+        <session-management invalid-session-url="/logout" session-fixation-protection="none">
+            <concurrency-control max-sessions="3" error-if-maximum-exceeded="false" expired-url="/logout"/>
+        </session-management>
+        <custom-filter position="FORM_LOGIN_FILTER" ref="customerUsernamePasswordAuthenticationFilter"/>
+        <remember-me />
+        <headers>
+            <frame-options policy="SAMEORIGIN"/>
+        </headers>
+        <csrf disabled="true" />
+    </http>
+
+    <beans:bean id="customerAuthenticationEntryPoint"  class="com.tianzhixing.oms.web.security.authentication.JSONLoginAuthenticationEntryPoint">
+        <beans:constructor-arg value="/login"/>
+        <beans:property name="useForward" value="false"/>
+    </beans:bean>
+
+    <beans:bean id="customerUsernamePasswordAuthenticationFilter" class="com.tianzhixing.oms.web.security.filter.CustomerUsernamePasswordAuthenticationFilter">
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+        <beans:property name="usernameParameter" value="username"/>
+        <beans:property name="passwordParameter" value="password"/>
+        <beans:property name="postOnly" value="false"/>
+        <beans:property name="filterProcessesUrl" value="/loginDo"/>
+        <beans:property name="authenticationSuccessHandler" ref="customerAuthenticationSuccessHandler"/>
+        <beans:property name="authenticationFailureHandler" ref="customerAuthenticationFailureHandler"/>
+    </beans:bean>
+    
+    <beans:bean id="customerAuthenticationSuccessHandler" class="com.tianzhixing.oms.web.security.handler.CustomerAuthenticationSuccessHandler">
+        <beans:property name="defaultTargetUrl" value="/index"/>
+    </beans:bean>
+    
+    <beans:bean id="customerAuthenticationFailureHandler"  class="com.tianzhixing.oms.web.security.handler.CustomerAuthenticationFailureHandler">
+        <beans:property name="defaultFailureUrl" value="/login"/>
+        <beans:property name="useForward" value="true"/>
+    </beans:bean>
+    
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="customerSecurityAuthenticationProvider"/>
+    </authentication-manager>
+    
+    <beans:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+    
+    <beans:bean id="securityUserService"  class="com.tianzhixing.oms.web.security.service.SecurityUserDetailsService">
+    </beans:bean>
+    
+    <beans:bean id="customerSecurityAuthenticationProvider" class="com.tianzhixing.oms.web.security.provider.CustomerSecurityAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="securityUserService"/>
+        <beans:property name="passwordEncoder" ref="passwordEncoder"/>
+    </beans:bean>
+
+</beans:beans>

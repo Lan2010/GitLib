@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>	
+	<parent>
+        <artifactId>tianzhixing-oms-platform</artifactId>
+        <groupId>com.tianzhixing</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+	<groupId>com.tianzhixing</groupId>
+	<artifactId>tianzhixing-oms-security-web</artifactId>
+	<version>1.0-SNAPSHOTS</version>
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- 项目依赖 -->
+		<dependency>
+			<groupId>com.tianzhixing</groupId>
+			<artifactId>tianzhixing-oms-utils</artifactId>
+			<version>1.0-SNAPSHOTS</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tianzhixing</groupId>
+			<artifactId>tianzhixing-oms-commons</artifactId>
+			<version>1.0-SNAPSHOTS</version>
+		</dependency>
+		<!-- end -->
+
+		<!-- spring security包 -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${springframework.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${springframework.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${springframework.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${springframework.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session</artifactId>
+			<version>${spring-session.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+			<version>${spring-session-data-redis.version}</version>
+		</dependency>
+		<!-- end -->
+		<!-- http servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+		</dependency>
+		<!-- end -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+	</dependencies>	
+</project>

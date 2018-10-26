@@ -1,0 +1,137 @@
+@charset "utf-8";
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.tabStyle .nav-tabs {
+  border-bottom: 2px solid #a7b1c2;
+}
+.tabStyle .nav-tabs > li > a {
+  border: 1px solid #a7b1c2;
+}
+.tabStyle .panel-body {
+  border: 1px solid #a7b1c2;
+  padding: 10px;
+}
+.tabStyle .nav-tabs > li.active > a,
+.tabStyle .nav-tabs > li.active > a:focus,
+.tabStyle .nav-tabs > li.active > a:hover {
+  border: 1px solid #a7b1c2;
+  background: #293846;
+  color: #a7b1c2;
+}
+.tabStyle .infoWrap {
+  min-height: 100px;
+  display: flex;
+  padding-top: 10px;
+}
+
+.tabStyle .attachmentsWrap {
+	max-width: 1055px;
+    margin-right: 10px;
+    overflow-x: auto;
+    padding: 10px 5px;
+    display: inline;
+}
+.attachmentsWrap > div:first-child {
+	margin-left: 14px;
+	margin-bottom: 10px
+}
+.tabStyle #attachments {
+	width: 100%;
+	display: flex;
+}
+
+.tabStyle #templateAttachment {
+	display: none;
+}
+
+.tabStyle .table.table-bordered input {
+	width: 100px;
+}
+
+.tabStyle .display-grid {
+	display: grid;
+	margin-left: 10px;
+	max-width: 183px;
+	min-width: 183px;
+}
+
+.tabStyle .display-grid > div {
+	text-align: center;
+	position: relative;
+}
+
+.tabStyle .display-grid .img > img {
+	width: 64px; 
+	height: 64px;
+}
+
+.tabStyle .display-flex {
+	display: flex;
+	margin-left: 10px
+}
+
+.tabStyle .margin-left-10px {
+	margin-left: 10px;
+}
+
+.tabStyle .form-group .hide {
+	display: none;
+}
+
+.tabStyle .form-group .active {
+	display: show;
+}
+
+.tabStyle .del {
+	width: 15px;
+    height: 16px;
+    padding: 0;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+   /*  margin-left: -10px;
+    margin-top: -64px; */
+    right: 48px;
+    top: -8px;
+    position: absolute;
+}
+
+.tabGreen .panel-heading .panel-options {
+  position: relative;
+}
+.tabGreen .panel-heading .panel-options .nav.nav-tabs {
+  border-bottom: 5px solid #6db31a;
+}
+.tabGreen .panel-heading .panel-options .nav.nav-tabs li {
+  background: #5f905d;
+  margin-right: 2px;
+  border-radius: 0;
+}
+.tabGreen .panel-heading .panel-options .nav.nav-tabs li a {
+  color: #fff;
+  border-radius: 0;
+  border: 1px solid #5e900e;
+}
+.tabGreen .panel-heading .panel-options .nav.nav-tabs li a:hover {
+  background: #5e900e;
+  border-color: #5e900e #5e900e rgba(0, 0, 0, 0);
+}
+.tabGreen .panel-heading .panel-options .nav.nav-tabs > li.active > a,
+.tabGreen .panel-heading .panel-options .nav.nav-tabs > li.active > a:focus,
+.tabGreen .panel-heading .panel-options .nav.nav-tabs > li.active > a:hover {
+  border-color: #5e900e #5e900e rgba(0, 0, 0, 0);
+  color: #fff;
+  background: #5e900e;
+  border-radius: 0;
+}
+.tabGreen .panel-heading .panel-options .btnWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.tabGreen .panel-heading .panel-options .btnWrap button {
+  background-color: #5e900e;
+  border-color: #5e900e;
+}

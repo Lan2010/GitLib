@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- 控制台输出 -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} [%5p] [%c] :%L - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="INFO" />
+			<param name="levelMax" value="ERROR" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<!-- DEBUG日志 -->
+	<appender name="app_debug" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Encoding" value="UTF-8" />
+		<param name="File"
+			value="${oms.customer.log.home}/logs/oms_customer/log_debug.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+			<param name="levelMax" value="ERROR" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<!-- 业务日志 -->
+	<appender name="app_info" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Encoding" value="UTF-8" />
+		<param name="File"
+			value="${oms.customer.log.home}/logs/oms_customer/log_app_info.log" />
+		<param name="DatePattern" value="'.'yyyyMMdd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="INFO" />
+			<param name="levelMax" value="ERROR" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+    <appender name="app_error" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <param name="File"
+               value="${oms.customer.log.home}/logs/oms_customer/log_app_error.log" />
+        <param name="DatePattern" value="'.'yyyyMMdd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="ERROR" />
+            <param name="levelMax" value="ERROR" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+    <appender name="app_warn" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <param name="File"
+               value="${oms.customer.log.home}/logs/oms_customer/log_app_warn.log" />
+        <param name="DatePattern" value="'.'yyyyMMdd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="WARN" />
+            <param name="levelMax" value="ERROR" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+    <appender name="app_fatal" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <param name="File"
+               value="${oms.customer.log.home}/logs/oms_customer/log_app_fatal.log" />
+        <param name="DatePattern" value="'.'yyyyMMdd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="ERROR" />
+            <param name="levelMax" value="FATAL" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+	<!-- 第三方开源软件debug -->
+	<appender name="thirtyPartyDebug" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Encoding" value="UTF-8" />
+		<param name="File"
+			value="${oms.customer.log.home}/logs/oms_customer/log_third_party_debug.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+			<param name="levelMax" value="ERROR" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+    <appender name="thirtyPartyInfo" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <param name="File"
+               value="${oms.customer.log.home}/logs/oms_customer/log_third_party_info.log" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="INFO" />
+            <param name="levelMax" value="ERROR" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+    <appender name="thirtyPartyWarn" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <param name="File"
+               value="${oms.customer.log.home}/logs/oms_customer/log_third_party_warn.log" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="WARN" />
+            <param name="levelMax" value="ERROR" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+    <!-- 系统日志 -->
+    <appender name="sys" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Encoding" value="UTF-8" />
+        <param name="File"
+               value="${oms.customer.log.home}/logs/oms_customer/log_sys.log" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH\:mm\:ss} [%c]-[%p] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="DEBUG" />
+            <param name="levelMax" value="ERROR" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+	<!-- spring -->
+	<logger name="org.springframework" additivity="false">
+		<appender-ref ref="thirtyPartyDebug" />
+        <appender-ref ref="thirtyPartyInfo" />
+        <appender-ref ref="thirtyPartyWarn" />
+        <appender-ref ref="app_error" />
+        <appender-ref ref="app_fatal" />
+        <appender-ref ref="stdout" />
+	</logger>
+
+	<!-- struts -->
+	<logger name="com.opensymphony.xwork2" additivity="false">
+        <appender-ref ref="thirtyPartyDebug" />
+        <appender-ref ref="thirtyPartyInfo" />
+        <appender-ref ref="thirtyPartyWarn" />
+        <appender-ref ref="app_error" />
+        <appender-ref ref="app_fatal" />
+        <appender-ref ref="stdout" />
+	</logger>
+    <logger name="org.apache.struts2" additivity="false">
+        <appender-ref ref="thirtyPartyDebug" />
+        <appender-ref ref="thirtyPartyInfo" />
+        <appender-ref ref="thirtyPartyWarn" />
+        <appender-ref ref="app_error" />
+        <appender-ref ref="app_fatal" />
+        <appender-ref ref="stdout" />
+	</logger>
+
+	<!-- hibernate -->
+	<logger name="org.hibernate" additivity="false">
+        <appender-ref ref="thirtyPartyDebug" />
+        <appender-ref ref="thirtyPartyInfo" />
+        <appender-ref ref="thirtyPartyWarn" />
+        <appender-ref ref="app_error" />
+        <appender-ref ref="app_fatal" />
+        <appender-ref ref="stdout" />
+	</logger>
+
+    <!--org.apache-->
+    <logger name="org.apache.http" additivity="false">
+        <appender-ref ref="thirtyPartyDebug" />
+        <appender-ref ref="thirtyPartyInfo" />
+        <appender-ref ref="thirtyPartyWarn" />
+        <appender-ref ref="app_error" />
+        <appender-ref ref="app_fatal" />
+        <appender-ref ref="stdout" />
+	</logger>
+
+    <!-- platform -->
+    <logger name="com.tianzhixing" additivity="false">
+        <appender-ref ref="app_debug" />
+        <appender-ref ref="app_info" />
+        <appender-ref ref="app_warn" />
+        <appender-ref ref="app_error"/>
+        <appender-ref ref="app_fatal" />
+        <appender-ref ref="stdout" />
+    </logger>
+	<root>
+
+ 		<!--<priority value="app_debug" />-->
+         <!--<priority value="thirtyPartyDebug" />-->
+		<appender-ref ref="app_info" />
+        <appender-ref ref="app_warn" />
+		<appender-ref ref="app_error" />
+		<appender-ref ref="app_fatal" />
+		<appender-ref ref="thirtyPartyInfo" />
+		<appender-ref ref="thirtyPartyWarn" />
+		<appender-ref ref="sys" />
+        <appender-ref ref="stdout" />
+	</root>
+</log4j:configuration>  

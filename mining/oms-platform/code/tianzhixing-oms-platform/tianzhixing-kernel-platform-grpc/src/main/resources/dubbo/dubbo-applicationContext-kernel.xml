@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-kernel-platform-config.properties" ignore-unresolvable="true" />
+
+	<dubbo:application id="TianZhixing-KERNEL-GRPC-APPID" registry="TianZhixing-KERNEL-GRPC-REGID" name="${kernel.domain.application.name}" logger="${kernel.domain.application.logger}" version="${kernel.domain.application.version}" organization="${kernel.domain.application.organization}" environment="${kernel.domain.application.environment}" />
+
+	<dubbo:registry id="TianZhixing-KERNEL-GRPC-REGID" address="${kernel.domain.application.registry.address}" port="${kernel.domain.application.registry.port}" protocol="${kernel.domain.application.registry.protocol}" timeout="${kernel.domain.application.registry.timeout}" username="${kernel.domain.application.registry.user.name}" password="${kernel.domain.application.registry.user.password}" >
+		<dubbo:parameter key="qos.port" value="${kernel.domain.dubbo.qos.port}" />
+	</dubbo:registry>
+	<dubbo:reference id="RPCAccountInfoService"
+		interface="com.tianzhixing.kernel.rpc.service.account.RPCAccountInfoService" version="${kernel.domain.rpc.service.version}"
+		group="${kernel.domain.rpc.service.group}" timeout="${kernel.domain.rpc.service.timeout}"
+		lazy="${kernel.domain.rpc.service.lazy}" loadbalance="${kernel.domain.rpc.service.reference.loadbalance}" retries="${kernel.domain.dubbo.retries}" registry="TianZhixing-KERNEL-GRPC-REGID" application="TianZhixing-KERNEL-GRPC-APPID"/>
+
+	<dubbo:reference id="RPCAccountStarPointOperationService"
+					 interface="com.tianzhixing.kernel.rpc.service.account.RPCAccountStarPointOperationService" version="${kernel.domain.rpc.service.version}"
+					 group="${kernel.domain.rpc.service.group}" timeout="${kernel.domain.rpc.service.timeout}"
+					 lazy="${kernel.domain.rpc.service.lazy}" loadbalance="${kernel.domain.rpc.service.reference.loadbalance}" retries="${kernel.domain.dubbo.retries}" registry="TianZhixing-KERNEL-GRPC-REGID" application="TianZhixing-KERNEL-GRPC-APPID"/>
+
+	<dubbo:reference id="RPCAdvertisementOperationService"
+					 interface="com.tianzhixing.kernel.rpc.service.advertisement.RPCAdvertisementOperationService" version="${kernel.domain.rpc.service.version}"
+					 group="${kernel.domain.rpc.service.group}" timeout="${kernel.domain.rpc.service.timeout}"
+					 lazy="${kernel.domain.rpc.service.lazy}" loadbalance="${kernel.domain.rpc.service.reference.loadbalance}" retries="${kernel.domain.dubbo.retries}" registry="TianZhixing-KERNEL-GRPC-REGID" application="TianZhixing-KERNEL-GRPC-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOperationService"
+					 interface="com.tianzhixing.kernel.rpc.service.device.RPCDeviceOperationService" version="${kernel.domain.rpc.service.version}"
+					 group="${kernel.domain.rpc.service.group}" timeout="${kernel.domain.rpc.service.timeout}"
+					 lazy="${kernel.domain.rpc.service.lazy}" loadbalance="${kernel.domain.rpc.service.reference.loadbalance}" retries="${kernel.domain.dubbo.retries}" registry="TianZhixing-KERNEL-GRPC-REGID" application="TianZhixing-KERNEL-GRPC-APPID"/>
+
+	<dubbo:reference id="RPCTaskOperationService"
+					 interface="com.tianzhixing.kernel.rpc.service.task.RPCTaskOperationService" version="${kernel.domain.rpc.service.version}"
+					 group="${kernel.domain.rpc.service.group}" timeout="${kernel.domain.rpc.service.timeout}"
+					 lazy="${kernel.domain.rpc.service.lazy}" loadbalance="${kernel.domain.rpc.service.reference.loadbalance}" retries="${kernel.domain.dubbo.retries}" registry="TianZhixing-KERNEL-GRPC-REGID" application="TianZhixing-KERNEL-GRPC-APPID"/>
+</beans>

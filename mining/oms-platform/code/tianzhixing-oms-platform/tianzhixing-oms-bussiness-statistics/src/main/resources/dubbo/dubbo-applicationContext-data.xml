@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-oms-data-config.properties" ignore-unresolvable="true" />
+
+	<dubbo:application id="TianZhixing-OMS-Data-Statistics-APPID" registry="TianZhixing-OMS-Data-Statistics-REGID" name="${oms.data.domain.application.name}" logger="${oms.data.domain.application.logger}" version="${oms.data.domain.application.version}" organization="${oms.data.domain.application.organization}" environment="${oms.data.domain.application.environment}"/>
+	<dubbo:registry id="TianZhixing-OMS-Data-Statistics-REGID" address="${oms.data.domain.application.registry.address}" port="${oms.data.domain.application.registry.port}" protocol="${oms.data.domain.application.registry.protocol}" timeout="${oms.data.domain.application.registry.timeout}" username="${oms.data.domain.application.registry.user.name}" password="${oms.data.domain.application.registry.user.password}">
+		<dubbo:parameter key="qos.port" value="${oms.data.domain.dubbo.qos.port}" />
+	</dubbo:registry>
+
+	<dubbo:reference id="RPCApplicationOperationService"
+		interface="com.tianzhixing.oms.rpc.service.RPCApplicationOperationService" version="${oms.data.domain.rpc.service.version}"
+		group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+		lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCDeviceCheckinService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCDeviceCheckinService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOnLineStatusService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCDeviceOnLineStatusService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOperationService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCDeviceOperationService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCPagesOperationService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCPagesOperationService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserAdvertisementService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserAdvertisementService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserBasicInfoService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserBasicInfoService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserAuthService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserAuthService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserLoginStatusService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserLoginStatusService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserGreeterCardService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserGreeterCardService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserPostCardService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserPostCardService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserRecordingService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserRecordingService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserTaskStatusService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserTaskStatusService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserStarPointIncrementService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserStarPointIncrementService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCUserStarPointConsumeService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCUserStarPointConsumeService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+	<dubbo:reference id="RPCMallUserOrderPayService"
+					 interface="com.tianzhixing.oms.rpc.service.RPCMallUserOrderPayService" version="${oms.data.domain.rpc.service.version}"
+					 group="${oms.data.domain.rpc.service.group}" timeout="${oms.data.domain.rpc.service.timeout}"
+					 lazy="${oms.data.domain.rpc.service.lazy}" loadbalance="${oms.data.domain.rpc.service.reference.loadbalance}" retries="${oms.data.domain.dubbo.retries}" registry="TianZhixing-OMS-Data-Statistics-REGID" application="TianZhixing-OMS-Data-Statistics-APPID"/>
+
+</beans>

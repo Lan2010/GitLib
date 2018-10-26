@@ -1,0 +1,24 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:context="http://www.springframework.org/schema/context" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:property-placeholder location="classpath:/datasource/jdbc-config.properties" ignore-unresolvable="true" />
+    <!--  配置数据源   -->
+    <beans:bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <beans:property name="driverClass" value="${jdbc.driver}"/>
+        <beans:property name="jdbcUrl" value="${jdbc.uri}" />
+        <beans:property name="user" value="${jdbc.username}"/>
+        <beans:property name="password" value="${jdbc.password}"/>
+        <beans:property name="initialPoolSize" value="${jdbc.initial.size}" />
+        <beans:property name="minPoolSize" value="${jdbc.min.total}"/>
+        <beans:property name="maxPoolSize" value="${jdbc.max.total}"/>
+        <beans:property name="acquireIncrement" value="${acquire.connection.increment}" />
+        <beans:property name="acquireRetryAttempts" value="${acquire.retry.connection.attempts}" />
+        <beans:property name="acquireRetryDelay" value="${acquire.retry.connection.delay}" />
+        <beans:property name="autoCommitOnClose" value="${auto.commit.on.close}" />
+        <beans:property name="checkoutTimeout" value="${jdbc.connection.checkout.time.out}" />
+        <beans:property name="maxIdleTime" value="${max.idle.time}" />
+        <beans:property name="numHelperThreads" value="${number.helper.threads}" />
+        <beans:property name="idleConnectionTestPeriod" value="${idle.connection.test.period}" />
+        <beans:property name="testConnectionOnCheckin" value="${test.connect.on.checkin}" />
+        <beans:property name="testConnectionOnCheckout" value="${test.connect.on.checkout}" />
+    </beans:bean>
+</beans:beans>

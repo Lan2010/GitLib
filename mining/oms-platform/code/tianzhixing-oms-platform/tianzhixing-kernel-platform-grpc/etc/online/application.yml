@@ -1,0 +1,13 @@
+server:
+  port:
+    8344
+grpc:
+  server:
+    address: 0.0.0.0
+    port: 10344
+spring:
+  application:
+      name: tianzhixing-kernel-platform-grpc-server
+  messages:
+      basename: properties/messages
+      encoding: UTF-8

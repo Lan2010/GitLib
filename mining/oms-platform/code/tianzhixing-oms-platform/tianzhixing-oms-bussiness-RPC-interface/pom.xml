@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>	
+	<parent>
+        <artifactId>tianzhixing-oms-platform</artifactId>
+        <groupId>com.tianzhixing</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+	<groupId>com.tianzhixing</groupId>
+	<artifactId>tianzhixing-oms-bussiness-RPC-interface</artifactId>
+	<version>1.0-SNAPSHOTS</version>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<!-- 项目依赖 -->
+		<dependency>
+			<groupId>com.tianzhixing</groupId>
+			<artifactId>tianzhixing-oms-bussiness-commons</artifactId>
+			<version>1.0-SNAPSHOTS</version>
+		</dependency>
+		<!-- end -->
+	</dependencies>	
+</project>

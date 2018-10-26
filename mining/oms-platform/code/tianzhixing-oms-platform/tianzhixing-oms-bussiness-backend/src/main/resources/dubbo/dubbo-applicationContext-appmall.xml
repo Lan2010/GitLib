@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-appmall-config.properties" ignore-unresolvable="true" />
+
+	<dubbo:application id="TianZhixing-AppMall-Backend-APPID" registry="TianZhixing-AppMall-Backend-REGID" name="${appmall.domain.application.name}" logger="${appmall.domain.application.logger}" version="${appmall.domain.application.version}" organization="${appmall.domain.application.organization}" environment="${appmall.domain.application.environment}" />
+	<dubbo:registry id="TianZhixing-AppMall-Backend-REGID" address="${appmall.domain.application.registry.address}" port="${appmall.domain.application.registry.port}" protocol="${appmall.domain.application.registry.protocol}" timeout="${appmall.domain.application.registry.timeout}" username="${appmall.domain.application.registry.user.name}" password="${appmall.domain.application.registry.user.password}">
+		<dubbo:parameter key="qos.port" value="${appmall.domain.dubbo.qos.port}" />
+	</dubbo:registry>
+
+	<dubbo:reference id="RPCProductService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCProductService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCCourseDetailService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCCourseDetailService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCPromotionCodeService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCPromotionCodeService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserPromotionCodeService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserPromotionCodeService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserWechatService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserWechatService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserGeneInterprService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserGeneInterprService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserStarpointAccountService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserStarpointAccountService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserTopicService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserTopicService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserMessageService"
+					 interface="com.tianzhixing.appmall.rpc.service.RPCUserMessageService" version="${appmall.domain.application.version}"
+					 group="${appmall.domain.rpc.service.group}" timeout="${appmall.domain.rpc.service.timeout}"
+					 lazy="${appmall.domain.rpc.service.lazy}" loadbalance="${appmall.domain.rpc.service.reference.loadbalance}" retries="${appmall.domain.dubbo.retries}" registry="TianZhixing-AppMall-Backend-REGID" application="TianZhixing-AppMall-Backend-APPID"/>
+
+</beans>

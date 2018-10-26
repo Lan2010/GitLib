@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-config.properties" ignore-unresolvable="true" />
+	<dubbo:application id="TianZhixing-OMS-Bussiness-RPC-SVC-APPID" name="${domain.application.rpc.service.name}" logger="${domain.application.rpc.service.logger}" version="${domain.application.rpc.service.version}" organization="${domain.application.service.organization}" environment="${domain.application.rpc.service.environment}" />
+	<dubbo:registry id="TianZhixing-OMS-Bussiness-RPC-SVC-REGID" address="${domain.application.rpc.service.address}" timeout="${domain.application.rpc.service.registry.timeout}" >
+		<dubbo:parameter key="qos.port" value="${domain.dubbo.qos.port}" />
+	</dubbo:registry>
+	<dubbo:protocol name="${domain.rpc.service.connection.protocol}" port="${domain.application.rpc.service.port}" accepts="${domain.rpc.service.accepts}" />
+	<dubbo:provider loadbalance="${domain.rpc.service.reference.loadbalance}" />
+	<import resource="dubbo-applicationContext-service.xml" />
+
+</beans>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		">
+
+    <!-- BEGIN -->
+    <bean id="taskAllotJob" class="com.tianzhixing.oms.bussiness.statistics.job.TaskAllotJob" />
+    <bean id="platformStatisticsJob" class="com.tianzhixing.oms.bussiness.statistics.job.PlatformStatisticsJob" />
+    <!-- END -->
+
+    <!--配置-BEGIN-->
+    <bean id="taskAllotJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="taskAllotJob" />
+        </property>
+        <property name="targetMethod">
+            <value>execute</value>
+        </property>
+    </bean>
+    <bean id="platformStatisticsJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="platformStatisticsJob" />
+        </property>
+        <property name="targetMethod">
+            <value>execute</value>
+        </property>
+    </bean>
+    <!--配置-END-->
+
+    <!--quartz trigger配置-BEGIN-->
+    <bean id="taskAllotJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="taskAllotJobDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0 01 00 * * ?</value>
+        </property>
+    </bean>
+    <bean id="platformStatisticsJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="platformStatisticsJobDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0 05 * * * ?</value>
+        </property>
+    </bean>
+    <!--quartz trigger配置-END-->
+
+    <!--启动触发器-->
+    <bean name="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="taskAllotJobTrigger" />
+                <ref bean="platformStatisticsJobTrigger" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

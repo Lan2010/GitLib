@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.kernel.grpc.proto.account.starpoint.operation";
+option java_outer_classname = "AccountStarPointOperationServiceProto";
+
+package account.starpoint.operation;
+
+import "response_entity.proto";
+
+//账户星点操作服务
+service AccountStarPointOperationService {
+    //采集
+    rpc collection (CollectionStarPointInfo) returns (CollectionResult) {
+    }
+    //提现 - 暂时未开启
+    rpc withdraw (WithdrawInfo) returns (WithdrawResult) {
+    }
+    //奖励
+    rpc award (AwardInfo) returns (AwardResult) {
+    }
+    //绑定通讯录奖励
+    rpc bindAddressList(BindAddressAwardInfo) returns (AwardResult){}
+}
+
+//奖励信息
+message AwardInfo {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int64 adwardTime = 3; //奖励时间
+    string adwardType = 4; //奖励类型
+    //[取值范围：AUTHIDCARD-实名认证奖励，GENE-基因数据奖励，ADDRESS-添加地址奖励，ATTENTIONWEBCHAT-关注公众号奖励，VOICEDISCERN-声音识别奖励，FACEDEISCEERN-人脸识别奖励，BINDBANK-绑定银行卡奖励，HARDWAREBIND-绑定矿机奖励]
+}
+
+//绑定通讯录奖励信息
+message BindAddressAwardInfo {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int64 adwardTime = 3; //奖励时间
+    int32 contactCount = 4; //通讯录联系人数量
+}
+
+//采集星点信息
+message CollectionStarPointInfo {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int64 collectionTime = 3; //采集时间 - 必填
+    repeated StarPointRecordsInfo records = 4; //需采集的记录token清单 - 必填
+    string advertId = 5; //广告ID-选填
+    int32 advertIdOperationType = 6; //广告操作类型-选填
+}
+
+//星点需采集记录
+message StarPointRecordsInfo {
+    string recordToken = 1; //记录token - 必填
+}
+
+//提现信息
+message WithdrawInfo {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int64 withdrawTime = 3; //提现时间  必填
+    string withdrawCount = 4; //提现数量  必填
+}
+
+//采集结果
+message CollectionResult {
+    string availableStarPoint = 1; //可用星点数
+    string frozenStarPoint = 2; //冻结星点数量
+    string starpoint = 4; //采集星点数
+    ResponseEntity responseEntity = 3;
+}
+
+//提现结果
+message WithdrawResult {
+    string availableStarPoint = 1; //可用星点数
+    string frozenStarPoint = 2; //冻结星点数量
+    ResponseEntity responseEntity = 3; //code : 200=ok, 300=param error, 502=operation error
+}
+//奖励结果
+message AwardResult {
+    string availableStarPoint = 1; //可用星点数
+    string frozenStarPoint = 2; //冻结星点数量
+    string starPoint = 4; //奖励的星点数
+    ResponseEntity responseEntity = 3; //code : 200=ok, 300=param error, 502=operation error
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		">
+
+    <!-- BEGIN -->
+    <bean id="accountSyncJob" class=" com.tianzhixing.kernel.redis.job.AccountRelationSyncService"/>
+    <!-- END -->
+
+    <!--配置-BEGIN-->
+    <bean id="accountSyncDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="accountSyncJob" />
+        </property>
+        <property name="targetMethod">
+            <value>sync</value>
+        </property>
+    </bean>
+    <!--配置-END-->
+
+    <!--quartz trigger配置-BEGIN-->
+    <bean id="accountSyncTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="accountSyncDetail" />
+        </property>
+        <property name="cronExpression">
+                <value>0 30 01 * * ?</value>
+        </property>
+    </bean>
+    <!--quartz trigger配置-END-->
+
+    <!--启动触发器-->
+    <bean name="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="accountSyncTrigger" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

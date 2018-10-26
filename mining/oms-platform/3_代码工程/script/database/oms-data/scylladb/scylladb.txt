@@ -1,0 +1,233 @@
+CREATE TABLE tianzhixing_oms_statistics_data.application_operation_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+app_operation_time bigint,
+mobile varchar,
+wx_id varchar,
+ip varchar,
+operation_type int,
+PRIMARY KEY (id, app_operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.device_checkin_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+device_id varchar,
+device_type varchar,
+device_mac varchar,
+device_ip varchar,
+device_model varchar,
+device_oper_type varchar,
+checkin_time bigint,
+bind_status int,
+PRIMARY KEY (id, checkin_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.device_online_status_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+device_id varchar,
+device_type varchar,
+device_mac varchar,
+device_ip varchar,
+device_model varchar,
+device_oper_type varchar,
+operation_time bigint,
+operation_type int,
+lng varchar,
+lat varchar,
+bind_status int,
+PRIMARY KEY (id, operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.device_operation_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+device_id varchar,
+device_type varchar,
+device_mac varchar,
+device_ip varchar,
+device_model varchar,
+device_oper_type varchar,
+operation_time bigint,
+operation_type int,
+PRIMARY KEY (id, operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.pages_operation_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+wx_id varchar,
+access_time bigint,
+pages_url text,
+pages_info text,
+pages_name text,
+login_status varchar,
+ip varchar,
+PRIMARY KEY (id, access_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_advertisement_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+advert_id varchar,
+advert_link varchar,
+advert_type varchar,
+advert_name varchar,
+advert_info varchar,
+operation_time bigint,
+operation_type int,
+ip varchar,
+PRIMARY KEY (id, operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_appointment_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+appointment_content varchar,
+appointment_future_time bigint,
+appointment_type varchar,
+appointment_time bigint,
+PRIMARY KEY (id, appointment_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_basic_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+email varchar,
+real_name varchar,
+id_card varchar,
+nick_name varchar,
+user_from_type varchar,
+avatar varchar,
+user_oper_type varchar,
+wx_id varchar,
+qq_id varchar,
+sina_weibo_id varchar,
+reg_time bigint,
+ip varchar,
+PRIMARY KEY (id, reg_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_greeter_card_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+greeter_card_id varchar,
+greeter_card_info varchar,
+greeter_card_link varchar,
+nick_name varchar,
+wx_id varchar,
+operation_time bigint,
+operation_type int,
+share_to_platform varchar,
+share_from_platform varchar,
+PRIMARY KEY (id, operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_post_card_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+post_card_id varchar,
+post_card_info varchar,
+post_card_link varchar,
+nick_name varchar,
+wx_id varchar,
+operation_time bigint,
+operation_type int,
+share_to_platform varchar,
+share_from_platform varchar,
+PRIMARY KEY (id, operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_auth_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+auth_type varchar,
+auth_status int,
+auth_time bigint,
+PRIMARY KEY (id, auth_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_login_status_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+operation_type int,
+operation_time bigint,
+wx_id varchar,
+qq_id varchar,
+sina_weibo_id varchar,
+ip varchar,
+PRIMARY KEY (id, operation_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_recording_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+voice_id varchar,
+voice_link varchar,
+nick_name varchar,
+wx_id varchar,
+recording_time bigint,
+PRIMARY KEY (id, recording_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_star_point_consume_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+consume_time bigint,
+consume_count varchar,
+consume_cause varchar,
+PRIMARY KEY (id, consume_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_star_point_increment_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+increment_time bigint,
+increment_count varchar,
+increment_type int,
+third_id varchar,
+third_name varchar,
+PRIMARY KEY (id, increment_time));
+
+CREATE TABLE tianzhixing_oms_statistics_data.user_task_status_info
+(id uuid,
+create_time timestamp,
+platform_from varchar,
+client_platform_type varchar,
+mobile varchar,
+operation_time bigint,
+operation_type int,
+task_id varchar,
+task_name varchar,
+task_info varchar,
+PRIMARY KEY (id, operation_time));

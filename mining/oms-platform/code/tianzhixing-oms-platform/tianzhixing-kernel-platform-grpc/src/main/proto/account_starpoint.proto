@@ -1,0 +1,158 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.kernel.grpc.proto.account.starpoint";
+option java_outer_classname = "AccountStarPointServiceProto";
+
+package account.starpoint;
+
+import "response_entity.proto";
+
+//账户星点查询服务
+service AccountStarPointService {
+    //查询
+    rpc starPoint(AccountInfo) returns (Result) {}
+    //查询排行
+    rpc ranking(RankingInfo) returns (RankingResult){}
+    //查询流水
+    rpc records(RecordsCondition) returns (RecordsResult){}
+    //查询未采集的星点记录
+    rpc unCollectionRecords(UnCollectionRecordsCondition) returns (UnCollectionRecordsResult){}
+    //查询当前日期内资金流水统计，以天为单位
+    rpc recordsWithDay(RecordsWithDayCondition) returns (RecordsWithDayResult){}
+    //根据任务查询用户已采集星点数
+    rpc starPointWithTask(StarPointWithTaskInfo) returns(StarPointWithTaskResult){}
+}
+
+//账户信息
+message AccountInfo {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+}
+
+//排行查询信息
+message RankingInfo {
+    PageMapper pageMapper = 1; //分页信息 必填
+    string token = 2; //安全校验码-必填
+}
+
+//流水查询条件
+message RecordsCondition {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int64 beginTime = 3; //开始时间-选填
+    int64 endTime = 4; //结束时间-选填
+    PageMapper pageMapper = 5; //分页信息 必填
+    string taskId = 6; //任务ID - 选填
+    string advertisementId = 7; //广告ID - 选填
+    string recordsType = 8;//记录类型 - 必填(ALL, TASK, ADVERTISEMENT, BASIC，RANDOM，CONSUME)
+}
+
+//流水查询条件-统计数据
+message RecordsWithDayCondition {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int32 days = 3; //天数-必填
+    int64 endTime = 4; //结束时间-必填
+}
+
+//未采集星点记录查询条件
+message UnCollectionRecordsCondition {
+    string accountToken = 1; //需存储的第三方唯一token 必填
+    string token = 2; //安全校验码-必填
+    int64 beginTime = 3; //开始时间-选填
+    int64 endTime = 4; //结束时间-选填
+}
+
+//分页信息
+message PageMapper{
+    int32 from = 1; //开始位置
+    int32 size = 2; //长度[10-100]
+}
+
+message Result {
+    string availableStarPoint = 1; //可用星点数
+    string frozenStarPoint = 2; //冻结星点数量
+    ResponseEntity responseEntity = 3;
+}
+
+//排行返回信息
+message RankingResult {
+    repeated RankingRecordsInfo records = 1;//记录
+    int64 total = 2; //条数
+    ResponseEntity responseEntity = 3;
+}
+
+//排行信息详情
+message RankingRecordsInfo{
+    string thirdToken = 1;//第三方token
+    string accountToken = 2;//account token
+    string starPoint = 3; //星点数
+}
+
+//流水结果
+message RecordsResult {
+    repeated RecordsInfo records = 1;//记录
+    int64 total = 2; //条数
+    ResponseEntity responseEntity = 3;
+}
+
+//流水结果 - 以天为单位的统计信息
+message RecordsWithDayResult {
+    repeated RecordsWithDayInfo records = 1;//记录
+    ResponseEntity responseEntity = 3;
+}
+
+//未采集星点记录结果
+message UnCollectionRecordsResult {
+    repeated UnCollectionRecordsInfo records = 1;//记录
+    ResponseEntity responseEntity = 2;
+}
+
+//流水详情
+message RecordsInfo {
+    string operStarPoint = 1; //操作星点数
+    string operationType = 2;//操作类型(CONSUME, INCREMENT,FROZEN)
+    string recordsType = 3;//记录类型(TASK, ADVERTISEMENT, BASIC，RANDOM，CONSUME)
+    string taskId = 4;//任务ID
+    string advertisementId = 5;//广告ID
+    string remark = 6;//备注
+    int64 createTime = 7; //创建时间
+}
+
+//流水详情 - 以天为单位的统计信息
+message RecordsWithDayInfo {
+    string starPoint = 1; //操作星点数
+    string date = 2; //日期(yyyyMMdd)
+}
+
+//未采集星点详情
+message UnCollectionRecordsInfo {
+    string operStarPoint = 1; //操作星点数
+    string longitudeAndLatitude = 2;//经纬度
+    string recordsType = 3;//记录类型(TASK，RANDOM)
+    string taskId = 4;//任务ID
+    string advertisementId = 5;//广告ID
+    string remark = 6;//备注
+    int64 createTime = 7; //创建时间
+    string recordToken = 8; //记录token
+    int64 overdueTime = 9; //到期时间
+}
+
+//根据任务查询用户采集的星点数
+message StarPointWithTaskInfo {
+    repeated string taskIds = 1;//记录
+    string accountToken = 2; //需存储的第三方唯一token 必填
+    string token = 3; //安全校验码-必填
+}
+
+//根据任务查询用户采集的星点数结果
+message StarPointWithTaskResult {
+    repeated StarPointWithTaskResultDetail records = 1;//记录
+    ResponseEntity responseEntity = 2;
+}
+//根据任务查询用户采集的星点数结果详情
+message StarPointWithTaskResultDetail {
+    string starPoint = 1;//星点数
+    string taskId = 2;//任务ID
+}

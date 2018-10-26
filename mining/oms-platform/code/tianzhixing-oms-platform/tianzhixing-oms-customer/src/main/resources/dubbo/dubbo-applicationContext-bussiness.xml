@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-bussiness-config.properties" ignore-unresolvable="true" />
+
+	<dubbo:application id="TianZhixing-OMS-Customer-BUSSINESS-APPID" registry="TianZhixing-OMS-Customer-BUSSINESS-REGID" name="${bussiness.domain.application.name}" logger="${bussiness.domain.application.logger}" version="${bussiness.domain.application.version}" organization="${bussiness.domain.application.organization}" environment="${bussiness.domain.application.environment}"/>
+	<dubbo:registry id="TianZhixing-OMS-Customer-BUSSINESS-REGID" address="${bussiness.domain.application.registry.address}" port="${bussiness.domain.application.registry.port}" protocol="${bussiness.domain.application.registry.protocol}" timeout="${bussiness.domain.application.registry.timeout}" username="${bussiness.domain.application.registry.user.name}" password="${bussiness.domain.application.registry.user.password}">
+		<dubbo:parameter key="qos.port" value="${bussiness.domain.dubbo.qos.port}" />
+	</dubbo:registry>
+
+	<dubbo:reference id="RPCDeviceCurrentOnlineStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCDeviceCurrentOnlineStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-OMS-Customer-BUSSINESS-REGID" application="TianZhixing-OMS-Customer-BUSSINESS-APPID"/>
+
+</beans>

@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tianzhixing.kernel.grpc.proto.account.reg";
+option java_outer_classname = "AccountRegServiceProto";
+
+package account.reg;
+
+import "response_entity.proto";
+
+//账户注册服务
+service AccountRegService {
+    //注册
+    rpc reg (AccountInfo) returns (Result) {}
+    //检查手机号
+    rpc check (CheckMobileInfo) returns (CheckMobileResult) {}
+}
+
+//账户信息
+message AccountInfo {
+    string mobile = 1; //手机号码-必填
+    int64 regTime = 2; //注册时间-必填
+    string thirdToken = 3; //需存储的第三方唯一token 必填
+    string token = 4; //安全校验码-必填
+    string referrerToken = 5; //推荐人token-选填
+}
+
+//账户信息
+message CheckMobileInfo {
+    string mobile = 1; //手机号码-必填
+    string token = 2; //安全校验码-必填
+    string org = 3; //机构 - 必填
+}
+
+message Result {
+    string accountToken = 1; //账户token，调用机构需存储，唯一识别账户标识码
+    string thirdToken = 2; //第三方传入的token
+    ResponseEntity responseEntity = 3; //code : 200=ok, 300=param error, 501=already exists
+}
+
+message CheckMobileResult {
+    string accountToken = 1; //账户token，调用机构需存储，唯一识别账户标识码
+    string thirdToken = 2; //第三方传入的token
+    bool exists = 3; //是否存在
+    ResponseEntity responseEntity = 4; //code : 200=ok, 300=param error
+}
+

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:property-placeholder location="classpath:dubbo/dubbo-bussiness-config.properties" ignore-unresolvable="true" />
+
+	<dubbo:application id="TianZhixing-Bussiness-Backend-APPID" registry="TianZhixing-Bussiness-Backend-REGID" name="${bussiness.domain.application.name}" logger="${bussiness.domain.application.logger}" version="${bussiness.domain.application.version}" organization="${bussiness.domain.application.organization}" environment="${bussiness.domain.application.environment}" />
+	<dubbo:registry id="TianZhixing-Bussiness-Backend-REGID" address="${bussiness.domain.application.registry.address}" port="${bussiness.domain.application.registry.port}" protocol="${bussiness.domain.application.registry.protocol}" timeout="${bussiness.domain.application.registry.timeout}" username="${bussiness.domain.application.registry.user.name}" password="${bussiness.domain.application.registry.user.password}">
+		<dubbo:parameter key="qos.port" value="${bussiness.domain.dubbo.qos.port}" />
+	</dubbo:registry>
+
+	<dubbo:reference id="RPCStaffInfoService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.staff.RPCStaffInfoService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCTaskInfoService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.task.RPCTaskInfoService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCAdvertisementService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.advertisement.RPCAdvertisementService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCSystemParamService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.system.RPCSystemParamService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCAppSuspendService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.app.RPCAppSuspendService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCAppPushRecordsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.app.RPCAppPushRecordsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCApplicationDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCApplicationDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCDeviceDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCDeviceDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserAuthDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserAuthDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+					 
+	<dubbo:reference id="RPCUserChannelDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserChannelDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+					 
+	<dubbo:reference id="RPCPagesDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCPagesDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCStarPointConsumeDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCStarPointConsumeDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCApplicationOperationStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCApplicationOperationStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCPagesOperationStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCPagesOperationStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserBasicStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserBasicStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserLoginStatusStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserLoginStatusStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserAdvertisementStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserAdvertisementStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+					 
+	<dubbo:reference id="RPCAdvertisementDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCAdvertisementDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserTaskStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserTaskStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCTaskDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCTaskDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserAuthStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserAuthStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOperationStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCDeviceOperationStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCDeviceOnLineStatusStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCDeviceOnLineStatusStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserStarPointIncrementStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserStarPointIncrementStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserGreeterCardStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserGreeterCardStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCUserPostCardStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCUserPostCardStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCMallProductDimensionService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCMallProductDimensionService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+	<dubbo:reference id="RPCMallUserOrderPayStatisticsService"
+					 interface="com.tianzhixing.oms.bussiness.rpc.service.statistics.RPCMallUserOrderPayStatisticsService" version="${bussiness.domain.rpc.service.version}"
+					 group="${bussiness.domain.rpc.service.group}" timeout="${bussiness.domain.rpc.service.timeout}"
+					 lazy="${bussiness.domain.rpc.service.lazy}" loadbalance="${bussiness.domain.rpc.service.reference.loadbalance}" retries="${bussiness.domain.dubbo.retries}" registry="TianZhixing-Bussiness-Backend-REGID" application="TianZhixing-Bussiness-Backend-APPID"/>
+
+</beans>

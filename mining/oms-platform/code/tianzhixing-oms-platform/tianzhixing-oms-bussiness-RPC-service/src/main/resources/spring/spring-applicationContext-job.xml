@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		">
+
+    <!-- BEGIN -->
+    <bean id="systemParamInfoSyncJob" class="com.tianzhixing.oms.bussiness.redis.job.SystemParamSyncService" init-method="sync"/>
+    <bean id="advertisementInfoSyncJob" class="com.tianzhixing.oms.bussiness.redis.job.AdvertisementSyncService"/>
+    <bean id="taskInfoSyncJob" class="com.tianzhixing.oms.bussiness.redis.job.TaskInfoSyncService"/>
+    <!-- END -->
+
+    <!--配置-BEGIN-->
+    <bean id="systemParamInfoSyncDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="systemParamInfoSyncJob" />
+        </property>
+        <property name="targetMethod">
+            <value>sync</value>
+        </property>
+    </bean>
+    <bean id="advertisementInfoSyncDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="advertisementInfoSyncJob" />
+        </property>
+        <property name="targetMethod">
+            <value>sync</value>
+        </property>
+    </bean>
+    <bean id="taskInfoSyncDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="taskInfoSyncJob" />
+        </property>
+        <property name="targetMethod">
+            <value>sync</value>
+        </property>
+    </bean>
+    <!--配置-END-->
+
+    <!--quartz trigger配置-BEGIN-->
+    <bean id="systemParamInfoSyncJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="systemParamInfoSyncDetail" />
+        </property>
+        <property name="cronExpression">
+                <value>0 30 01 * * ?</value>
+        </property>
+    </bean>
+    <bean id="advertisementInfoSyncJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="advertisementInfoSyncDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0 0 02 * * ?</value>
+        </property>
+    </bean>
+    <bean id="taskInfoSyncJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="taskInfoSyncDetail" />
+        </property>
+        <property name="cronExpression">
+            <value>0 30 02 * * ?</value>
+        </property>
+    </bean>
+    <!--quartz trigger配置-END-->
+
+    <!--启动触发器-->
+    <bean name="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="systemParamInfoSyncJobTrigger" />
+                <ref bean="advertisementInfoSyncJobTrigger" />
+                <ref bean="taskInfoSyncJobTrigger" />
+            </list>
+        </property>
+    </bean>
+
+</beans>
